@@ -1,0 +1,12 @@
+class Pellets : ZilchComponent
+{
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Owner, Events.GroupCollisionStarted, this.OnGroupCollisionStarted);
+  }
+
+  function OnGroupCollisionStarted(event : CollisionGroupEvent)
+  {
+    this.Owner.Destroy();
+  }
+}

@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "Ghosts"
+		var ResourceId = 0x5c7fcfb0bf690365
+		var LoaderType = "CollisionGroup"
+		var Version = 0
+	}
+}

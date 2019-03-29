@@ -1,0 +1,36 @@
+class PacmanMovement : ZilchComponent
+{
+  [Property] var LeftKey : Keys = Keys.A;
+  [Property] var RightKey : Keys = Keys.D;
+  [Property] var UpKey : Keys = Keys.W;
+  [Property] var DownKey: Keys = Keys.S;
+  [Property] var CanMove : Boolean = true;
+  //1 is up, 2 is right, 3 is down, 4 is left
+  [Property] var Direction: Integer = 4;
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }  
+  function OnLogicUpdate(event : UpdateEvent)
+    {
+    if (Zero.Keyboard.KeyIsDown(this.UpKey) && this.CanMove == true)
+    {
+      this.Direction = 1;
+    }
+    if (Zero.Keyboard.KeyIsDown(this.RightKey) && this.CanMove == true)
+    {
+      this.Direction = 2;
+    }
+    if (Zero.Keyboard.KeyIsDown(this.DownKey) && this.CanMove == true)
+    {
+      this.Direction = 3;
+    }
+    
+    if (Zero.Keyboard.KeyIsDown(this.LeftKey) && this.CanMove == true)
+    {
+      this.Direction = 4;
+    }
+  
+  }
+}
