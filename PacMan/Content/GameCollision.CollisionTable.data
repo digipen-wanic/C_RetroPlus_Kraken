@@ -1,0 +1,14 @@
+[Version:1]
+CollisionTable 
+{
+	var RegisteredGroups = Array
+	{
+		"4e740859314e5515:DefaultGroup"
+		"5c48ee4a75c977e8:Player"
+		"5c48ee71769c608c:Pellet"
+	}
+	var CollisionFilters = Array
+	{
+	}
+	var AutoRegister = true
+}

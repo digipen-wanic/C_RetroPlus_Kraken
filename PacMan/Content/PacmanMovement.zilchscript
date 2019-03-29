@@ -31,7 +31,6 @@ class PacmanMovement : ZilchComponent
     {
       this.Direction = 4;
     }
-    if(movement = 4 
   
   }
 }
