@@ -1,10 +1,12 @@
 class BlinkyAI : ZilchComponent
 {
+  [Dependency] var ValidMove : ValidMove;
   [Property] var MoveDistanceX : Real3 = Real3(0.9,0.0,0.0);
   [Property] var MoveDistanceY : Real3 = Real3(0.0,0.9,0.0);
   [Property] var MoveSpeed : Real = 1;
-  [Property]
-  var PacMan : CogPath = null;
+  [Property] var PacMan : CogPath = null;
+  var MoveBool : Real = 0.0;
+  var BMove : Real = 0.0;
   function Initialize(init : CogInitializer)
   {
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
@@ -12,26 +14,53 @@ class BlinkyAI : ZilchComponent
 
   function OnLogicUpdate(event : UpdateEvent)
   {
-    var result : Real = 0.0;
-    var result2 : Real = 0.0;
-    var result3 : Real = 0.0;
-    result = this.PacMan.Transform.Translation.X - this.Owner.Transform.Translation.X;
-    result2 = this.PacMan.Transform.Translation.Y - this.Owner.Transform.Translation.Y;
-    if(result > 0.1)
+    this.MoveBool = this.BestMove();
+    var lastMove : Real = this.MoveBool;
+    if(this.ValidMove.ResultE)
     {
-      Actions.Property(this.Owner.Actions,@this.Owner.Transform.Translation, this.Owner.Transform.Translation + this.MoveDistanceX,this.MoveSpeed, Ease.Linear);
+      if(this.MoveBool == 1)
+        Actions.Property(this.Owner.Actions,@this.Owner.Transform.Translation, this.Owner.Transform.Translation + this.MoveDistanceX,this.MoveSpeed, Ease.Linear);
     }
-    if(result < 0.1)
+    else if(this.ValidMove.ResultW)
     {
-      Actions.Property(this.Owner.Actions,@this.Owner.Transform.Translation, this.Owner.Transform.Translation - this.MoveDistanceX,this.MoveSpeed, Ease.Linear);
+      if(this.MoveBool == 2)
+        Actions.Property(this.Owner.Actions,@this.Owner.Transform.Translation, this.Owner.Transform.Translation - this.MoveDistanceX,this.MoveSpeed, Ease.Linear);
     }
-    if(result2 > 0.1)
+    else if(this.ValidMove.ResultN)
     {
-      Actions.Property(this.Owner.Actions,@this.Owner.Transform.Translation, this.Owner.Transform.Translation + this.MoveDistanceY,this.MoveSpeed, Ease.Linear);
+      if(this.MoveBool == 3)
+        Actions.Property(this.Owner.Actions,@this.Owner.Transform.Translation, this.Owner.Transform.Translation + this.MoveDistanceY,this.MoveSpeed, Ease.Linear);
     }
-    if(result2 < 0.1)
+    else if(this.ValidMove.ResultS)
     {
-      Actions.Property(this.Owner.Actions,@this.Owner.Transform.Translation, this.Owner.Transform.Translation - this.MoveDistanceY,this.MoveSpeed, Ease.Linear);
+      if(this.MoveBool == 4)
+        Actions.Property(this.Owner.Actions,@this.Owner.Transform.Translation, this.Owner.Transform.Translation - this.MoveDistanceY,this.MoveSpeed, Ease.Linear);
     }
+  }
+  function BestMove() : Real
+  {
+    var result = this.PacMan.Transform.Translation.X - this.Owner.Transform.Translation.X;
+    var result2 = this.PacMan.Transform.Translation.Y - this.Owner.Transform.Translation.Y;
+    var temp1 = result;
+    var temp2 = result2;
+    Math.Abs(result);
+    Math.Abs(result2);
+    if(result > result2 && temp1 > 0.0)
+    {
+      this.BMove = 1.0;
+    }
+    else if(result > result2 && temp1 < 0.0)
+    {
+      this.BMove = 2.0;
+    }
+    else if(result < result2 && temp2 > 0.0)
+    {
+      this.BMove= 3.0;
+    }
+    else if(result < result2 && temp2 < 0.0)
+    {
+      this.BMove = 4.0;
+    }
+    return this.BMove;
   }
 }

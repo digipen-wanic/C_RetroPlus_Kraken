@@ -4,7 +4,7 @@ Cog
 	var Name = "Blinky"
 	Transform 
 	{
-		var Translation = Real3{-6.26313972, 2.91488242, 0}
+		var Translation = Real3{-9.48332787, 2.83232784, 0}
 		var Scale = Real3{0.899999976, 0.899999976, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -42,14 +42,34 @@ Cog
 		var Ghost = false
 		var SendsEvents = true
 		var Material = "4de020863e872da8:DefaultPhysicsMaterial"
-		var CollisionGroup = "4e740859314e5515:DefaultGroup"
+		var CollisionGroup = "5c7fcfb0bf690365:Ghosts"
 		var Offset = Real3{0, 0, 0}
 		var HalfSize = Real3{0.5, 0.5, 0.5}
+	}
+	ValidMove 
+	{
+		var DrawDebugLine = true
+		var MaxDebugLength = 1
 	}
 	BlinkyAI 
 	{
 		var MoveDistanceX = Real3{0.899999976, 0, 0}
 		var MoveDistanceY = Real3{0, 0.899999976, 0}
 		var MoveSpeed = 1
+		var PacMan = CogPath
+		{
+			var Path = ":/PacMan"
+			var ErrorOnResolveToNull = false
+			var ErrorOnPathCantCompute = false
+			var ErrorOnDirectLinkFail = false
+			var UpdateCogOnPathChange = true
+			var UpdatePathOnCogChange = true
+			var UpdateCogOnInitialize = true
+			var ResolvedNullErrorOccurred = false
+			var Cog = 4294967293
+			var PathPreference0 = CogPathPreference.CogRelative
+			var PathPreference1 = CogPathPreference.SpaceRelative
+			var PathPreference2 = CogPathPreference.Absolute
+		}
 	}
 }
