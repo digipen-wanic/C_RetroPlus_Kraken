@@ -7,6 +7,7 @@ class Pellets : ZilchComponent
 
   function OnGroupCollisionStarted(event : CollisionGroupEvent)
   {
+    this.GameSession.LevelSettings.GameVars.Points += 10;
     this.Owner.Destroy();
   }
 }

@@ -43,8 +43,8 @@ class BlinkyAI : ZilchComponent
     var result2 = this.PacMan.Transform.Translation.Y - this.Owner.Transform.Translation.Y;
     var temp1 = result;
     var temp2 = result2;
-    Math.Abs(result);
-    Math.Abs(result2);
+    result = Math.Abs(result);
+    result2 = Math.Abs(result2);
     if(result > result2 && temp1 > 0.0)
     {
       this.BMove = 1.0;
