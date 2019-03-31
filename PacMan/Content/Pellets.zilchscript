@@ -2,11 +2,12 @@ class Pellets : ZilchComponent
 {
   function Initialize(init : CogInitializer)
   {
-    Zero.Connect(this.Owner, Events.GroupCollisionStarted, this.OnGroupCollisionStarted);
+    Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
   }
 
-  function OnGroupCollisionStarted(event : CollisionGroupEvent)
+  function OnCollisionStarted(event : CollisionEvent)
   {
+        Console.WriteLine("adfasdf");
     this.Owner.Destroy();
   }
 }

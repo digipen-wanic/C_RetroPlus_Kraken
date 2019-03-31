@@ -1,66 +1,87 @@
 class BlinkyAI : ZilchComponent
 {
   [Dependency] var ValidMove : ValidMove;
-  [Property] var MoveDistanceX : Real3 = Real3(0.9,0.0,0.0);
-  [Property] var MoveDistanceY : Real3 = Real3(0.0,0.9,0.0);
+  [Property] var MoveDistanceX : Real3 = Real3(1,0.0,0.0);
+  [Property] var MoveDistanceY : Real3 = Real3(0.0,1,0.0);
   [Property] var MoveSpeed : Real = 1;
   [Property] var PacMan : CogPath = null;
   var MoveBool : Real = 0.0;
   var BMove : Real = 0.0;
+  var SecondBMove : Real = 0.0;
   function Initialize(init : CogInitializer)
   {
-    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    //calls the function
+    this.CalculateNextMove();
   }
-
-  function OnLogicUpdate(event : UpdateEvent)
+  
+  function CalculateNextMove()
   {
+    Console.WriteLine("Trigger Logic");
+    //starts the sequence for the actions
+    var actionSequence = Actions.Sequence(this.Owner.Actions);
+    
     this.MoveBool = this.BestMove();
     var lastMove : Real = this.MoveBool;
-    if(this.ValidMove.ResultE)
+    if(this.MoveBool == 1)
     {
-      if(this.MoveBool == 1)
-        Actions.Property(this.Owner.Actions,@this.Owner.Transform.Translation, this.Owner.Transform.Translation + this.MoveDistanceX,this.MoveSpeed, Ease.Linear);
+      if(this.ValidMove.ResultE)
+        Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) + this.MoveDistanceX,this.MoveSpeed, Ease.QuadInOut);
     }
-    else if(this.ValidMove.ResultW)
+    else if(this.MoveBool == 2)
     {
-      if(this.MoveBool == 2)
-        Actions.Property(this.Owner.Actions,@this.Owner.Transform.Translation, this.Owner.Transform.Translation - this.MoveDistanceX,this.MoveSpeed, Ease.Linear);
+      if(this.ValidMove.ResultW)
+        Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) - this.MoveDistanceX,this.MoveSpeed, Ease.QuadInOut);
     }
-    else if(this.ValidMove.ResultN)
+    else if(this.MoveBool == 3)
     {
-      if(this.MoveBool == 3)
-        Actions.Property(this.Owner.Actions,@this.Owner.Transform.Translation, this.Owner.Transform.Translation + this.MoveDistanceY,this.MoveSpeed, Ease.Linear);
+      if(this.ValidMove.ResultN)
+        Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) + this.MoveDistanceY,this.MoveSpeed, Ease.QuadInOut);
     }
-    else if(this.ValidMove.ResultS)
+    else if(this.MoveBool == 4)
     {
-      if(this.MoveBool == 4)
-        Actions.Property(this.Owner.Actions,@this.Owner.Transform.Translation, this.Owner.Transform.Translation - this.MoveDistanceY,this.MoveSpeed, Ease.Linear);
+      if(this.ValidMove.ResultS)
+        Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) - this.MoveDistanceY,this.MoveSpeed, Ease.QuadInOut);
     }
+    // this makes this recurisve
+    Actions.Call(actionSequence, this.CalculateNextMove);
   }
+  //this function is to find out which path is the quickest
   function BestMove() : Real
   {
-    var result = this.PacMan.Transform.Translation.X - this.Owner.Transform.Translation.X;
-    var result2 = this.PacMan.Transform.Translation.Y - this.Owner.Transform.Translation.Y;
+    var result : Real = 0.0;
+    var result2 : Real = 0.0;
+    result = this.PacMan.Transform.Translation.X - this.Owner.Transform.Translation.X;
+    result2 = this.PacMan.Transform.Translation.Y - this.Owner.Transform.Translation.Y;
     var temp1 = result;
     var temp2 = result2;
-    Math.Abs(result);
-    Math.Abs(result2);
-    if(result > result2 && temp1 > 0.0)
+    result = Math.Abs(result);
+    result2 = Math.Abs(result2);
+    if(result2 < result)
     {
-      this.BMove = 1.0;
+      this.SecondBMove = temp2;
+      if(temp2 > 0.0 && this.ValidMove.ResultN)
+      {
+        this.BMove= 3.0;
+      }
+      if(temp2 < 0.0 && this.ValidMove.ResultS)
+      {
+        this.BMove = 4.0;
+      }
     }
-    else if(result > result2 && temp1 < 0.0)
+    else
     {
-      this.BMove = 2.0;
+      this.SecondBMove = temp1;
+      if(temp1 > 0.0 && this.ValidMove.ResultE)
+      {
+        this.BMove = 1.0;
+      }
+      if(temp1 < 0.0 && this.ValidMove.ResultW)
+      {
+        this.BMove = 2.0;
+      }
     }
-    else if(result < result2 && temp2 > 0.0)
-    {
-      this.BMove= 3.0;
-    }
-    else if(result < result2 && temp2 < 0.0)
-    {
-      this.BMove = 4.0;
-    }
+    
+    Console.WriteLine("`this.BMove`");
     return this.BMove;
   }
 }

@@ -1,0 +1,12 @@
+class DestroyOnCollision : ZilchComponent
+{
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.CollisionStarted, this.OnCollisionStarted);
+  }
+
+  function OnCollisionStarted(event : CollisionEvent)
+  {
+     event.OtherObject.Destroy();
+  }
+}

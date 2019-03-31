@@ -4,8 +4,8 @@ Cog
 	var Name = "Blinky"
 	Transform 
 	{
-		var Translation = Real3{-9.48332787, 2.83232784, 0}
-		var Scale = Real3{0.899999976, 0.899999976, 1}
+		var Translation = Real3{-8, 3, 0}
+		var Scale = Real3{1, 1, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
 	Sprite 
@@ -31,7 +31,7 @@ Cog
 	{
 		var Velocity = Real3{0, 0, 0}
 		var AngularVelocity = Real3{0, 0, 0}
-		var DynamicState = RigidBodyDynamicState.Dynamic
+		var DynamicState = RigidBodyDynamicState.Kinematic
 		var AllowSleep = true
 		var Asleep = false
 		var RotationLocked = false
@@ -53,8 +53,8 @@ Cog
 	}
 	BlinkyAI 
 	{
-		var MoveDistanceX = Real3{0.899999976, 0, 0}
-		var MoveDistanceY = Real3{0, 0.899999976, 0}
+		var MoveDistanceX = Real3{1, 0, 0}
+		var MoveDistanceY = Real3{0, 1, 0}
 		var MoveSpeed = 1
 		var PacMan = CogPath
 		{
