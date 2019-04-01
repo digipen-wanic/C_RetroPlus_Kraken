@@ -81,7 +81,5 @@ class PacmanMovement : ZilchComponent
       this.Owner.Actions.Cancel();
       this.CheckMove();
     }
-    
-    
   }
 }

@@ -7,7 +7,6 @@ class Pellets : ZilchComponent
 
   function OnCollisionStarted(event : CollisionEvent)
   {
-        Console.WriteLine("adfasdf");
     this.Owner.Destroy();
   }
 }

@@ -21,10 +21,10 @@ class ValidMove : ZilchComponent
     this.ResultE = this.CastRay(Real3(1.0,0.0,0.0));
     this.ResultS = this.CastRay(Real3(0.0,-1.0,0.0));
     this.ResultW = this.CastRay(Real3(-1.0,0.0,0.0));
-    //Console.WriteLine("north `this.ResultN`");
-    //Console.WriteLine("east `this.ResultE`");
-    //Console.WriteLine("south `this.ResultS`");
-    //Console.WriteLine("west `this.ResultW`");
+    Console.WriteLine("north `this.ResultN`");
+    Console.WriteLine("east `this.ResultE`");
+    Console.WriteLine("south `this.ResultS`");
+    Console.WriteLine("west `this.ResultW`");
   }
   function CastRay(direction : Real3) : Boolean
   {
