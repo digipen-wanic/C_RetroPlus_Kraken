@@ -130,7 +130,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 17.2518425
+			var Size = 23.2875462
 		}
 		EditorCameraController 
 		{
@@ -148,7 +148,7 @@ Level
 		var Name = "PacMan"
 		Transform 
 		{
-			var Translation = Real3{0, -7, 0}
+			var Translation = Real3{0, -7.97437477, 0}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
