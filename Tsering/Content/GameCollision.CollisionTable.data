@@ -32,6 +32,28 @@ CollisionTable
 			var PersistedEvent = false
 			var PreSolveEvent = false
 		}
+		Object
+		{
+			var TypeA = "5c48ee71769c608c:Pellet"
+			var TypeB = "5c48ee4a75c977e8:Player"
+			var SkipResolution = false
+			var SkipDetectingCollision = false
+			var StartEvent = false
+			var EndEvent = false
+			var PersistedEvent = false
+			var PreSolveEvent = false
+		}
+		Object
+		{
+			var TypeA = "5c7fcfb0bf690365:Ghosts"
+			var TypeB = "5c48ee4a75c977e8:Player"
+			var SkipResolution = false
+			var SkipDetectingCollision = false
+			var StartEvent = false
+			var EndEvent = false
+			var PersistedEvent = false
+			var PreSolveEvent = false
+		}
 	}
 	var AutoRegister = true
 }

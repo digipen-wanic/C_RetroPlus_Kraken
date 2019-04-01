@@ -4,7 +4,7 @@ Cog
 	var Name = "Pellet"
 	Transform 
 	{
-		var Translation = Real3{2.70000005, -7, 0}
+		var Translation = Real3{3, -8, 0}
 		var Scale = Real3{0.25, 0.25, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -29,7 +29,7 @@ Cog
 	}
 	SphereCollider 
 	{
-		var Ghost = false
+		var Ghost = true
 		var SendsEvents = true
 		var Material = "4de020863e872da8:DefaultPhysicsMaterial"
 		var CollisionGroup = "5c48ee71769c608c:Pellet"
@@ -38,5 +38,15 @@ Cog
 	}
 	Pellets 
 	{
+	}
+	RigidBody 
+	{
+		var Velocity = Real3{0, 0, 0}
+		var AngularVelocity = Real3{0, 0, 0}
+		var DynamicState = RigidBodyDynamicState.Kinematic
+		var AllowSleep = true
+		var Asleep = false
+		var RotationLocked = false
+		var Mode2D = Mode2DStates.InheritFromSpace
 	}
 }

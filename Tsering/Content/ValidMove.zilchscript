@@ -17,7 +17,7 @@ class ValidMove : ZilchComponent
 
   function OnLogicUpdate(event : UpdateEvent)
   {
-    this.ResultN = this.CastRay(Real3(0,0.1,0.0));
+    this.ResultN = this.CastRay(Real3(0,1.0,0.0));
     this.ResultE = this.CastRay(Real3(1.0,0.0,0.0));
     this.ResultS = this.CastRay(Real3(0.0,-1.0,0.0));
     this.ResultW = this.CastRay(Real3(-1.0,0.0,0.0));
@@ -30,31 +30,30 @@ class ValidMove : ZilchComponent
   {
     var filter = CastFilter();
     var rBool : Boolean = false;
-    //filter.CollisionGroup.Name = "Pellet";
-    var ray = Ray();
-    ray.Start = this.Owner.Transform.Translation;
-    ray.Direction = direction;
+    filter.IgnoreKinematic = true;
+    var segment = Segment();
+    segment.Start = (this.Owner.Transform.Translation);
+    segment.End = segment.Start + direction;
     
-    var result = this.Space.PhysicsSpace.CastRayFirst(ray);
+    var result = this.Space.PhysicsSpace.CastSegment(segment, 2 , filter);
     
-    if(result.ObjectHit != null)
+    if(result.IsEmpty)
     {
-      rBool = false;
-      Console.WriteLine("Ray found :  `result.ObjectHit.Name`");
+      rBool = true;
     }
     else
     {
-      rBool = true;
-      Console.WriteLine("Valid Move");
+      rBool = false;
+      //Console.WriteLine("Valid Move");
     }
     
     if(this.DrawDebugLine)
     {
-      var debugRay = DebugLine();
-      debugRay.Start = ray.Start;
-      debugRay.End = ray.Start + Real3.XAxis * Math.Min(result.Distance, this.MaxDebugLength);
-      debugRay.HeadSize = 0.2;
-      DebugDraw.Add(debugRay);
+      var debugSegment = DebugLine();
+      debugSegment.Start = segment.Start;
+      debugSegment.End = segment.Start + direction;
+      debugSegment.HeadSize = 0.2;
+      DebugDraw.Add(debugSegment);
     }
     return rBool;
   }
