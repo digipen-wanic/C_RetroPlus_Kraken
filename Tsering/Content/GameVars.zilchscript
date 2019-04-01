@@ -1,0 +1,18 @@
+class GameVars : ZilchComponent
+{
+  // Number of points the player has
+  [Property] var Points : Real = 0;
+  // Time left for the Scatter Phase
+  [Property] var GhostScatterTimer : Real;
+  // Time left for the Frightened Phase
+  [Property] var GhostFrightenedTimer : Real;
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+  }
+}
