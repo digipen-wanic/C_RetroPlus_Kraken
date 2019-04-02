@@ -1,0 +1,8 @@
+[Version:1]
+ContentLibrary 
+{
+	var Name = "PacMan"
+	var LibraryId = 0x5cfd505de4179bdc
+	var SourceControlType = ""
+	var ReadOnly = false
+}

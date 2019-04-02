@@ -164,7 +164,7 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{1, 0.990000129, 0, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5cc2aca2878c7df4:PacManMoving_0"
+			var SpriteSource = "5586f579ca73ecc2:SquareBordered"
 			var FlipX = false
 			var FlipY = false
 			var AnimationActive = true
@@ -215,10 +215,6 @@ Level
 			var StartPlaying = true
 			var Positional = false
 			var Cue = "5cc29ec3e7519477:Soldier_paincrticialdeath01"
-		}
-		PacManDeath 
-		{
-			var LevelToLoad = "5cc2ad61b4c14410:MainMenu"
 		}
 	}
 	Cog [ContextId:5]
@@ -485,6 +481,10 @@ Level
 			var CollisionGroup = "4e740859314e5515:DefaultGroup"
 			var Offset = Real3{0, 0, 0}
 			var HalfSize = Real3{0.5, 0.5, 0.5}
+		}
+		Teleporter 
+		{
+			var TeleExit = Real3{0, 0, 0}
 		}
 	}
 	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:18]

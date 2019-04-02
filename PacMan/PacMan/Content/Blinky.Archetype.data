@@ -55,7 +55,7 @@ Cog
 	{
 		var MoveDistanceX = Real3{1, 0, 0}
 		var MoveDistanceY = Real3{0, 1, 0}
-		var MoveSpeed = 1
+		var MoveSpeed = 0.5
 		var PacMan = CogPath
 		{
 			var Path = ":/PacMan"
@@ -71,5 +71,8 @@ Cog
 			var PathPreference1 = CogPathPreference.SpaceRelative
 			var PathPreference2 = CogPathPreference.Absolute
 		}
+	}
+	DestroyOnCollision 
+	{
 	}
 }

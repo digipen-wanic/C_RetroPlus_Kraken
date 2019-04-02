@@ -14,6 +14,7 @@ class PinkyAI : ZilchComponent
 
   function OnLogicUpdate(event : UpdateEvent)
   {
+    /*
     this.MoveBool = this.BestMove();
     var lastMove : Real = this.MoveBool;
     if(this.ValidMove.ResultE)
@@ -36,9 +37,11 @@ class PinkyAI : ZilchComponent
       if(this.MoveBool == 4)
         Actions.Property(this.Owner.Actions,@this.Owner.Transform.Translation, this.Owner.Transform.Translation - this.MoveDistanceY,this.MoveSpeed, Ease.Linear);
     }
+    */
   }
   function BestMove() : Real
   {
+    /*
     var result = this.PacMan.Transform.Translation.X - this.Owner.Transform.Translation.X;
     var result2 = this.PacMan.Transform.Translation.Y - this.Owner.Transform.Translation.Y;
     var temp1 = result;
@@ -61,6 +64,7 @@ class PinkyAI : ZilchComponent
     {
       this.BMove = 4.0;
     }
+    */
     return this.BMove;
   }
 }
