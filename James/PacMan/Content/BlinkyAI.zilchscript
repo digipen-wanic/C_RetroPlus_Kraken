@@ -6,6 +6,7 @@ class BlinkyAI : ZilchComponent
   [Property] var MoveSpeed : Real = 1;
   [Property] var PacMan : CogPath = null;
   var MoveBool : Real = 0.0;
+  var PreviousDirection : Real = 0;
   var BMove : Real = 0.0;
   var SecondBMove : Real = 0.0;
   function Initialize(init : CogInitializer)
@@ -21,25 +22,29 @@ class BlinkyAI : ZilchComponent
     
     this.MoveBool = this.BestMove();
     var lastMove : Real = this.MoveBool;
-    if(this.MoveBool == 1)
+    if(this.MoveBool == 1 && this.ValidMove.ResultE && this.PreviousDirection != 1)
     {
-      if(this.ValidMove.ResultE)
         Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) + this.MoveDistanceX,this.MoveSpeed, Ease.QuadInOut);
+        this.PreviousDirection = 2;
     }
-    else if(this.MoveBool == 2)
+    else if(this.MoveBool == 2 && this.ValidMove.ResultW && this.PreviousDirection != 2)
     {
-      if(this.ValidMove.ResultW)
         Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) - this.MoveDistanceX,this.MoveSpeed, Ease.QuadInOut);
+        this.PreviousDirection = 1;
     }
-    else if(this.MoveBool == 3)
+    else if(this.MoveBool == 3 && this.ValidMove.ResultN && this.PreviousDirection != 3)
     {
-      if(this.ValidMove.ResultN)
         Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) + this.MoveDistanceY,this.MoveSpeed, Ease.QuadInOut);
+        this.PreviousDirection = 4;
     }
-    else if(this.MoveBool == 4)
+    else if(this.MoveBool == 4 && this.ValidMove.ResultS && this.PreviousDirection != 4)
     {
-      if(this.ValidMove.ResultS)
         Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) - this.MoveDistanceY,this.MoveSpeed, Ease.QuadInOut);
+        this.PreviousDirection = 3;
+    }
+    else 
+    {
+      
     }
     // this makes this recurisve
     Actions.Call(actionSequence, this.CalculateNextMove);

@@ -63,20 +63,23 @@ class PacmanMovement : ZilchComponent
   {
     if (Zero.Keyboard.KeyIsDown(this.UpKey) && this.CanMove == true)
     {
-      
       this.TestDirection = Real3(0, 1, 0);
+      this.Owner.Transform.SetEulerAnglesXYZ(0, 0, Math.Pi / 2.0);
     }
     if (Zero.Keyboard.KeyIsDown(this.RightKey) && this.CanMove == true)
     {
       this.TestDirection = Real3(1, 0, 0);
+      this.Owner.Transform.SetEulerAnglesXYZ(0, 0, 0);
     }
     if (Zero.Keyboard.KeyIsDown(this.DownKey) && this.CanMove == true)
     {
       this.TestDirection = Real3(0, -1, 0);
+      this.Owner.Transform.SetEulerAnglesXYZ(0, 0, 3.0 * Math.Pi / 2.0);
     }
     if (Zero.Keyboard.KeyIsDown(this.LeftKey) && this.CanMove == true)
     {
       this.TestDirection = Real3(-1, 0, 0);
+      this.Owner.Transform.SetEulerAnglesXYZ(0, 0, Math.Pi);
     }
     
     if(this.TestDirection == -this.Direction)
