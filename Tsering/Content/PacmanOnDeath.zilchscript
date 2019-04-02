@@ -1,0 +1,18 @@
+class PacmanOnDeath : ZilchComponent
+{
+  [Property]
+  var Animation : SpriteSource = null;
+  function Initialize(init : CogInitializer)
+  {
+    //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    this.Owner.Transform.Scale += Real3(4.5, 4.5, 1);
+    this.Owner.Sprite.SpriteSource = this.Animation;
+    if(this.Owner.MarkedForDestruction) {
+      
+    }
+  }
+}
