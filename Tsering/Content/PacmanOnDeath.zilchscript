@@ -1,18 +1,31 @@
-class PacmanOnDeath : ZilchComponent
+class PacManOnDeath : ZilchComponent
 {
   [Property]
-  var Animation : SpriteSource = null;
+  var DeathAnimation : SpriteSource = null;
+  [Property]
+  var LoadLevel : Level = null;
   function Initialize(init : CogInitializer)
   {
-    //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    Zero.Connect(this.Owner, Events.GroupCollisionStarted, this.OnGroupCollisionStarted);
   }
 
-  function OnLogicUpdate(event : UpdateEvent)
+  function OnGroupCollisionStarted(event : CollisionGroupEvent)
   {
-    this.Owner.Transform.Scale += Real3(4.5, 4.5, 1);
-    this.Owner.Sprite.SpriteSource = this.Animation;
-    if(this.Owner.MarkedForDestruction) {
-      
-    }
+    if(event.OtherObject.Collider.CollisionGroup.Name == "Ghosts")
+    {
+      this.Death();
+      this.Space.DispatchEvent("Death",ZilchEvent());
+    }    
+  }
+  function Death()
+  {
+    this.Owner.Actions.Cancel;
+    this.GameSession.GameVars.PacManLives -= 1;
+    //this.GameSession.GameVars.FreezeBool = true;
+    var seq = Action.Sequence(this.Owner.Actions);
+    Actions.Delay(seq, 3.0);
+    Console.WriteLine("123123");
+    this.Space.LoadLevel(this.LoadLevel);
   }
 }
+

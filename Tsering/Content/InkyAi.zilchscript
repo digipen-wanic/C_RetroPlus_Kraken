@@ -1,4 +1,4 @@
-class BlinkyAI : ZilchComponent
+class InkyAi : ZilchComponent
 {
   [Dependency] var ValidMove : ValidMove;
   [Property] var MoveDistanceX : Real3 = Real3(1,0.0,0.0);
@@ -23,6 +23,14 @@ class BlinkyAI : ZilchComponent
     
     this.CalculateDistanceFromPacman();
     Console.WriteLine(this.DistanceFromPacman);
+  }
+  
+  function FindTarget()
+  {
+    //find the direciton pacman is facing plus two in that direction
+    //get the distance from blinky to pacman plus two in the direction
+    //double it
+    //set that to the target
   }
   
   function CalculateDistanceFromPacman()

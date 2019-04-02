@@ -1,14 +1,22 @@
 class Teleporter : ZilchComponent
 {
-  
-  
+  [Property]
+  var TeleExit = Real3();
   function Initialize(init : CogInitializer)
   {
-    //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
   }
-
-  function OnLogicUpdate(event : UpdateEvent)
+  
+  function OnCollisionStarted(event : CollisionEvent)
   {
-    
+    if(event.OtherObject.PacmanMovement != null)
+    {
+      event.OtherObject.Actions.Cancel();
+      
+      event.OtherObject.Transform.Translation = this.TeleExit;
+      event.OtherObject.PacmanMovement.CheckMove();
+      event.OtherObject.PacmanMovement.Move();
+      
+    }
   }
 }

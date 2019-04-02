@@ -3,10 +3,16 @@ class GameVars : ZilchComponent
   // Number of points the player has
   [Property] var Points : Real = 0;
   // Time left for the Scatter Phase
-  [Property] var GhostScatterTimer : Real;
+  [Property] var GhostScatterTimer : Boolean = true;
   // Time left for the Frightened Phase
   [Property] var GhostFrightenedTimer : Real;
+  //lives for pacman
+  [Property]
+  var PacManLives : Integer = 2;
+  //freeze the enemys if its true and if false the run as normal
+  var FreezeBool : Boolean = false;
+  //this is for the frightened mode
+  var FrightenedBool : Boolean   = false;
   // Direction PacMan is facing
   var PacManDirection : Integer = 0;
-  
 }

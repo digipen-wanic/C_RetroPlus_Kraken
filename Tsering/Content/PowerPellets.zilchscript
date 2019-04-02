@@ -1,1 +1,17 @@
- 
+class PowerPellets : ZilchComponent
+{
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.CollisionStarted, this.OnCollisionStarted);
+  }
+
+  function OnCollisionStarted(event : CollisionEvent)
+  {
+      this.Owner.Destroy();
+      //trigger frightened phase
+      this.LevelSettings.GameVars.Points += 50;
+      this.GameSession.GameVars.FreezeBool = true;
+      this.GameSession.GameVars.FrightenedBool = true;
+    
+  }
+}

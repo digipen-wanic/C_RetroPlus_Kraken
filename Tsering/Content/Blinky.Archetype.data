@@ -55,7 +55,7 @@ Cog
 	{
 		var MoveDistanceX = Real3{1, 0, 0}
 		var MoveDistanceY = Real3{0, 1, 0}
-		var MoveSpeed = 0.5
+		var MoveSpeed = 0.25
 		var PacMan = CogPath
 		{
 			var Path = ":/PacMan"
