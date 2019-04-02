@@ -1,6 +1,8 @@
 class PacmanMovement : ZilchComponent
 {
   [Property]
+  var MoveAnimation : Archetype = null;
+  [Property]
   var LeftKey : Keys = Keys.A;
   [Property]
   var RightKey : Keys = Keys.D;
@@ -10,8 +12,6 @@ class PacmanMovement : ZilchComponent
   var DownKey: Keys = Keys.S;
   [Property]
   var CanMove : Boolean = true;
-  [Property]
-  var MoveNoise : SoundCue = null;
   [Property]
   var TestDirection : Real3 = Real3(0,0,0);
   //1 is up, 2 is right, 3 is down, 4 is left
@@ -54,9 +54,7 @@ class PacmanMovement : ZilchComponent
   {
     var seq = Action.Sequence(this.Owner.Actions);
     Action.Property(seq, @this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation)+this.Direction, 0.2, Ease.Linear);
-    //this.Space.SoundSpace.PlayCue(this.MoveNoise);
     Action.Call(seq, this.CheckMove);
-  
   }
   
   function OnLogicUpdate(event : UpdateEvent)
@@ -64,22 +62,22 @@ class PacmanMovement : ZilchComponent
     if (Zero.Keyboard.KeyIsDown(this.UpKey) && this.CanMove == true)
     {
       this.TestDirection = Real3(0, 1, 0);
-      this.Owner.Transform.SetEulerAnglesXYZ(0, 0, Math.Pi / 2.0);
+      this.Owner.Transform.SetEulerAnglesXYZ(0,0,Math.Pi / 2.0);
     }
     if (Zero.Keyboard.KeyIsDown(this.RightKey) && this.CanMove == true)
     {
       this.TestDirection = Real3(1, 0, 0);
-      this.Owner.Transform.SetEulerAnglesXYZ(0, 0, 0);
+      this.Owner.Transform.SetEulerAnglesXYZ(0,0,0);
     }
     if (Zero.Keyboard.KeyIsDown(this.DownKey) && this.CanMove == true)
     {
       this.TestDirection = Real3(0, -1, 0);
-      this.Owner.Transform.SetEulerAnglesXYZ(0, 0, 3.0 * Math.Pi / 2.0);
+      this.Owner.Transform.SetEulerAnglesXYZ(0,0,3.0 * Math.Pi / 2.0);
     }
     if (Zero.Keyboard.KeyIsDown(this.LeftKey) && this.CanMove == true)
     {
       this.TestDirection = Real3(-1, 0, 0);
-      this.Owner.Transform.SetEulerAnglesXYZ(0, 0, Math.Pi);
+      this.Owner.Transform.SetEulerAnglesXYZ(0,0,Math.Pi);
     }
     
     if(this.TestDirection == -this.Direction)
