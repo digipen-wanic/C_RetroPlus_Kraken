@@ -6,27 +6,26 @@ class ValidMove : ZilchComponent
   var DrawDebugLine : Boolean = true;
   [Property]
   var MaxDebugLength : Real = 1.0;
-  var ResultN : Boolean = false ;
+  // E, W, N, S
+  // 0, 1, 2, 3
+  var ResultDirection : Array[Boolean] = Array[Boolean](4, false);
+  /*
+  var ResultN : Boolean = false;
   var ResultE : Boolean = false;
   var ResultS : Boolean = false;
   var ResultW : Boolean = false;
+  */
   function Initialize(init : CogInitializer)
   {
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
   }
 
   function OnLogicUpdate(event : UpdateEvent)
-  {
-    this.ResultN = this.CastRay(Real3(0,1.0,0.0));
-    this.ResultE = this.CastRay(Real3(1.0,0.0,0.0));
-    this.ResultS = this.CastRay(Real3(0.0,-1.0,0.0));
-    this.ResultW = this.CastRay(Real3(-1.0,0.0,0.0));
-    /*
-    Console.WriteLine("north `this.ResultN`");
-    Console.WriteLine("east `this.ResultE`");
-    Console.WriteLine("south `this.ResultS`");
-    Console.WriteLine("west `this.ResultW`");
-    */
+  {    
+    this.ResultDirection.Set(2,this.CastRay(Real3(0,1.0,0.0)));
+    this.ResultDirection.Set(0,this.CastRay(Real3(1.0,0.0,0.0)));
+    this.ResultDirection.Set(3,this.CastRay(Real3(0.0,-1.0,0.0)));
+    this.ResultDirection.Set(1,this.CastRay(Real3(-1.0,0.0,0.0)));
   }
   function CastRay(direction : Real3) : Boolean
   {
@@ -46,7 +45,6 @@ class ValidMove : ZilchComponent
     else
     {
       rBool = false;
-      //Console.WriteLine("Valid Move");
     }
     
     if(this.DrawDebugLine)
