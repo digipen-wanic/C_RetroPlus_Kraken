@@ -38,6 +38,12 @@ Level
 			var HighlightInterval = 10
 			var FollowEditorCamera = false
 		}
+		GameVars 
+		{
+			var Points = 0
+			var GhostScatterTimer = 0
+			var GhostFrightenedTimer = 0
+		}
 	}
 	Cog [ContextId:2]
 	{
@@ -556,6 +562,15 @@ Level
 			var Translation = Real3{7.91981411, -6.96811628, 0}
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5cc30cc237684f6b:Pinky"][ContextId:28]
+	{
+		Transform 
+		{
+			var Translation = Real3{-9, 3, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{1, 1, 1}
 		}
 	}
 }

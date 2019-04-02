@@ -17,7 +17,7 @@ class PacmanMovement : ZilchComponent
   //1 is up, 2 is right, 3 is down, 4 is left
   [Property]
   var Direction: Real3 = Real3(0, 0, 0);
-  
+  var CurrentDirection : Integer = 0;
   function Initialize(init : CogInitializer)
   {
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
@@ -85,5 +85,24 @@ class PacmanMovement : ZilchComponent
       this.Owner.Actions.Cancel();
       this.CheckMove();
     }
+    //update the direction PacMan is facing
+    if(this.TestDirection == Real3(0, 1, 0))
+    {
+      this.CurrentDirection = 2;
+    }
+    else if(this.TestDirection == Real3(1, 0, 0))
+    {
+      this.CurrentDirection = 0;
+    }
+    else if(this.TestDirection == Real3(0, -1, 0))
+    {
+      this.CurrentDirection = 3;
+    }
+    else if(this.TestDirection == Real3(-1, 0, 0))
+    {
+      this.CurrentDirection = 1;
+    }
+    this.LevelSettings.GameVars.PacManDirection = this.CurrentDirection;
+    Console.WriteLine(this.LevelSettings.GameVars.PacManDirection);
   }
 }

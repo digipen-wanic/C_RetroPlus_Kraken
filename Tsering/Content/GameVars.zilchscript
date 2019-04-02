@@ -6,7 +6,8 @@ class GameVars : ZilchComponent
   [Property] var GhostScatterTimer : Real;
   // Time left for the Frightened Phase
   [Property] var GhostFrightenedTimer : Real;
-  
+  // Direction PacMan is facing
+  var PacManDirection : Integer = 0;
   function Initialize(init : CogInitializer)
   {
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
