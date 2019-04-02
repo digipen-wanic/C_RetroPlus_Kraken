@@ -5,12 +5,18 @@ class BlinkyAI : ZilchComponent
   [Property] var MoveDistanceY : Real3 = Real3(0.0,1,0.0);
   [Property] var MoveSpeed : Real = 1;
   [Property] var PacMan : CogPath = null;
+  var AvailableDirections : Array[Boolean] = Array[Boolean](4, false);
+  
   var MoveBool : Real = 0.0;
   var PreviousDirection : Real = 0;
   var BMove : Real = 0.0;
   var SecondBMove : Real = 0.0;
   function Initialize(init : CogInitializer)
   {
+    Console.WriteLine(this.AvailableDirections);
+    this.AvailableDirections[3] = true;
+    Console.WriteLine(this.AvailableDirections);
+    
     //calls the function
     this.CalculateNextMove();
   }
@@ -105,7 +111,7 @@ class BlinkyAI : ZilchComponent
       }
     }
     
-    Console.WriteLine("`this.BMove`");
+    //Console.WriteLine("`this.BMove`");
     return this.BMove;
   }
 }
