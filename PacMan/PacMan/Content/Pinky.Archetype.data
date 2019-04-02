@@ -4,7 +4,7 @@ Cog
 	var Name = "Pinky"
 	Transform 
 	{
-		var Translation = Real3{-9, 3, 0}
+		var Translation = Real3{0, 1, 0}
 		var Scale = Real3{1, 1, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -55,7 +55,7 @@ Cog
 	{
 		var MoveDistanceX = Real3{1, 0, 0}
 		var MoveDistanceY = Real3{0, 1, 0}
-		var MoveSpeed = 0.5
+		var MoveSpeed = 0.25
 		var PacMan = CogPath
 		{
 			var Path = ":/PacMan"
