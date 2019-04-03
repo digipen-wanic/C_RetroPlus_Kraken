@@ -13,7 +13,7 @@ class Fruit : ZilchComponent
 
   function OnLogicUpdate(event : UpdateEvent)
   {
-    if(this.GameSession.GameVars.Points >= 650 && this.GameSession.GameVars.Points >= 1250)
+    if(this.GameSession.GameVars.Points >= 650 && this.GameSession.GameVars.Points <= 1250)
     {
       this.Owner.Sprite.Visible = true;
       this.Owner.SphereCollider.SendsEvents = true;
