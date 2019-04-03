@@ -77,7 +77,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{1.17719996, -12.1114092, 20}
+			var Translation = Real3{1.36022747, -19.6715794, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -130,7 +130,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 26.9971752
+			var Size = 26.9972076
 		}
 		EditorCameraController 
 		{
@@ -139,7 +139,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{1.17719996, -12.1114092, 5.14570537e-08}
+			var LookTarget = Real3{1.36022747, -19.6715794, 5.94574345e-08}
 			var MoveSensitivity = 1
 		}
 	}
@@ -223,13 +223,13 @@ Level
 		var Name = "MenuMove"
 		Transform 
 		{
-			var Translation = Real3{0, -21.2954559, 0}
-			var Scale = Real3{20, 20, 1}
+			var Translation = Real3{0, -20, 0}
+			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
 		Sprite 
 		{
-			var Visible = false
+			var Visible = true
 			var ViewCulling = true
 			var VisibilityEvents = true
 			var OverrideBoundingBox = false
@@ -239,7 +239,7 @@ Level
 			var Material = "582c575af53d18c9:AlphaSprite"
 			var VertexColor = Real4{1, 1, 1, 1}
 			var GeometryMode = SpriteGeometryMode.ZPlane
-			var SpriteSource = "5275aa4d802dd6dc:Square"
+			var SpriteSource = "5c710e9433310948:TitleScreen"
 			var FlipX = false
 			var FlipY = false
 			var AnimationActive = true
@@ -291,6 +291,7 @@ Level
 				MainMenuButton 
 				{
 					var LevelToLoad = "5cfd5035fc0494fa:PacMaze"
+					var KeyToClick = Keys.Enter
 				}
 			}
 			Cog [Id:0x5c7652a5f9cddb94][ContextId:7]
@@ -321,6 +322,69 @@ Level
 					var TextAlign = TextAlign.Center
 				}
 			}
+			Cog [Id:0x5c710e1d251b2323][ContextId:8]
+			{
+				var Name = "Sprite"
+				Transform 
+				{
+					var Translation = Real3{-0.00362408161, -0.67896843, 1}
+					var Scale = Real3{5, 1, 1}
+					var Rotation = Quaternion{0, 0, 0, 1}
+				}
+				Sprite 
+				{
+					var Visible = true
+					var ViewCulling = true
+					var VisibilityEvents = true
+					var OverrideBoundingBox = false
+					var LocalAabbCenter = Real3{0, 0, 0}
+					var LocalAabbHalfExtents = Real3{1, 1, 1}
+					var GroupSortValue = 0
+					var Material = "582c575af53d18c9:AlphaSprite"
+					var VertexColor = Real4{0, 0, 0, 1}
+					var GeometryMode = SpriteGeometryMode.ZPlane
+					var SpriteSource = "5275aa4d802dd6dc:Square"
+					var FlipX = false
+					var FlipY = false
+					var AnimationActive = true
+					var AnimationSpeed = 1
+					var StartFrame = 0
+				}
+			}
+		}
+	}
+	Cog [ContextId:9]
+	{
+		var Name = "Button"
+		Transform 
+		{
+			var Translation = Real3{0.863192856, -19.6977406, 3.77313647e-08}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = false
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+		MainMenuButton 
+		{
+			var LevelToLoad = "5cfd5035fc0494fa:PacMaze"
+			var KeyToClick = Keys.Enter
 		}
 	}
 }

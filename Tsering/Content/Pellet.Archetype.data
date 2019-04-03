@@ -1,10 +1,10 @@
 [Version:1]
 Cog 
 {
-	var Name = "Pellet"
+	var Name = "Fruit"
 	Transform 
 	{
-		var Translation = Real3{3, -8, 0}
+		var Translation = Real3{-6.99999905, 2, 0}
 		var Scale = Real3{0.25, 0.25, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -36,9 +36,6 @@ Cog
 		var Offset = Real3{0, 0, 0}
 		var Radius = 0.125
 	}
-	Pellets 
-	{
-	}
 	RigidBody 
 	{
 		var Velocity = Real3{0, 0, 0}
@@ -48,5 +45,8 @@ Cog
 		var Asleep = false
 		var RotationLocked = false
 		var Mode2D = Mode2DStates.InheritFromSpace
+	}
+	Pellets 
+	{
 	}
 }

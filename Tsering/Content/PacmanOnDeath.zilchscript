@@ -21,7 +21,7 @@ class PacManOnDeath : ZilchComponent
   {
     this.Owner.Actions.Cancel;
     this.GameSession.GameVars.PacManLives -= 1;
-    //this.GameSession.GameVars.FreezeBool = true;
+    this.GameSession.GameVars.FreezeBool = true;
     var seq = Action.Sequence(this.Owner.Actions);
     Actions.Delay(seq, 3.0);
     Console.WriteLine("123123");

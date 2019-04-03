@@ -13,6 +13,5 @@ class GameVars : ZilchComponent
   var FreezeBool : Boolean = false;
   //this is for the frightened mode
   var FrightenedBool : Boolean   = false;
-  // Direction PacMan is facing
   var PacManDirection : Integer = 0;
 }

@@ -8,6 +8,6 @@ class MenuMove : ZilchComponent
   function OnLogicUpdate(event : UpdateEvent)
   {
     var seq = Actions.Sequence(this.Owner.Actions);
-    Actions.Property(seq,@this.Owner.Transform.Translation, Real3(0.0,0.0,0.0), 5.0, Ease.Linear);
+    Actions.Property(seq,@this.Owner.Transform.Translation, Real3(0.0,0.0,0.0), 3.0, Ease.Linear);
   }
 }

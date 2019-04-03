@@ -1,0 +1,27 @@
+[Version:1]
+ImageContent 
+{
+	SpriteSourceBuilder 
+	{
+		var Name = "bubbledeath"
+		var ResourceId = 0x5cc3f9dce32cd6b5
+		var FrameSizeX = 280
+		var FrameSizeY = 420
+		var FrameCount = 1
+		var FrameDelay = 0.0833333358
+		var OriginX = 140
+		var OriginY = 210
+		var PixelsPerUnit = 64
+		var Sampling = SpriteSampling.Linear
+		var Looping = true
+		var Slices = Real4{0, 0, 0, 0}
+		var Fill = SpriteFill.Stretch
+	}
+	ContentTags 
+	{
+		var Tags = Array
+		{
+			"AllTheArts"
+		}
+	}
+}
