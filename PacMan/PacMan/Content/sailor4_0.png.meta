@@ -1,0 +1,20 @@
+[Version:1]
+ImageContent 
+{
+	SpriteSourceBuilder 
+	{
+		var Name = "sailor4_0"
+		var ResourceId = 0x5cc3f92cf4e3c3d8
+		var FrameSizeX = 140
+		var FrameSizeY = 130
+		var FrameCount = 2
+		var FrameDelay = 0.0833333358
+		var OriginX = 70
+		var OriginY = 65
+		var PixelsPerUnit = 14
+		var Sampling = SpriteSampling.Nearest
+		var Looping = true
+		var Slices = Real4{0, 0, 0, 0}
+		var Fill = SpriteFill.Stretch
+	}
+}
