@@ -1,0 +1,2751 @@
+[Version:1]
+Level 
+{
+	Cog [ContextId:1]
+	{
+		var Name = "LevelSettings"
+		GravityEffect 
+		{
+			var Active = false
+			var WakeUpOnChange = false
+			var DebugDrawEffect = false
+			var LocalSpaceDirection = true
+			var Strength = 10
+			var Direction = Real3{0, -1, 0}
+		}
+		DragEffect 
+		{
+			var Active = true
+			var WakeUpOnChange = false
+			var DebugDrawEffect = false
+			var LinearDamping = 0.200000003
+			var AngularDamping = 0.100000001
+			var LinearDrag = 0
+			var AngularDrag = 0
+		}
+		GridDraw 
+		{
+			var Active = true
+			var HalfCellOffset = false
+			var CellSize = 1
+			var Axis = AxisDirection.Z
+			var Lines = 100
+			var DrawAxisOrigins = true
+			var AlwaysDrawInEditor = true
+			var DrawInGame = false
+			var GridColor = Real4{0.5, 0.5, 0.5, 0.400000006}
+			var GridHighlight = Real4{0, 0, 0, 0.400000006}
+			var HighlightInterval = 10
+			var FollowEditorCamera = false
+		}
+	}
+	Cog [ContextId:2]
+	{
+		var Name = "Renderer"
+		ForwardRenderer 
+		{
+			var EditorDebugDraw = true
+			var GameDebugDraw = true
+			var RenderDiffuse = true
+			var RenderSpecular = true
+			var RenderSkybox = false
+			var Skybox = "5822dec85e380cf1:SimpleSkybox"
+			var ClearColor = Real4{0, 0, 0, 1}
+			var DirectLighting = true
+			var IndirectLighting = true
+			var IndirectIntensity = 1
+			var ToneMap = true
+			var DirectionalLight = CogPath
+			{
+				var Path = ""
+				var ErrorOnResolveToNull = false
+				var ErrorOnPathCantCompute = false
+				var ErrorOnDirectLinkFail = false
+				var UpdateCogOnPathChange = true
+				var UpdatePathOnCogChange = true
+				var UpdateCogOnInitialize = true
+				var ResolvedNullErrorOccurred = false
+				var Cog = 4294967293
+				var PathPreference0 = CogPathPreference.CogRelative
+				var PathPreference1 = CogPathPreference.SpaceRelative
+				var PathPreference2 = CogPathPreference.Absolute
+			}
+		}
+	}
+	Cog [ContextId:3]
+	{
+		var Name = "EditorCamera"
+		Transform 
+		{
+			var Translation = Real3{3.52881956, -7.02061081, 20}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
+		}
+		CameraViewport 
+		{
+			var RenderInEditor = true
+			var RenderInGame = false
+			var RenderOrder = 0
+			var CameraPath = CogPath
+			{
+				var Path = "."
+				var ErrorOnResolveToNull = false
+				var ErrorOnPathCantCompute = false
+				var ErrorOnDirectLinkFail = false
+				var UpdateCogOnPathChange = true
+				var UpdatePathOnCogChange = true
+				var UpdateCogOnInitialize = true
+				var ResolvedNullErrorOccurred = false
+				var Cog = 3
+				var PathPreference0 = CogPathPreference.CogRelative
+				var PathPreference1 = CogPathPreference.SpaceRelative
+				var PathPreference2 = CogPathPreference.Absolute
+			}
+			var RendererPath = CogPath
+			{
+				var Path = ":/Renderer"
+				var ErrorOnResolveToNull = false
+				var ErrorOnPathCantCompute = false
+				var ErrorOnDirectLinkFail = false
+				var UpdateCogOnPathChange = true
+				var UpdatePathOnCogChange = true
+				var UpdateCogOnInitialize = true
+				var ResolvedNullErrorOccurred = false
+				var Cog = 2
+				var PathPreference0 = CogPathPreference.CogRelative
+				var PathPreference1 = CogPathPreference.SpaceRelative
+				var PathPreference2 = CogPathPreference.Absolute
+			}
+			var ResolutionOrAspect = Integer2{1920, 1080}
+			var RenderToViewport = true
+			var ForwardViewportEvents = false
+			var ViewportScaling = ViewportScaling.Fill
+			var MarginColor = Real4{0, 0, 0, 1}
+			var NormalizedSize = Real2{1, 1}
+			var NormalizedOffset = Real2{0, 0}
+		}
+		Camera 
+		{
+			var NearPlane = 0.5
+			var FarPlane = 500
+			var PerspectiveMode = PerspectiveMode.Orthographic
+			var FieldOfView = 45
+			var Size = 23.2876682
+		}
+		EditorCameraController 
+		{
+			var ControlMode = ControlMode.ZPlane
+			var Previous3DMode = ControlMode.Orbit
+			var LookDistance = 20
+			var VerticalAngle = 0
+			var HorizontalAngle = 0
+			var LookTarget = Real3{3.52881956, -7.02061081, 1.32393566e-07}
+			var MoveSensitivity = 1
+		}
+	}
+	Cog [ContextId:4]
+	{
+		var Name = "PacMan"
+		Transform 
+		{
+			var Translation = Real3{0, -3, 0}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 0.990000129, 0, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5c77a2b9f0f20b61:PacManMoving_0"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+		PacmanMovement 
+		{
+			var MoveAnimation = "null"
+			var LeftKey = Keys.A
+			var RightKey = Keys.D
+			var UpKey = Keys.W
+			var DownKey = Keys.S
+			var CanMove = true
+			var TestDirection = Real3{0, 0, 0}
+			var Direction = Real3{0, 0, 0}
+		}
+		SphereCollider 
+		{
+			var Ghost = false
+			var SendsEvents = true
+			var Material = "4de020863e872da8:DefaultPhysicsMaterial"
+			var CollisionGroup = "5c48ee4a75c977e8:Player"
+			var Offset = Real3{0, 0, 0}
+			var Radius = 0.449999988
+		}
+		RigidBody 
+		{
+			var Velocity = Real3{0, 0, 0}
+			var AngularVelocity = Real3{0, 0, 0}
+			var DynamicState = RigidBodyDynamicState.Kinematic
+			var AllowSleep = true
+			var Asleep = false
+			var RotationLocked = false
+			var Mode2D = Mode2DStates.InheritFromSpace
+		}
+		SoundEmitter 
+		{
+			var Volume = 1
+			var Pitch = 0
+			var Attenuator = "57ca8a6ad262efe5:DefaultNoAttenuation"
+			var Directional = false
+			var EmitAngle = 90
+			var RearVolume = 0.200000003
+		}
+		SimpleSound 
+		{
+			var StartPlaying = true
+			var Positional = false
+			var Cue = "5cc29ec3e7519477:Soldier_paincrticialdeath01"
+		}
+		PacManOnDeath 
+		{
+			var DeathAnimation = "null"
+			var LoadLevel = "5cfd5035fc0494fa:PacMaze"
+		}
+	}
+	Cog [ContextId:5]
+	{
+		var Name = "TileMap"
+		Transform 
+		{
+			var Translation = Real3{0.5, 30.5, 0}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		MultiSprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var AnimationActive = true
+			var AnimationSpeed = 1
+		}
+		TileMap 
+		{
+			var Source = "5c48ea60336e1332:PacMaze_TileMap02"
+			var PaletteName = ""
+			var MeshThickness = 1.20000005
+		}
+	}
+	Cog [ContextId:6]
+	{
+		var Name = "GameCamera"
+		Transform 
+		{
+			var Translation = Real3{3.75, -1.08612251, 10}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		SelectionIcon 
+		{
+			var Visible = true
+			var VisibilityEvents = true
+			var Material = "56581e2bb81777be:DebugDrawOnTop"
+			var SpriteSource = "58f8e4be7360cf7c:CameraIcon"
+			var ViewScale = 1
+			var OverrideSelections = true
+		}
+		CameraViewport 
+		{
+			var RenderInEditor = false
+			var RenderInGame = true
+			var RenderOrder = 0
+			var CameraPath = CogPath
+			{
+				var Path = "."
+				var ErrorOnResolveToNull = false
+				var ErrorOnPathCantCompute = false
+				var ErrorOnDirectLinkFail = false
+				var UpdateCogOnPathChange = true
+				var UpdatePathOnCogChange = true
+				var UpdateCogOnInitialize = true
+				var ResolvedNullErrorOccurred = false
+				var Cog = 6
+				var PathPreference0 = CogPathPreference.CogRelative
+				var PathPreference1 = CogPathPreference.SpaceRelative
+				var PathPreference2 = CogPathPreference.Absolute
+			}
+			var RendererPath = CogPath
+			{
+				var Path = ":/Renderer"
+				var ErrorOnResolveToNull = false
+				var ErrorOnPathCantCompute = false
+				var ErrorOnDirectLinkFail = false
+				var UpdateCogOnPathChange = true
+				var UpdatePathOnCogChange = true
+				var UpdateCogOnInitialize = true
+				var ResolvedNullErrorOccurred = false
+				var Cog = 2
+				var PathPreference0 = CogPathPreference.CogRelative
+				var PathPreference1 = CogPathPreference.SpaceRelative
+				var PathPreference2 = CogPathPreference.Absolute
+			}
+			var ResolutionOrAspect = Integer2{256, 240}
+			var RenderToViewport = true
+			var ForwardViewportEvents = false
+			var ViewportScaling = ViewportScaling.Letterbox
+			var MarginColor = Real4{0, 0, 0, 1}
+			var NormalizedSize = Real2{1, 1}
+			var NormalizedOffset = Real2{0, 0}
+		}
+		Camera 
+		{
+			var NearPlane = 0.100000001
+			var FarPlane = 200
+			var PerspectiveMode = PerspectiveMode.Orthographic
+			var FieldOfView = 60
+			var Size = 35
+		}
+		SoundListener 
+		{
+			var Active = true
+			var AttenuationScale = 1
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:7]
+	{
+		Transform 
+		{
+			var Translation = Real3{1, -15, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c488e7604fefca4:Blinky"][ContextId:8]
+	{
+		Transform 
+		{
+			var Translation = Real3{-12, 0, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{1, 1, 1}
+		}
+		RigidBody 
+		{
+			var DynamicState = RigidBodyDynamicState.Kinematic
+		}
+	}
+	Cog [ContextId:9]
+	{
+		var Name = "TeleporterLeft"
+		Transform 
+		{
+			var Translation = Real3{-13, 0, 10}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 0.720000029, 0, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+		BoxCollider 
+		{
+			var Ghost = false
+			var SendsEvents = true
+			var Material = "4de020863e872da8:DefaultPhysicsMaterial"
+			var CollisionGroup = "4e740859314e5515:DefaultGroup"
+			var Offset = Real3{0, 0, 0}
+			var HalfSize = Real3{0.5, 0.5, 0.5}
+		}
+		Teleporter 
+		{
+			var TeleExit = Real3{0, 0, 0}
+		}
+	}
+	Cog [ContextId:10]
+	{
+		var Name = "TeleporterRight"
+		Transform 
+		{
+			var Translation = Real3{13.9999981, 0, 10}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 0.720000029, 0, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5275aa4d802dd6dc:Square"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+		BoxCollider 
+		{
+			var Ghost = false
+			var SendsEvents = true
+			var Material = "4de020863e872da8:DefaultPhysicsMaterial"
+			var CollisionGroup = "4e740859314e5515:DefaultGroup"
+			var Offset = Real3{0, 0, 0}
+			var HalfSize = Real3{0.5, 0.5, 0.5}
+		}
+		Teleporter 
+		{
+			var TeleExit = Real3{-11, 3, 0}
+		}
+	}
+	Cog [ContextId:11]
+	{
+		var Name = "FirstLife"
+		Transform 
+		{
+			var Translation = Real3{17.2494106, -9.91693783, 3.79943742e-07}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+		LivesText 
+		{
+			var FirstLife = true
+			var SecondLife = false
+		}
+	}
+	Cog [ContextId:12]
+	{
+		var Name = "SecondLife"
+		Transform 
+		{
+			var Translation = Real3{16.2101517, -9.91693783, 3.79943742e-07}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+		LivesText 
+		{
+			var FirstLife = false
+			var SecondLife = true
+		}
+	}
+	Cog [InheritId:"5c764fdbffac995f:PoewerPellet"][ContextId:13]
+	{
+		Transform 
+		{
+			var Translation = Real3{-12, -9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.5, 0.5, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:14]
+	{
+		Transform 
+		{
+			var Translation = Real3{2, -15, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:15]
+	{
+		Transform 
+		{
+			var Translation = Real3{3, -15, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:16]
+	{
+		Transform 
+		{
+			var Translation = Real3{4, -15, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:17]
+	{
+		Transform 
+		{
+			var Translation = Real3{5, -15, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:18]
+	{
+		Transform 
+		{
+			var Translation = Real3{6, -15, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:19]
+	{
+		Transform 
+		{
+			var Translation = Real3{7, -15, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:20]
+	{
+		Transform 
+		{
+			var Translation = Real3{8, -15, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:21]
+	{
+		Transform 
+		{
+			var Translation = Real3{9, -15, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:22]
+	{
+		Transform 
+		{
+			var Translation = Real3{10, -15, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:23]
+	{
+		Transform 
+		{
+			var Translation = Real3{11, -15, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:24]
+	{
+		Transform 
+		{
+			var Translation = Real3{-5, -15, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:25]
+	{
+		Transform 
+		{
+			var Translation = Real3{-4, -15, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:26]
+	{
+		Transform 
+		{
+			var Translation = Real3{-3, -15, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:27]
+	{
+		Transform 
+		{
+			var Translation = Real3{-2, -15, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:28]
+	{
+		Transform 
+		{
+			var Translation = Real3{-1, -15, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:29]
+	{
+		Transform 
+		{
+			var Translation = Real3{-10, -15, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:30]
+	{
+		Transform 
+		{
+			var Translation = Real3{-9, -15, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:31]
+	{
+		Transform 
+		{
+			var Translation = Real3{-8, -15, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:32]
+	{
+		Transform 
+		{
+			var Translation = Real3{-7, -15, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:33]
+	{
+		Transform 
+		{
+			var Translation = Real3{-6, -15, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:34]
+	{
+		Transform 
+		{
+			var Translation = Real3{-10, -12, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:35]
+	{
+		Transform 
+		{
+			var Translation = Real3{-8, -12, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:36]
+	{
+		Transform 
+		{
+			var Translation = Real3{-12, -12, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:37]
+	{
+		Transform 
+		{
+			var Translation = Real3{-11, -12, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:38]
+	{
+		Transform 
+		{
+			var Translation = Real3{-9, -12, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:39]
+	{
+		Transform 
+		{
+			var Translation = Real3{-9, -9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:40]
+	{
+		Transform 
+		{
+			var Translation = Real3{-10, -9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:41]
+	{
+		Transform 
+		{
+			var Translation = Real3{-11, -9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:42]
+	{
+		Transform 
+		{
+			var Translation = Real3{-12, -8, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:43]
+	{
+		Transform 
+		{
+			var Translation = Real3{-3, -9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:44]
+	{
+		Transform 
+		{
+			var Translation = Real3{-4, -9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:45]
+	{
+		Transform 
+		{
+			var Translation = Real3{-5, -9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:46]
+	{
+		Transform 
+		{
+			var Translation = Real3{-6, -9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:47]
+	{
+		Transform 
+		{
+			var Translation = Real3{1, -9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:48]
+	{
+		Transform 
+		{
+			var Translation = Real3{0, -9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:49]
+	{
+		Transform 
+		{
+			var Translation = Real3{-1, -9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:50]
+	{
+		Transform 
+		{
+			var Translation = Real3{-2, -9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:51]
+	{
+		Transform 
+		{
+			var Translation = Real3{4, -9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:52]
+	{
+		Transform 
+		{
+			var Translation = Real3{2, -9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:53]
+	{
+		Transform 
+		{
+			var Translation = Real3{5, -9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:54]
+	{
+		Transform 
+		{
+			var Translation = Real3{13, -6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:55]
+	{
+		Transform 
+		{
+			var Translation = Real3{12, -6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:56]
+	{
+		Transform 
+		{
+			var Translation = Real3{3, -9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:57]
+	{
+		Transform 
+		{
+			var Translation = Real3{11, -6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:58]
+	{
+		Transform 
+		{
+			var Translation = Real3{10, -6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:59]
+	{
+		Transform 
+		{
+			var Translation = Real3{9, -12, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:60]
+	{
+		Transform 
+		{
+			var Translation = Real3{8, -12, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:61]
+	{
+		Transform 
+		{
+			var Translation = Real3{10, -12, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:62]
+	{
+		Transform 
+		{
+			var Translation = Real3{7, -12, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:63]
+	{
+		Transform 
+		{
+			var Translation = Real3{8, -6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:64]
+	{
+		Transform 
+		{
+			var Translation = Real3{7, -6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:65]
+	{
+		Transform 
+		{
+			var Translation = Real3{9, -6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:66]
+	{
+		Transform 
+		{
+			var Translation = Real3{6, -6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:67]
+	{
+		Transform 
+		{
+			var Translation = Real3{4, -6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:68]
+	{
+		Transform 
+		{
+			var Translation = Real3{3, -6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:69]
+	{
+		Transform 
+		{
+			var Translation = Real3{5, -6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:70]
+	{
+		Transform 
+		{
+			var Translation = Real3{2, -6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:71]
+	{
+		Transform 
+		{
+			var Translation = Real3{-2, -6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:72]
+	{
+		Transform 
+		{
+			var Translation = Real3{-3, -6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:73]
+	{
+		Transform 
+		{
+			var Translation = Real3{-1, -6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:74]
+	{
+		Transform 
+		{
+			var Translation = Real3{-4, -6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:75]
+	{
+		Transform 
+		{
+			var Translation = Real3{-6, -6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:76]
+	{
+		Transform 
+		{
+			var Translation = Real3{-7, -6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:77]
+	{
+		Transform 
+		{
+			var Translation = Real3{-5, -6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:78]
+	{
+		Transform 
+		{
+			var Translation = Real3{-8, -6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:79]
+	{
+		Transform 
+		{
+			var Translation = Real3{-10, -6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:80]
+	{
+		Transform 
+		{
+			var Translation = Real3{-11, -6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:81]
+	{
+		Transform 
+		{
+			var Translation = Real3{-9, -6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:82]
+	{
+		Transform 
+		{
+			var Translation = Real3{-12, -6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:83]
+	{
+		Transform 
+		{
+			var Translation = Real3{13, 9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:84]
+	{
+		Transform 
+		{
+			var Translation = Real3{11, 9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:85]
+	{
+		Transform 
+		{
+			var Translation = Real3{9, 9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:86]
+	{
+		Transform 
+		{
+			var Translation = Real3{8, 9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:87]
+	{
+		Transform 
+		{
+			var Translation = Real3{6, 9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:88]
+	{
+		Transform 
+		{
+			var Translation = Real3{12, 9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:89]
+	{
+		Transform 
+		{
+			var Translation = Real3{10, 9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:90]
+	{
+		Transform 
+		{
+			var Translation = Real3{7, 9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:91]
+	{
+		Transform 
+		{
+			var Translation = Real3{5, 9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:92]
+	{
+		Transform 
+		{
+			var Translation = Real3{4, 9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:93]
+	{
+		Transform 
+		{
+			var Translation = Real3{3, 9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:94]
+	{
+		Transform 
+		{
+			var Translation = Real3{2, 9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:95]
+	{
+		Transform 
+		{
+			var Translation = Real3{1, 9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:96]
+	{
+		Transform 
+		{
+			var Translation = Real3{0, 9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:97]
+	{
+		Transform 
+		{
+			var Translation = Real3{-2, 9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:98]
+	{
+		Transform 
+		{
+			var Translation = Real3{-1, 9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:99]
+	{
+		Transform 
+		{
+			var Translation = Real3{-3, 9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:100]
+	{
+		Transform 
+		{
+			var Translation = Real3{-4, 9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:101]
+	{
+		Transform 
+		{
+			var Translation = Real3{-5, 9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:102]
+	{
+		Transform 
+		{
+			var Translation = Real3{-6, 9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:103]
+	{
+		Transform 
+		{
+			var Translation = Real3{-7, 9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:104]
+	{
+		Transform 
+		{
+			var Translation = Real3{-8, 9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:105]
+	{
+		Transform 
+		{
+			var Translation = Real3{-10, 9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:106]
+	{
+		Transform 
+		{
+			var Translation = Real3{-9, 9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:107]
+	{
+		Transform 
+		{
+			var Translation = Real3{-5, 13, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:108]
+	{
+		Transform 
+		{
+			var Translation = Real3{-6, 13, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:109]
+	{
+		Transform 
+		{
+			var Translation = Real3{-7, 13, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:110]
+	{
+		Transform 
+		{
+			var Translation = Real3{-8, 13, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:111]
+	{
+		Transform 
+		{
+			var Translation = Real3{-9, 13, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:112]
+	{
+		Transform 
+		{
+			var Translation = Real3{-10, 13, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:113]
+	{
+		Transform 
+		{
+			var Translation = Real3{-12, 13, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:114]
+	{
+		Transform 
+		{
+			var Translation = Real3{-11, 13, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:115]
+	{
+		Transform 
+		{
+			var Translation = Real3{9, 13, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:116]
+	{
+		Transform 
+		{
+			var Translation = Real3{8, 13, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:117]
+	{
+		Transform 
+		{
+			var Translation = Real3{7, 13, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:118]
+	{
+		Transform 
+		{
+			var Translation = Real3{6, 13, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:119]
+	{
+		Transform 
+		{
+			var Translation = Real3{5, 13, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:120]
+	{
+		Transform 
+		{
+			var Translation = Real3{4, 13, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:121]
+	{
+		Transform 
+		{
+			var Translation = Real3{2, 13, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:122]
+	{
+		Transform 
+		{
+			var Translation = Real3{3, 13, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:123]
+	{
+		Transform 
+		{
+			var Translation = Real3{13, 13, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:124]
+	{
+		Transform 
+		{
+			var Translation = Real3{12, 13, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:125]
+	{
+		Transform 
+		{
+			var Translation = Real3{11, 13, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:126]
+	{
+		Transform 
+		{
+			var Translation = Real3{10, 13, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:127]
+	{
+		Transform 
+		{
+			var Translation = Real3{-1, 13, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:128]
+	{
+		Transform 
+		{
+			var Translation = Real3{-2, 13, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:129]
+	{
+		Transform 
+		{
+			var Translation = Real3{-3, 13, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:130]
+	{
+		Transform 
+		{
+			var Translation = Real3{-4, 13, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:131]
+	{
+		Transform 
+		{
+			var Translation = Real3{-11, 9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:132]
+	{
+		Transform 
+		{
+			var Translation = Real3{-12, 9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:133]
+	{
+		Transform 
+		{
+			var Translation = Real3{-12, 8, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:134]
+	{
+		Transform 
+		{
+			var Translation = Real3{-12, 7, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:135]
+	{
+		Transform 
+		{
+			var Translation = Real3{-12, 6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:136]
+	{
+		Transform 
+		{
+			var Translation = Real3{-8, 6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:137]
+	{
+		Transform 
+		{
+			var Translation = Real3{-9, 6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:138]
+	{
+		Transform 
+		{
+			var Translation = Real3{-10, 6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:139]
+	{
+		Transform 
+		{
+			var Translation = Real3{-11, 6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:140]
+	{
+		Transform 
+		{
+			var Translation = Real3{-1.00000048, 6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:141]
+	{
+		Transform 
+		{
+			var Translation = Real3{-2.00000048, 6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:142]
+	{
+		Transform 
+		{
+			var Translation = Real3{-3.00000048, 6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:143]
+	{
+		Transform 
+		{
+			var Translation = Real3{-4.00000048, 6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:144]
+	{
+		Transform 
+		{
+			var Translation = Real3{4.99999952, 6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:145]
+	{
+		Transform 
+		{
+			var Translation = Real3{3.99999952, 6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:146]
+	{
+		Transform 
+		{
+			var Translation = Real3{2.99999952, 6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:147]
+	{
+		Transform 
+		{
+			var Translation = Real3{1.99999952, 6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:148]
+	{
+		Transform 
+		{
+			var Translation = Real3{11, 6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:149]
+	{
+		Transform 
+		{
+			var Translation = Real3{10, 6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:150]
+	{
+		Transform 
+		{
+			var Translation = Real3{7.99999952, 6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:151]
+	{
+		Transform 
+		{
+			var Translation = Real3{-12, 12, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:152]
+	{
+		Transform 
+		{
+			var Translation = Real3{-12, 10, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:153]
+	{
+		Transform 
+		{
+			var Translation = Real3{-7, 12, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:154]
+	{
+		Transform 
+		{
+			var Translation = Real3{-7, 11, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:155]
+	{
+		Transform 
+		{
+			var Translation = Real3{-7, 10, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:156]
+	{
+		Transform 
+		{
+			var Translation = Real3{-1, 12, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:157]
+	{
+		Transform 
+		{
+			var Translation = Real3{-1, 11, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:158]
+	{
+		Transform 
+		{
+			var Translation = Real3{-1, 10, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:159]
+	{
+		Transform 
+		{
+			var Translation = Real3{2, 12, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:160]
+	{
+		Transform 
+		{
+			var Translation = Real3{2, 11, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:161]
+	{
+		Transform 
+		{
+			var Translation = Real3{2, 10, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:162]
+	{
+		Transform 
+		{
+			var Translation = Real3{9, 12, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:163]
+	{
+		Transform 
+		{
+			var Translation = Real3{9, 11, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:164]
+	{
+		Transform 
+		{
+			var Translation = Real3{9, 10, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:165]
+	{
+		Transform 
+		{
+			var Translation = Real3{13, 12, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:166]
+	{
+		Transform 
+		{
+			var Translation = Real3{13, 10, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:167]
+	{
+		Transform 
+		{
+			var Translation = Real3{13, 7, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:168]
+	{
+		Transform 
+		{
+			var Translation = Real3{13, 6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:169]
+	{
+		Transform 
+		{
+			var Translation = Real3{13, 8, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:170]
+	{
+		Transform 
+		{
+			var Translation = Real3{8, 7, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:171]
+	{
+		Transform 
+		{
+			var Translation = Real3{8, 8, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:172]
+	{
+		Transform 
+		{
+			var Translation = Real3{9, 6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:173]
+	{
+		Transform 
+		{
+			var Translation = Real3{12, 6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:174]
+	{
+		Transform 
+		{
+			var Translation = Real3{8, 5, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:175]
+	{
+		Transform 
+		{
+			var Translation = Real3{8, 4, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:176]
+	{
+		Transform 
+		{
+			var Translation = Real3{8, 3, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:177]
+	{
+		Transform 
+		{
+			var Translation = Real3{7.99999952, 2, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:178]
+	{
+		Transform 
+		{
+			var Translation = Real3{8, 1, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:179]
+	{
+		Transform 
+		{
+			var Translation = Real3{8, -1.49011612e-08, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:180]
+	{
+		Transform 
+		{
+			var Translation = Real3{8, -1, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:181]
+	{
+		Transform 
+		{
+			var Translation = Real3{7.99999952, -2, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:182]
+	{
+		Transform 
+		{
+			var Translation = Real3{7.99999952, -3, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:183]
+	{
+		Transform 
+		{
+			var Translation = Real3{7.99999952, -4, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:184]
+	{
+		Transform 
+		{
+			var Translation = Real3{7.99999952, -5, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:185]
+	{
+		Transform 
+		{
+			var Translation = Real3{-6.99999905, 8, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:186]
+	{
+		Transform 
+		{
+			var Translation = Real3{-6.99999905, 7, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:187]
+	{
+		Transform 
+		{
+			var Translation = Real3{-6.99999952, 6, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:188]
+	{
+		Transform 
+		{
+			var Translation = Real3{-6.99999905, 5, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:189]
+	{
+		Transform 
+		{
+			var Translation = Real3{-6.99999905, 4, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:190]
+	{
+		Transform 
+		{
+			var Translation = Real3{-6.99999905, 3, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:191]
+	{
+		Transform 
+		{
+			var Translation = Real3{-6.99999905, 2, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:192]
+	{
+		Transform 
+		{
+			var Translation = Real3{-6.99999905, 1, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:193]
+	{
+		Transform 
+		{
+			var Translation = Real3{-6.99999952, 0, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:194]
+	{
+		Transform 
+		{
+			var Translation = Real3{-6.99999905, -1, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:195]
+	{
+		Transform 
+		{
+			var Translation = Real3{-6.99999905, -2, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:196]
+	{
+		Transform 
+		{
+			var Translation = Real3{-6.99999905, -3, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:197]
+	{
+		Transform 
+		{
+			var Translation = Real3{-6.99999905, -4, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:198]
+	{
+		Transform 
+		{
+			var Translation = Real3{-6.99999905, -5, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:199]
+	{
+		Transform 
+		{
+			var Translation = Real3{12, -12, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:200]
+	{
+		Transform 
+		{
+			var Translation = Real3{11, -12, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:201]
+	{
+		Transform 
+		{
+			var Translation = Real3{13, -12, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:202]
+	{
+		Transform 
+		{
+			var Translation = Real3{-6, -7, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:203]
+	{
+		Transform 
+		{
+			var Translation = Real3{-6, -8, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:204]
+	{
+		Transform 
+		{
+			var Translation = Real3{-6, -10, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:205]
+	{
+		Transform 
+		{
+			var Translation = Real3{-6, -11, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:206]
+	{
+		Transform 
+		{
+			var Translation = Real3{-6, -12, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:207]
+	{
+		Transform 
+		{
+			var Translation = Real3{-7, -12, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:208]
+	{
+		Transform 
+		{
+			var Translation = Real3{-9, -10, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:209]
+	{
+		Transform 
+		{
+			var Translation = Real3{-9, -11, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:210]
+	{
+		Transform 
+		{
+			var Translation = Real3{-12, -7, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:211]
+	{
+		Transform 
+		{
+			var Translation = Real3{13, -13, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:212]
+	{
+		Transform 
+		{
+			var Translation = Real3{13, -14, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:213]
+	{
+		Transform 
+		{
+			var Translation = Real3{13, -15, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:214]
+	{
+		Transform 
+		{
+			var Translation = Real3{12, -15, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:215]
+	{
+		Transform 
+		{
+			var Translation = Real3{-1.00000048, -7, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:216]
+	{
+		Transform 
+		{
+			var Translation = Real3{-1.00000048, -8, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:217]
+	{
+		Transform 
+		{
+			var Translation = Real3{1.99999952, -7, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:218]
+	{
+		Transform 
+		{
+			var Translation = Real3{1.99999952, -8, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:219]
+	{
+		Transform 
+		{
+			var Translation = Real3{6.99999952, -7, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:220]
+	{
+		Transform 
+		{
+			var Translation = Real3{13, -7, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:221]
+	{
+		Transform 
+		{
+			var Translation = Real3{6.99999952, -8, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:222]
+	{
+		Transform 
+		{
+			var Translation = Real3{13, -8, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:223]
+	{
+		Transform 
+		{
+			var Translation = Real3{7, -9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:224]
+	{
+		Transform 
+		{
+			var Translation = Real3{7, -10, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:225]
+	{
+		Transform 
+		{
+			var Translation = Real3{12, -9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:226]
+	{
+		Transform 
+		{
+			var Translation = Real3{11, -9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:227]
+	{
+		Transform 
+		{
+			var Translation = Real3{10, -9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:228]
+	{
+		Transform 
+		{
+			var Translation = Real3{4, -12, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:229]
+	{
+		Transform 
+		{
+			var Translation = Real3{2, -12, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:230]
+	{
+		Transform 
+		{
+			var Translation = Real3{-1, -12, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:231]
+	{
+		Transform 
+		{
+			var Translation = Real3{3, -12, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:232]
+	{
+		Transform 
+		{
+			var Translation = Real3{-2, -12, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:233]
+	{
+		Transform 
+		{
+			var Translation = Real3{-3, -12, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:234]
+	{
+		Transform 
+		{
+			var Translation = Real3{10, -10, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:235]
+	{
+		Transform 
+		{
+			var Translation = Real3{7, -11, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:236]
+	{
+		Transform 
+		{
+			var Translation = Real3{10, -11, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:237]
+	{
+		Transform 
+		{
+			var Translation = Real3{4.00000048, -11, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:238]
+	{
+		Transform 
+		{
+			var Translation = Real3{4.00000048, -10, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:239]
+	{
+		Transform 
+		{
+			var Translation = Real3{-2.99999952, -10, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:240]
+	{
+		Transform 
+		{
+			var Translation = Real3{-2.99999952, -11, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:241]
+	{
+		Transform 
+		{
+			var Translation = Real3{-0.999999523, -13, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:242]
+	{
+		Transform 
+		{
+			var Translation = Real3{-0.999999523, -14, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:243]
+	{
+		Transform 
+		{
+			var Translation = Real3{2.00000024, -13, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:244]
+	{
+		Transform 
+		{
+			var Translation = Real3{2.00000024, -14, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:245]
+	{
+		Transform 
+		{
+			var Translation = Real3{-12, -13, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:246]
+	{
+		Transform 
+		{
+			var Translation = Real3{-12, -14, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:247]
+	{
+		Transform 
+		{
+			var Translation = Real3{-11, -15, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:248]
+	{
+		Transform 
+		{
+			var Translation = Real3{-12, -15, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:249]
+	{
+		Transform 
+		{
+			var Translation = Real3{5, 8, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:250]
+	{
+		Transform 
+		{
+			var Translation = Real3{5, 7, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:251]
+	{
+		Transform 
+		{
+			var Translation = Real3{-4, 8, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:252]
+	{
+		Transform 
+		{
+			var Translation = Real3{-4, 7, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [InheritId:"5c764fdbffac995f:PoewerPellet"][ContextId:253]
+	{
+		Transform 
+		{
+			var Translation = Real3{12.9999981, -9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.5, 0.5, 1}
+		}
+	}
+	Cog [InheritId:"5c764fdbffac995f:PoewerPellet"][ContextId:254]
+	{
+		Transform 
+		{
+			var Translation = Real3{12.9999981, 11, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.5, 0.5, 1}
+		}
+	}
+	Cog [InheritId:"5c764fdbffac995f:PoewerPellet"][ContextId:255]
+	{
+		Transform 
+		{
+			var Translation = Real3{-12.0000019, 11, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.5, 0.5, 1}
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:256]
+	{
+		Transform 
+		{
+			var Translation = Real3{6, -9, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [ContextId:257]
+	{
+		var Name = "SpriteText"
+		Transform 
+		{
+			var Translation = Real3{6.32552814, -4.54543543, 2.5464135e-07}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+	}
+	Cog [ContextId:258]
+	{
+		var Name = "SpriteText"
+		Transform 
+		{
+			var Translation = Real3{16.7818089, 0.94782275, 7.11699897e-07}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		SpriteText 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var Text = ""
+			var Font = "57343753bb4eaaec:NotoSans-Regular"
+			var FontSize = 64
+			var PixelsPerUnit = 128
+			var TextAlign = TextAlign.Center
+		}
+		PointText 
+		{
+		}
+	}
+	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:259]
+	{
+		Transform 
+		{
+			var Translation = Real3{0, -15, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+}

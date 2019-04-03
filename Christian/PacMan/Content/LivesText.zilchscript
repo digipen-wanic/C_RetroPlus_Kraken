@@ -1,0 +1,42 @@
+class LivesText : ZilchComponent
+{
+  //if its the first life then turn this on
+  [Property]
+  var FirstLife : Boolean = false;
+  //if its the second life then turn this one on
+  [Property]
+  var SecondLife : Boolean = false;
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    //checks which one it is
+    if(this.FirstLife)
+    {
+      //changes the visabilty depending on the live left
+      if(this.GameSession.GameVars.PacManLives == 1)
+      {
+        this.Owner.Sprite.Visible = false;
+      }
+      else if(this.GameSession.GameVars.PacManLives == 2)
+      {
+        this.Owner.Sprite.Visible = true;
+      }
+    }
+    if(this.SecondLife)
+    {
+      if(this.GameSession.GameVars.PacManLives == 0)
+      {
+        this.Owner.Sprite.Visible = false;
+      }
+      else if(this.GameSession.GameVars.PacManLives == 1)
+      {
+        this.Owner.Sprite.Visible = true;
+      }
+    }
+  }
+}

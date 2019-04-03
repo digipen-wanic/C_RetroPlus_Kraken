@@ -1,0 +1,108 @@
+class PacmanMovement : ZilchComponent
+{
+  [Property]
+  var MoveAnimation : Archetype = null;
+  [Property]
+  var LeftKey : Keys = Keys.A;
+  [Property]
+  var RightKey : Keys = Keys.D;
+  [Property]
+  var UpKey : Keys = Keys.W;
+  [Property]
+  var DownKey: Keys = Keys.S;
+  [Property]
+  var CanMove : Boolean = true;
+  [Property]
+  var TestDirection : Real3 = Real3(0,0,0);
+  //1 is up, 2 is right, 3 is down, 4 is left
+  [Property]
+  var Direction: Real3 = Real3(0, 0, 0);
+  var CurrentDirection : Integer = 0;
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    this.Move();
+  }
+  
+  function CheckMove()
+  {
+    var checkDir : Segment = Segment();
+    checkDir.Start = Math.Round(this.Owner.Transform.Translation);
+    checkDir.End = checkDir.Start + this.TestDirection;
+    var filter = CastFilter();
+    filter.IgnoreKinematic = true;
+    var results = this.Space.PhysicsSpace.CastSegment(checkDir, 1, filter);
+    
+    if(results.IsEmpty)
+    {
+      this.Direction = this.TestDirection;
+    }
+    checkDir.End = checkDir.Start + this.Direction;
+    results = this.Space.PhysicsSpace.CastSegment(checkDir, 1, filter);
+    if(results.IsNotEmpty)
+    {
+      this.Direction = Real3(0,0,0);
+    }
+    
+    this.TestDirection = this.Direction;
+    
+    
+    this.Move();
+  }
+  
+  function Move()
+  {
+    var seq = Action.Sequence(this.Owner.Actions);
+    Action.Property(seq, @this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation)+this.Direction, 0.2, Ease.Linear);
+    Action.Call(seq, this.CheckMove);
+  }
+  
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    if (Zero.Keyboard.KeyIsDown(this.UpKey) && this.CanMove == true)
+    {
+      this.TestDirection = Real3(0, 1, 0);
+      this.Owner.Transform.SetEulerAnglesXYZ(0,0,Math.Pi / 2.0);
+    }
+    if (Zero.Keyboard.KeyIsDown(this.RightKey) && this.CanMove == true)
+    {
+      this.TestDirection = Real3(1, 0, 0);
+      this.Owner.Transform.SetEulerAnglesXYZ(0,0,0);
+    }
+    if (Zero.Keyboard.KeyIsDown(this.DownKey) && this.CanMove == true)
+    {
+      this.TestDirection = Real3(0, -1, 0);
+      this.Owner.Transform.SetEulerAnglesXYZ(0,0,3.0 * Math.Pi / 2.0);
+    }
+    if (Zero.Keyboard.KeyIsDown(this.LeftKey) && this.CanMove == true)
+    {
+      this.TestDirection = Real3(-1, 0, 0);
+      this.Owner.Transform.SetEulerAnglesXYZ(0,0,Math.Pi);
+    }
+    
+    if(this.TestDirection == -this.Direction)
+    {
+      this.Owner.Actions.Cancel();
+      this.CheckMove();
+    }
+    //update the direction PacMan is facing
+    if(this.TestDirection == Real3(0, 1, 0))
+    {
+      this.CurrentDirection = 2;
+    }
+    else if(this.TestDirection == Real3(1, 0, 0))
+    {
+      this.CurrentDirection = 0;
+    }
+    else if(this.TestDirection == Real3(0, -1, 0))
+    {
+      this.CurrentDirection = 3;
+    }
+    else if(this.TestDirection == Real3(-1, 0, 0))
+    {
+      this.CurrentDirection = 1;
+    }
+    this.LevelSettings.GameVars.PacManDirection = this.CurrentDirection;
+    Console.WriteLine(this.LevelSettings.GameVars.PacManDirection);
+  }
+}

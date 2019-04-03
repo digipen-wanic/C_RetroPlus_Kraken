@@ -1,0 +1,9 @@
+[Version:1]
+TextContent 
+{
+	ZilchScriptBuilder 
+	{
+		var Name = "BlinkyAI"
+		var ResourceId = 0x5c488c9a44452c0a
+	}
+}

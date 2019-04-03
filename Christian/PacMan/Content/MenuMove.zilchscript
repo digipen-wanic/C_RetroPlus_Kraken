@@ -1,0 +1,13 @@
+class MenuMove : ZilchComponent
+{
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    var seq = Actions.Sequence(this.Owner.Actions);
+    Actions.Property(seq,@this.Owner.Transform.Translation, Real3(0.0,0.0,0.0), 5.0, Ease.Linear);
+  }
+}

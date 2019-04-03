@@ -1,0 +1,110 @@
+class BlinkyAI : ZilchComponent
+{
+  [Dependency] var ValidMove : ValidMove;
+  [Property] var MoveDistanceX : Real3 = Real3(1,0.0,0.0);
+  [Property] var MoveDistanceY : Real3 = Real3(0.0,1,0.0);
+  [Property] var MoveSpeed : Real = 1;
+  [Property] var PacMan : CogPath = null;
+  var MoveBool : Real = 0.0;
+  var BMove : Real = 0.0;
+  var SecondBMove : Real = 0.0;
+  function Initialize(init : CogInitializer)
+  {
+    //calls the function
+    this.CalculateNextMove();
+  }
+  
+  function CalculateNextMove()
+  {
+    //starts the sequence for the actions
+    var actionSequence = Actions.Sequence(this.Owner.Actions);
+    
+    this.MoveBool = this.BestMove();
+    var lastMove : Real = this.MoveBool;
+    if(this.MoveBool == 1)
+    {
+      if(this.ValidMove.ResultE)
+        Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) + this.MoveDistanceX,this.MoveSpeed, Ease.QuadInOut);
+    }
+    else if(this.MoveBool == 2)
+    {
+      if(this.ValidMove.ResultW)
+        Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) - this.MoveDistanceX,this.MoveSpeed, Ease.QuadInOut);
+    }
+    else if(this.MoveBool == 3)
+    {
+      if(this.ValidMove.ResultN)
+        Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) + this.MoveDistanceY,this.MoveSpeed, Ease.QuadInOut);
+    }
+    else if(this.MoveBool == 4)
+    {
+      if(this.ValidMove.ResultS)
+        Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) - this.MoveDistanceY,this.MoveSpeed, Ease.QuadInOut);
+    }
+    // this makes this recurisve
+    Actions.Call(actionSequence, this.CalculateNextMove);
+  }
+  //this function is to find out which path is the quickest
+  function BestMove() : Real
+  {
+    var result : Real = 0.0;
+    var result2 : Real = 0.0;
+    result = this.PacMan.Transform.Translation.X - this.Owner.Transform.Translation.X;
+    result2 = this.PacMan.Transform.Translation.Y - this.Owner.Transform.Translation.Y;
+    var temp1 = result;
+    var temp2 = result2;
+    result = Math.Abs(result);
+    result2 = Math.Abs(result2);
+    if(this.PacMan.Transform.Translation.X == this.Owner.Transform.Translation.X)
+    {
+      this.SecondBMove = temp2;
+      if(temp2 > 0.0 && this.ValidMove.ResultN)
+      {
+        this.BMove= 3.0;
+      }
+      if(temp2 < 0.0 && this.ValidMove.ResultS)
+      {
+        this.BMove = 4.0;
+      }
+    }
+    else if(this.PacMan.Transform.Translation.Y == this.Owner.Transform.Translation.Y)
+    {
+      this.SecondBMove = temp2;
+      if(temp2 > 0.0 && this.ValidMove.ResultN)
+      {
+        this.BMove= 3.0;
+      }
+      if(temp2 < 0.0 && this.ValidMove.ResultS)
+      {
+        this.BMove = 4.0;
+      }
+    }
+    else if(result2 < result)
+    {
+      this.SecondBMove = temp1;
+      if(temp1 > 0.0 && this.ValidMove.ResultE)
+      {
+        this.BMove = 1.0;
+      }
+      if(temp1 < 0.0 && this.ValidMove.ResultW)
+      {
+        this.BMove = 2.0;
+      }
+    }
+    else
+    {
+      this.SecondBMove = temp1;
+      if(temp1 > 0.0 && this.ValidMove.ResultE)
+      {
+        this.BMove = 1.0;
+      }
+      if(temp1 < 0.0 && this.ValidMove.ResultW)
+      {
+        this.BMove = 2.0;
+      }
+    }
+    
+    Console.WriteLine("`this.BMove`");
+    return this.BMove;
+  }
+}

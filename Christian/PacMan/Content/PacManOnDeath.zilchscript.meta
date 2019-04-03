@@ -1,0 +1,9 @@
+[Version:1]
+TextContent 
+{
+	ZilchScriptBuilder 
+	{
+		var Name = "PacManOnDeath"
+		var ResourceId = 0x5c77a9f5d24c2704
+	}
+}
