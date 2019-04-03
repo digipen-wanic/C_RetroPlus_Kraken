@@ -3,8 +3,8 @@ TextContent
 {
 	ZilchScriptBuilder 
 	{
-		var Name = "BlinkyAI"
-		var ResourceId = 0x5c488c9a44452c0a
+		var Name = "PinkyAI"
+		var ResourceId = 0x5cc2f04983c40eb5
 	}
 	ContentTags 
 	{

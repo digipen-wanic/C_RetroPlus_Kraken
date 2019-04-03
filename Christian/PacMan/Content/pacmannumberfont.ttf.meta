@@ -4,6 +4,6 @@ FontContent
 	FontBuilder 
 	{
 		var Name = "pacmannumberfont"
-		var ResourceId = 0x5cc3f0fd4997da47
+		var ResourceId = 0x5cc4032085ce46b8
 	}
 }

@@ -6,4 +6,11 @@ TextContent
 		var Name = "ValidMove"
 		var ResourceId = 0x5c7ff0df4dab0522
 	}
+	ContentTags 
+	{
+		var Tags = Array
+		{
+			"GhostAI"
+		}
+	}
 }

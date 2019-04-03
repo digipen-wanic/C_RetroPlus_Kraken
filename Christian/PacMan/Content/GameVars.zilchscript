@@ -13,4 +13,5 @@ class GameVars : ZilchComponent
   var FreezeBool : Boolean = false;
   //this is for the frightened mode
   var FrightenedBool : Boolean   = false;
+  var PacManDirection : Integer = 0;
 }
