@@ -12,7 +12,7 @@ ImageContent
 		var OriginX = 2
 		var OriginY = 2
 		var PixelsPerUnit = 64
-		var Sampling = SpriteSampling.Linear
+		var Sampling = SpriteSampling.Nearest
 		var Looping = true
 		var Slices = Real4{0, 0, 0, 0}
 		var Fill = SpriteFill.Stretch

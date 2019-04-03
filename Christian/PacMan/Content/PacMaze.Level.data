@@ -84,7 +84,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{0.028527379, -0.476409137, 20}
+			var Translation = Real3{10.7864361, -0.0344916061, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -137,7 +137,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 31.4353848
+			var Size = 57.2789993
 		}
 		EditorCameraController 
 		{
@@ -146,7 +146,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{0.028527379, -0.476409137, -2.0607553e-08}
+			var LookTarget = Real3{10.7864361, -0.0344916061, 4.49635337e-07}
 			var MoveSensitivity = 1
 		}
 	}
@@ -340,7 +340,7 @@ Level
 		var Name = "TeleporterLeft"
 		Transform 
 		{
-			var Translation = Real3{11, -1, 10}
+			var Translation = Real3{11, -1, 0}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -382,7 +382,7 @@ Level
 		var Name = "TeleporterRight"
 		Transform 
 		{
-			var Translation = Real3{-9.00000191, -1, 10}
+			var Translation = Real3{-9.00000191, -1, 0}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -2274,7 +2274,7 @@ Level
 		}
 		TileMap 
 		{
-			var Source = "5c704a4aa2caebb8:PacMaze_TileMap03"
+			var Source = "5cc5389004d88967:PacMaze_TileMap03"
 			var PaletteName = ""
 			var MeshThickness = 1.20000005
 		}
@@ -2412,6 +2412,35 @@ Level
 			var Translation = Real3{6, 10, 0}
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{0.25, 0.25, 1}
+		}
+	}
+	Cog [ContextId:213]
+	{
+		var Name = "PacManGhostCenter1"
+		Transform 
+		{
+			var Translation = Real3{23.2850094, 5.95867538, 0}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5c710caa661ae441:PacManGhostCenter1"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
 		}
 	}
 }
