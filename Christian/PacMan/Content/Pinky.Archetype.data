@@ -46,4 +46,30 @@ Cog
 		var Offset = Real3{0, 0, 0}
 		var HalfSize = Real3{0.5, 0.5, 0.5}
 	}
+	ValidMove 
+	{
+		var DrawDebugLine = true
+		var MaxDebugLength = 1
+	}
+	PinkyAI 
+	{
+		var MoveDistanceX = Real3{1, 0, 0}
+		var MoveDistanceY = Real3{0, 1, 0}
+		var MoveSpeed = 1
+		var PacMan = CogPath
+		{
+			var Path = ":/PacMan"
+			var ErrorOnResolveToNull = false
+			var ErrorOnPathCantCompute = false
+			var ErrorOnDirectLinkFail = false
+			var UpdateCogOnPathChange = true
+			var UpdatePathOnCogChange = true
+			var UpdateCogOnInitialize = true
+			var ResolvedNullErrorOccurred = false
+			var Cog = 4294967293
+			var PathPreference0 = CogPathPreference.CogRelative
+			var PathPreference1 = CogPathPreference.SpaceRelative
+			var PathPreference2 = CogPathPreference.Absolute
+		}
+	}
 }

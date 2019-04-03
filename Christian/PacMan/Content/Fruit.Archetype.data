@@ -4,8 +4,8 @@ Cog
 	var Name = "Fruit"
 	Transform 
 	{
-		var Translation = Real3{-6.99999905, 2, 0}
-		var Scale = Real3{0.25, 0.25, 1}
+		var Translation = Real3{1.00000024, -3, 0}
+		var Scale = Real3{1, 1, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
 	Sprite 
@@ -20,7 +20,7 @@ Cog
 		var Material = "582c575af53d18c9:AlphaSprite"
 		var VertexColor = Real4{1, 1, 1, 1}
 		var GeometryMode = SpriteGeometryMode.ZPlane
-		var SpriteSource = "5274db4c2e7c11f9:Circle"
+		var SpriteSource = "5c7103e84ec89a0d:Cherry"
 		var FlipX = false
 		var FlipY = false
 		var AnimationActive = true
@@ -46,7 +46,8 @@ Cog
 		var RotationLocked = false
 		var Mode2D = Mode2DStates.InheritFromSpace
 	}
-	Pellets 
+	Fruit 
 	{
+		var FirstFruit = false
 	}
 }

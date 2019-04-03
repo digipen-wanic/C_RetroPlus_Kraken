@@ -1,0 +1,20 @@
+[Version:1]
+ImageContent 
+{
+	SpriteSourceBuilder 
+	{
+		var Name = "CornerWal"
+		var ResourceId = 0x5c710ad5e9c17baa
+		var FrameSizeX = 4
+		var FrameSizeY = 4
+		var FrameCount = 1
+		var FrameDelay = 0.0833333358
+		var OriginX = 2
+		var OriginY = 2
+		var PixelsPerUnit = 64
+		var Sampling = SpriteSampling.Nearest
+		var Looping = true
+		var Slices = Real4{0, 0, 0, 0}
+		var Fill = SpriteFill.Stretch
+	}
+}
