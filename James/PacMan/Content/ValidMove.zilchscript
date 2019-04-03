@@ -18,6 +18,10 @@ class ValidMove : ZilchComponent
   function Initialize(init : CogInitializer)
   {
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    this.ResultDirection.Set(2,this.CastRay(Real3(0,1.0,0.0)));
+    this.ResultDirection.Set(0,this.CastRay(Real3(1.0,0.0,0.0)));
+    this.ResultDirection.Set(3,this.CastRay(Real3(0.0,-1.0,0.0)));
+    this.ResultDirection.Set(1,this.CastRay(Real3(-1.0,0.0,0.0)));
   }
 
   function OnLogicUpdate(event : UpdateEvent)

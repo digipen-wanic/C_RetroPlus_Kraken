@@ -1,0 +1,9 @@
+[Version:1]
+TextContent 
+{
+	ZilchScriptBuilder 
+	{
+		var Name = "FleeingAI"
+		var ResourceId = 0x5cc3ec42d1c60ea1
+	}
+}

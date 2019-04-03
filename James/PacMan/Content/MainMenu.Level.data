@@ -1,10 +1,9 @@
 [Version:1]
 Level 
 {
-	Cog 
+	Cog [ContextId:1]
 	{
 		var Name = "LevelSettings"
-		var LinkId = 1
 		GravityEffect 
 		{
 			var Active = true
@@ -40,10 +39,9 @@ Level
 			var FollowEditorCamera = false
 		}
 	}
-	Cog 
+	Cog [ContextId:2]
 	{
 		var Name = "Renderer"
-		var LinkId = 2
 		ForwardRenderer 
 		{
 			var EditorDebugDraw = true
@@ -67,32 +65,27 @@ Level
 				var UpdatePathOnCogChange = true
 				var UpdateCogOnInitialize = true
 				var ResolvedNullErrorOccurred = false
-				var ResolvedCog = 4294967293
+				var Cog = 4294967293
 				var PathPreference0 = CogPathPreference.CogRelative
 				var PathPreference1 = CogPathPreference.SpaceRelative
 				var PathPreference2 = CogPathPreference.Absolute
 			}
 		}
 	}
-	Cog 
+	Cog [ContextId:3]
 	{
 		var Name = "EditorCamera"
-		var LinkId = 3
 		Transform 
 		{
-			var Translation = Real3{0, 0, 10}
+			var Translation = Real3{1.17719996, -12.1114092, 20}
 			var Scale = Real3{1, 1, 1}
-			var Rotation = Quaternion{0, 0, 0, 1}
+			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
 		CameraViewport 
 		{
 			var RenderInEditor = true
 			var RenderInGame = false
-			var RenderToViewport = true
-			var ForwardViewportEvents = false
 			var RenderOrder = 0
-			var NormalizedSize = Real2{1, 1}
-			var NormalizedOffset = Real2{0, 0}
 			var CameraPath = CogPath
 			{
 				var Path = "."
@@ -103,7 +96,7 @@ Level
 				var UpdatePathOnCogChange = true
 				var UpdateCogOnInitialize = true
 				var ResolvedNullErrorOccurred = false
-				var ResolvedCog = 3
+				var Cog = 3
 				var PathPreference0 = CogPathPreference.CogRelative
 				var PathPreference1 = CogPathPreference.SpaceRelative
 				var PathPreference2 = CogPathPreference.Absolute
@@ -118,14 +111,18 @@ Level
 				var UpdatePathOnCogChange = true
 				var UpdateCogOnInitialize = true
 				var ResolvedNullErrorOccurred = false
-				var ResolvedCog = 2
+				var Cog = 2
 				var PathPreference0 = CogPathPreference.CogRelative
 				var PathPreference1 = CogPathPreference.SpaceRelative
 				var PathPreference2 = CogPathPreference.Absolute
 			}
-			var Resolution = Real2{1920, 1080}
+			var ResolutionOrAspect = Integer2{1920, 1080}
+			var RenderToViewport = true
+			var ForwardViewportEvents = false
 			var ViewportScaling = ViewportScaling.Fill
 			var MarginColor = Real4{0, 0, 0, 1}
+			var NormalizedSize = Real2{1, 1}
+			var NormalizedOffset = Real2{0, 0}
 		}
 		Camera 
 		{
@@ -133,7 +130,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 19.9999905
+			var Size = 26.9971752
 		}
 		EditorCameraController 
 		{
@@ -142,14 +139,13 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{0, 0, 0}
+			var LookTarget = Real3{1.17719996, -12.1114092, 5.14570537e-08}
 			var MoveSensitivity = 1
 		}
 	}
-	Cog 
+	Cog [ContextId:4]
 	{
 		var Name = "GameCamera"
-		var LinkId = 4
 		Transform 
 		{
 			var Translation = Real3{0, 0, 10}
@@ -169,11 +165,7 @@ Level
 		{
 			var RenderInEditor = false
 			var RenderInGame = true
-			var RenderToViewport = true
-			var ForwardViewportEvents = false
 			var RenderOrder = 0
-			var NormalizedSize = Real2{1, 1}
-			var NormalizedOffset = Real2{0, 0}
 			var CameraPath = CogPath
 			{
 				var Path = "."
@@ -184,7 +176,7 @@ Level
 				var UpdatePathOnCogChange = true
 				var UpdateCogOnInitialize = true
 				var ResolvedNullErrorOccurred = false
-				var ResolvedCog = 4
+				var Cog = 4
 				var PathPreference0 = CogPathPreference.CogRelative
 				var PathPreference1 = CogPathPreference.SpaceRelative
 				var PathPreference2 = CogPathPreference.Absolute
@@ -199,14 +191,18 @@ Level
 				var UpdatePathOnCogChange = true
 				var UpdateCogOnInitialize = true
 				var ResolvedNullErrorOccurred = false
-				var ResolvedCog = 2
+				var Cog = 2
 				var PathPreference0 = CogPathPreference.CogRelative
 				var PathPreference1 = CogPathPreference.SpaceRelative
 				var PathPreference2 = CogPathPreference.Absolute
 			}
-			var Resolution = Real2{1920, 1080}
+			var ResolutionOrAspect = Integer2{256, 244}
+			var RenderToViewport = true
+			var ForwardViewportEvents = false
 			var ViewportScaling = ViewportScaling.Letterbox
 			var MarginColor = Real4{0, 0, 0, 1}
+			var NormalizedSize = Real2{1, 1}
+			var NormalizedOffset = Real2{0, 0}
 		}
 		Camera 
 		{
@@ -219,6 +215,112 @@ Level
 		SoundListener 
 		{
 			var Active = true
+			var AttenuationScale = 1
+		}
+	}
+	Cog [ContextId:5]
+	{
+		var Name = "MenuMove"
+		Transform 
+		{
+			var Translation = Real3{0, -21.2954559, 0}
+			var Scale = Real3{20, 20, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = false
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5275aa4d802dd6dc:Square"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+		MenuMove 
+		{
+		}
+		Hierarchy 
+		{
+			Cog [Id:0x5c76557983743cc8][ContextId:6]
+			{
+				var Name = "Sprite"
+				Transform 
+				{
+					var Translation = Real3{0, 0.083607614, 1}
+					var Scale = Real3{0.049999997, 0.049999997, 1}
+					var Rotation = Quaternion{0, 0, 0, 1}
+				}
+				Sprite 
+				{
+					var Visible = true
+					var ViewCulling = true
+					var VisibilityEvents = true
+					var OverrideBoundingBox = false
+					var LocalAabbCenter = Real3{0, 0, 0}
+					var LocalAabbHalfExtents = Real3{1, 1, 1}
+					var GroupSortValue = 0
+					var Material = "582c575af53d18c9:AlphaSprite"
+					var VertexColor = Real4{1, 1, 1, 1}
+					var GeometryMode = SpriteGeometryMode.ZPlane
+					var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+					var FlipX = false
+					var FlipY = false
+					var AnimationActive = true
+					var AnimationSpeed = 1
+					var StartFrame = 0
+				}
+				Area 
+				{
+					var Size = Real2{1, 1}
+					var Origin = Location.Center
+				}
+				Reactive 
+				{
+					var Active = true
+				}
+				MainMenuButton 
+				{
+					var LevelToLoad = "5cfd5035fc0494fa:PacMaze"
+				}
+			}
+			Cog [Id:0x5c7652a5f9cddb94][ContextId:7]
+			{
+				var Name = "SpriteText"
+				Transform 
+				{
+					var Translation = Real3{0, 0.25, 1}
+					var Scale = Real3{0.049999997, 0.049999997, 1}
+					var Rotation = Quaternion{0, 0, 0, 1}
+				}
+				SpriteText 
+				{
+					var Visible = true
+					var ViewCulling = true
+					var VisibilityEvents = true
+					var OverrideBoundingBox = false
+					var LocalAabbCenter = Real3{0, 0, 0}
+					var LocalAabbHalfExtents = Real3{1, 1, 1}
+					var GroupSortValue = 0
+					var Material = "582c575af53d18c9:AlphaSprite"
+					var VertexColor = Real4{1, 1, 1, 1}
+					var GeometryMode = SpriteGeometryMode.ZPlane
+					var Text = "Pac-man"
+					var Font = "57343753bb4eaaec:NotoSans-Regular"
+					var FontSize = 128
+					var PixelsPerUnit = 128
+					var TextAlign = TextAlign.Center
+				}
+			}
 		}
 	}
 }
