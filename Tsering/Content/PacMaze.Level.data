@@ -84,7 +84,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{0.318946123, 2.44736028, 20}
+			var Translation = Real3{-0.514389634, 1.27995014, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -146,7 +146,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{0.318946123, 2.44736028, -5.16258218e-08}
+			var LookTarget = Real3{-0.514389634, 1.27995014, -5.16258218e-08}
 			var MoveSensitivity = 1
 		}
 	}
@@ -415,10 +415,6 @@ Level
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{1, 1, 1}
 		}
-		RigidBody 
-		{
-			var DynamicState = RigidBodyDynamicState.Kinematic
-		}
 	}
 	Cog [ContextId:16]
 	{
@@ -685,6 +681,28 @@ Level
 		Transform 
 		{
 			var Translation = Real3{0, 1, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{1, 1, 1}
+		}
+	}
+	Cog [InheritId:"5cc3f4268a1c64f0:Clyde"][ContextId:33]
+	{
+		Transform 
+		{
+			var Translation = Real3{-3, 2, 0}
+			var Rotation = Quaternion{0, 0, 0, 1}
+			var Scale = Real3{1, 1, 1}
+		}
+		Sprite 
+		{
+			var VertexColor = Real4{0.925000012, 0.664057553, 0.0832500458, 1}
+		}
+	}
+	Cog [InheritId:"5cc3fd9991718ae8:Inky"][ContextId:34]
+	{
+		Transform 
+		{
+			var Translation = Real3{-5, 5, 0}
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{1, 1, 1}
 		}

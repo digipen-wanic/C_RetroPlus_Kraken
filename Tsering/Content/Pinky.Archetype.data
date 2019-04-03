@@ -18,7 +18,7 @@ Cog
 		var LocalAabbHalfExtents = Real3{1, 1, 1}
 		var GroupSortValue = 0
 		var Material = "582c575af53d18c9:AlphaSprite"
-		var VertexColor = Real4{1, 1, 1, 1}
+		var VertexColor = Real4{0.954999983, 0.458400011, 0.875544071, 1}
 		var GeometryMode = SpriteGeometryMode.ZPlane
 		var SpriteSource = "5586f579ca73ecc2:SquareBordered"
 		var FlipX = false
@@ -55,7 +55,7 @@ Cog
 	{
 		var MoveDistanceX = Real3{1, 0, 0}
 		var MoveDistanceY = Real3{0, 1, 0}
-		var MoveSpeed = 0.25
+		var MoveSpeed = 0.400000006
 		var PacMan = CogPath
 		{
 			var Path = ":/PacMan"

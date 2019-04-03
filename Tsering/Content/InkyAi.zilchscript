@@ -1,10 +1,11 @@
-class InkyAi : ZilchComponent
+class InkyAI : ZilchComponent
 {
   [Dependency] var ValidMove : ValidMove;
   [Property] var MoveDistanceX : Real3 = Real3(1,0.0,0.0);
   [Property] var MoveDistanceY : Real3 = Real3(0.0,1,0.0);
-  [Property] var MoveSpeed : Real = 3;
+  [Property] var MoveSpeed : Real = 1;
   [Property] var PacMan : CogPath = null;
+  [Property] var Blinky : CogPath = null;
   var AvailableDirections : Array[Boolean] = Array[Boolean](4, true);
   var DistanceFromPacman : Array[Real] = Array[Real](4, 0);
   var MoveBool : Real;
@@ -17,6 +18,7 @@ class InkyAi : ZilchComponent
     Console.WriteLine(this.AvailableDirections);
     this.AvailableDirections[3] = true;
     Console.WriteLine(this.AvailableDirections);
+    Owner
     */
     //calls the function
     this.CalculateNextMove();
@@ -25,38 +27,128 @@ class InkyAi : ZilchComponent
     Console.WriteLine(this.DistanceFromPacman);
   }
   
-  function FindTarget()
-  {
-    //find the direciton pacman is facing plus two in that direction
-    //get the distance from blinky to pacman plus two in the direction
-    //double it
-    //set that to the target
-  }
-  
   function CalculateDistanceFromPacman()
   {
     var yDistance : Real = 0;
     var xDistance : Real = 0;
     
-    //get east distance
-    yDistance = this.PacMan.Transform.Translation.Y - this.Owner.Transform.Translation.Y;
-    xDistance = this.PacMan.Transform.Translation.X - (this.Owner.Transform.Translation.X + 1);
-    this.DistanceFromPacman.Set(0, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
-    
-    //get west distance
-    yDistance = this.PacMan.Transform.Translation.Y - this.Owner.Transform.Translation.Y;
-    xDistance = this.PacMan.Transform.Translation.X - (this.Owner.Transform.Translation.X - 1);
-    this.DistanceFromPacman.Set(1, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
-    
-    //get north distance
-    yDistance = this.PacMan.Transform.Translation.Y - (this.Owner.Transform.Translation.Y + 1);
-    xDistance = this.PacMan.Transform.Translation.X - this.Owner.Transform.Translation.X;
-    this.DistanceFromPacman.Set(2, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
-    
-    //get south distance
-    yDistance = this.PacMan.Transform.Translation.Y - (this.Owner.Transform.Translation.Y - 1);
-    xDistance = this.PacMan.Transform.Translation.X - this.Owner.Transform.Translation.X;
-    this.DistanceFromPacman.Set(3, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+    if(this.LevelSettings.GameVars.PacManDirection == 0)
+    {
+      //get east distance
+      yDistance = this.PacMan.Transform.Translation.Y - this.Blinky.Transform.Translation.Y;
+      xDistance = this.PacMan.Transform.Translation.X - (this.Blinky.Transform.Translation.X + 1) + 2;
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(0, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+      
+      //get west distance
+      yDistance = this.PacMan.Transform.Translation.Y - this.Blinky.Transform.Translation.Y;
+      xDistance = this.PacMan.Transform.Translation.X - (this.Blinky.Transform.Translation.X - 1) + 2;
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(1, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+      
+      //get north distance
+      yDistance = this.PacMan.Transform.Translation.Y - (this.Blinky.Transform.Translation.Y + 1);
+      xDistance = this.PacMan.Transform.Translation.X - this.Blinky.Transform.Translation.X + 2;
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(2, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+      
+      //get south distance
+      yDistance = this.PacMan.Transform.Translation.Y - (this.Blinky.Transform.Translation.Y - 1);
+      xDistance = this.PacMan.Transform.Translation.X - this.Blinky.Transform.Translation.X + 2;
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(3, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+    } else if(this.LevelSettings.GameVars.PacManDirection == 1)
+    {
+      //get east distance
+      yDistance = this.PacMan.Transform.Translation.Y - this.Blinky.Transform.Translation.Y;
+      xDistance = this.PacMan.Transform.Translation.X - (this.Blinky.Transform.Translation.X + 1) - 2;
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(0, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+      
+      //get west distance
+      yDistance = this.PacMan.Transform.Translation.Y - this.Blinky.Transform.Translation.Y;
+      xDistance = this.PacMan.Transform.Translation.X - (this.Blinky.Transform.Translation.X - 1) - 2;
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(1, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+      
+      //get north distance
+      yDistance = this.PacMan.Transform.Translation.Y - (this.Blinky.Transform.Translation.Y + 1);
+      xDistance = this.PacMan.Transform.Translation.X - this.Blinky.Transform.Translation.X - 2;
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(2, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+      
+      //get south distance
+      yDistance = this.PacMan.Transform.Translation.Y - (this.Blinky.Transform.Translation.Y - 1);
+      xDistance = this.PacMan.Transform.Translation.X - this.Blinky.Transform.Translation.X - 2;
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(3, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+    } else if(this.LevelSettings.GameVars.PacManDirection == 2)
+    {
+      //get east distance
+      yDistance = this.PacMan.Transform.Translation.Y - this.Blinky.Transform.Translation.Y + 2;
+      xDistance = this.PacMan.Transform.Translation.X - (this.Blinky.Transform.Translation.X + 1);
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(0, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+      
+      //get west distance
+      yDistance = this.PacMan.Transform.Translation.Y - this.Blinky.Transform.Translation.Y + 2;
+      xDistance = this.PacMan.Transform.Translation.X - (this.Blinky.Transform.Translation.X - 1);
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(1, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+      
+      //get north distance
+      yDistance = this.PacMan.Transform.Translation.Y - (this.Blinky.Transform.Translation.Y + 1) + 2;
+      xDistance = this.PacMan.Transform.Translation.X - this.Blinky.Transform.Translation.X;
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(2, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+      
+      //get south distance
+      yDistance = this.PacMan.Transform.Translation.Y - (this.Blinky.Transform.Translation.Y - 1) + 2;
+      xDistance = this.PacMan.Transform.Translation.X - this.Blinky.Transform.Translation.X;
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(3, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+    } else if(this.LevelSettings.GameVars.PacManDirection == 3)
+    {
+      //get east distance
+      yDistance = this.PacMan.Transform.Translation.Y - this.Blinky.Transform.Translation.Y - 2;
+      xDistance = this.PacMan.Transform.Translation.X - (this.Blinky.Transform.Translation.X + 1);
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(0, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+      
+      //get west distance
+      yDistance = this.PacMan.Transform.Translation.Y - this.Blinky.Transform.Translation.Y - 2;
+      xDistance = this.PacMan.Transform.Translation.X - (this.Blinky.Transform.Translation.X - 1);
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(1, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+      
+      //get north distance
+      yDistance = this.PacMan.Transform.Translation.Y - (this.Blinky.Transform.Translation.Y + 1) - 2;
+      xDistance = this.PacMan.Transform.Translation.X - this.Blinky.Transform.Translation.X;
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(2, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+      
+      //get south distance
+      yDistance = this.PacMan.Transform.Translation.Y - (this.Blinky.Transform.Translation.Y - 1) - 2;
+      xDistance = this.PacMan.Transform.Translation.X - this.Blinky.Transform.Translation.X;
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(3, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+    }
   }
   function GetBestMove() : Real
   {

@@ -1,10 +1,10 @@
 [Version:1]
 Cog 
 {
-	var Name = "Blinky"
+	var Name = "Inky"
 	Transform 
 	{
-		var Translation = Real3{-9, 3, 0}
+		var Translation = Real3{-5, 5, 0}
 		var Scale = Real3{1, 1, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -18,7 +18,7 @@ Cog
 		var LocalAabbHalfExtents = Real3{1, 1, 1}
 		var GroupSortValue = 0
 		var Material = "582c575af53d18c9:AlphaSprite"
-		var VertexColor = Real4{0.935000002, 0.060774982, 0.060774982, 1}
+		var VertexColor = Real4{0.253700018, 0.587164879, 0.860000014, 1}
 		var GeometryMode = SpriteGeometryMode.ZPlane
 		var SpriteSource = "5586f579ca73ecc2:SquareBordered"
 		var FlipX = false
@@ -51,7 +51,7 @@ Cog
 		var DrawDebugLine = true
 		var MaxDebugLength = 1
 	}
-	BlinkyAI 
+	InkyAI 
 	{
 		var MoveDistanceX = Real3{1, 0, 0}
 		var MoveDistanceY = Real3{0, 1, 0}
@@ -59,6 +59,21 @@ Cog
 		var PacMan = CogPath
 		{
 			var Path = ":/PacMan"
+			var ErrorOnResolveToNull = false
+			var ErrorOnPathCantCompute = false
+			var ErrorOnDirectLinkFail = false
+			var UpdateCogOnPathChange = true
+			var UpdatePathOnCogChange = true
+			var UpdateCogOnInitialize = true
+			var ResolvedNullErrorOccurred = false
+			var Cog = 4294967293
+			var PathPreference0 = CogPathPreference.CogRelative
+			var PathPreference1 = CogPathPreference.SpaceRelative
+			var PathPreference2 = CogPathPreference.Absolute
+		}
+		var Blinky = CogPath
+		{
+			var Path = ":/Blinky"
 			var ErrorOnResolveToNull = false
 			var ErrorOnPathCantCompute = false
 			var ErrorOnDirectLinkFail = false
