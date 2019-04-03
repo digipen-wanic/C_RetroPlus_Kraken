@@ -1,0 +1,61 @@
+class ValidMove : ZilchComponent
+{
+  [Dependency]
+  var Transform : Transform;
+  [Property]
+  var DrawDebugLine : Boolean = true;
+  [Property]
+  var MaxDebugLength : Real = 1.0;
+  var ResultN : Boolean = false ;
+  var ResultE : Boolean = false;
+  var ResultS : Boolean = false;
+  var ResultW : Boolean = false;
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    this.ResultN = this.CastRay(Real3(0,0.1,0.0));
+    this.ResultE = this.CastRay(Real3(1.0,0.0,0.0));
+    this.ResultS = this.CastRay(Real3(0.0,-1.0,0.0));
+    this.ResultW = this.CastRay(Real3(-1.0,0.0,0.0));
+    Console.WriteLine("north `this.ResultN`");
+    Console.WriteLine("east `this.ResultE`");
+    Console.WriteLine("south `this.ResultS`");
+    Console.WriteLine("west `this.ResultW`");
+  }
+  function CastRay(direction : Real3) : Boolean
+  {
+    var filter = CastFilter();
+    var rBool : Boolean = false;
+    //filter.CollisionGroup.Name = "Pellet";
+    var ray = Ray();
+    ray.Start = this.Owner.Transform.Translation;
+    ray.Direction = direction;
+    
+    var result = this.Space.PhysicsSpace.CastRayFirst(ray);
+    
+    if(result.ObjectHit != null)
+    {
+      rBool = false;
+      Console.WriteLine("Ray found :  `result.ObjectHit.Name`");
+    }
+    else
+    {
+      rBool = true;
+      Console.WriteLine("Valid Move");
+    }
+    
+    if(this.DrawDebugLine)
+    {
+      var debugRay = DebugLine();
+      debugRay.Start = ray.Start;
+      debugRay.End = ray.Start + Real3.XAxis * Math.Min(result.Distance, this.MaxDebugLength);
+      debugRay.HeadSize = 0.2;
+      DebugDraw.Add(debugRay);
+    }
+    return rBool;
+  }
+}
