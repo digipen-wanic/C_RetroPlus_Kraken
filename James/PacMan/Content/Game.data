@@ -2,10 +2,11 @@
 GameSession 
 {
 	var Name = ""
+	var LinkId = 1
 	DefaultGameSetup 
 	{
 		var StartingSpace = "576f215c0825de61:Space"
-		var StartingLevel = "577d126becbdd810:EmptyLevel"
+		var StartingLevel = "59097123da28242a:Level"
 		var LoadEditingLevel = true
 	}
 	NetPeer 
@@ -13,9 +14,6 @@ GameSession
 		var DetectOutgoingChanges = true
 		var AcceptIncomingChanges = true
 		var AllowNapping = true
-		var AccurateTimestampOnOnline = true
-		var AccurateTimestampOnChange = true
-		var AccurateTimestampOnOffline = true
 		var AutomaticChannel = "56f22bdc94800e65:Default"
 		var NetPropertyInfos = Array
 		{
@@ -33,12 +31,5 @@ GameSession
 		var InternetHostListTimeout = 4
 		var BasicHostInfoTimeout = 3
 		var ExtraHostInfoTimeout = 4
-	}
-	GameVars 
-	{
-		var Points = 0
-		var GhostScatterTimer = true
-		var GhostFrightenedTimer = 0
-		var PacManLives = 2
 	}
 }
