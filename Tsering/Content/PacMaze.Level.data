@@ -84,7 +84,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{0.770746946, -2.75401592, 19.9784794}
+			var Translation = Real3{0.770760715, -3.25400782, 19.9758625}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0.00261798222, -0.00261800364, 6.85398845e-06, 0.999993205}
 		}
@@ -146,7 +146,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = -0.00523598772
 			var HorizontalAngle = 0.00523598772
-			var LookTarget = Real3{0.875464797, -2.64929652, -0.0209703743}
+			var LookTarget = Real3{0.875478566, -3.14928865, -0.0235883147}
 			var MoveSensitivity = 1
 		}
 	}
@@ -436,7 +436,7 @@ Level
 		var Name = "SecondLife"
 		Transform 
 		{
-			var Translation = Real3{11.4601517, -5, 0}
+			var Translation = Real3{12.4601517, -5, 0}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
