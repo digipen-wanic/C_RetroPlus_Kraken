@@ -30,7 +30,7 @@ class PinkyAI : ZilchComponent
     var yDistance : Real = 0;
     var xDistance : Real = 0;
     
-    if(this.LevelSettings.GameVars.PacManDirection == 0)
+    if(this.LevelSettings.GameVars.PacManDirection == 0) 
     {
       //get east distance
       yDistance = this.PacMan.Transform.Translation.Y - this.Owner.Transform.Translation.Y;
