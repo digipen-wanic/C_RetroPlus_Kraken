@@ -1,0 +1,13 @@
+[Version:1]
+BinaryContent 
+{
+	BinaryBuilder 
+	{
+		var Name = "PacMaze_TileMap04"
+		var ResourceId = 0x5cc54dc63b49f1a0
+		var LoaderType = "TileMapSource"
+		var Version = 0
+		var FilterTag = ""
+		var ResourceOwner = "5cfd5035fc0494fa:PacMaze"
+	}
+}
