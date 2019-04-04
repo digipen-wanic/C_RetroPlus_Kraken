@@ -1,0 +1,27 @@
+[Version:1]
+ImageContent 
+{
+	SpriteSourceBuilder 
+	{
+		var Name = "bait"
+		var ResourceId = 0x5cc3fa589b9c047e
+		var FrameSizeX = 20
+		var FrameSizeY = 20
+		var FrameCount = 1
+		var FrameDelay = 0.0833333358
+		var OriginX = 10
+		var OriginY = 10
+		var PixelsPerUnit = 64
+		var Sampling = SpriteSampling.Linear
+		var Looping = true
+		var Slices = Real4{0, 0, 0, 0}
+		var Fill = SpriteFill.Stretch
+	}
+	ContentTags 
+	{
+		var Tags = Array
+		{
+			"AllTheArts"
+		}
+	}
+}

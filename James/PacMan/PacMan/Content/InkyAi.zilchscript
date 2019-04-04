@@ -1,0 +1,226 @@
+class InkyAI : ZilchComponent
+{
+  [Dependency] var ValidMove : ValidMove;
+  [Property] var MoveDistanceX : Real3 = Real3(1,0.0,0.0);
+  [Property] var MoveDistanceY : Real3 = Real3(0.0,1,0.0);
+  [Property] var MoveSpeed : Real = 1;
+  [Property] var PacMan : CogPath = null;
+  [Property] var Blinky : CogPath = null;
+  var AvailableDirections : Array[Boolean] = Array[Boolean](4, true);
+  var DistanceFromPacman : Array[Real] = Array[Real](4, 0);
+  var MoveBool : Real;
+  var PreviousDirection : Integer = 1;
+  var BMove : Real = 0.0;
+  var SecondBMove : Real = 0.0;
+  function Initialize(init : CogInitializer)
+  {
+    /*
+    Console.WriteLine(this.AvailableDirections);
+    this.AvailableDirections[3] = true;
+    Console.WriteLine(this.AvailableDirections);
+    Owner
+    */
+    //calls the function
+    this.CalculateNextMove();
+    
+    this.CalculateDistanceFromPacman();
+    Console.WriteLine(this.DistanceFromPacman);
+  }
+  
+  function CalculateDistanceFromPacman()
+  {
+    var yDistance : Real = 0;
+    var xDistance : Real = 0;
+    
+    if(this.LevelSettings.GameVars.PacManDirection == 0)
+    {
+      //get east distance
+      yDistance = this.PacMan.Transform.Translation.Y - this.Blinky.Transform.Translation.Y;
+      xDistance = this.PacMan.Transform.Translation.X - (this.Blinky.Transform.Translation.X + 1) + 2;
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(0, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+      
+      //get west distance
+      yDistance = this.PacMan.Transform.Translation.Y - this.Blinky.Transform.Translation.Y;
+      xDistance = this.PacMan.Transform.Translation.X - (this.Blinky.Transform.Translation.X - 1) + 2;
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(1, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+      
+      //get north distance
+      yDistance = this.PacMan.Transform.Translation.Y - (this.Blinky.Transform.Translation.Y + 1);
+      xDistance = this.PacMan.Transform.Translation.X - this.Blinky.Transform.Translation.X + 2;
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(2, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+      
+      //get south distance
+      yDistance = this.PacMan.Transform.Translation.Y - (this.Blinky.Transform.Translation.Y - 1);
+      xDistance = this.PacMan.Transform.Translation.X - this.Blinky.Transform.Translation.X + 2;
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(3, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+    } else if(this.LevelSettings.GameVars.PacManDirection == 1)
+    {
+      //get east distance
+      yDistance = this.PacMan.Transform.Translation.Y - this.Blinky.Transform.Translation.Y;
+      xDistance = this.PacMan.Transform.Translation.X - (this.Blinky.Transform.Translation.X + 1) - 2;
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(0, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+      
+      //get west distance
+      yDistance = this.PacMan.Transform.Translation.Y - this.Blinky.Transform.Translation.Y;
+      xDistance = this.PacMan.Transform.Translation.X - (this.Blinky.Transform.Translation.X - 1) - 2;
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(1, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+      
+      //get north distance
+      yDistance = this.PacMan.Transform.Translation.Y - (this.Blinky.Transform.Translation.Y + 1);
+      xDistance = this.PacMan.Transform.Translation.X - this.Blinky.Transform.Translation.X - 2;
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(2, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+      
+      //get south distance
+      yDistance = this.PacMan.Transform.Translation.Y - (this.Blinky.Transform.Translation.Y - 1);
+      xDistance = this.PacMan.Transform.Translation.X - this.Blinky.Transform.Translation.X - 2;
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(3, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+    } else if(this.LevelSettings.GameVars.PacManDirection == 2)
+    {
+      //get east distance
+      yDistance = this.PacMan.Transform.Translation.Y - this.Blinky.Transform.Translation.Y + 2;
+      xDistance = this.PacMan.Transform.Translation.X - (this.Blinky.Transform.Translation.X + 1);
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(0, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+      
+      //get west distance
+      yDistance = this.PacMan.Transform.Translation.Y - this.Blinky.Transform.Translation.Y + 2;
+      xDistance = this.PacMan.Transform.Translation.X - (this.Blinky.Transform.Translation.X - 1);
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(1, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+      
+      //get north distance
+      yDistance = this.PacMan.Transform.Translation.Y - (this.Blinky.Transform.Translation.Y + 1) + 2;
+      xDistance = this.PacMan.Transform.Translation.X - this.Blinky.Transform.Translation.X;
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(2, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+      
+      //get south distance
+      yDistance = this.PacMan.Transform.Translation.Y - (this.Blinky.Transform.Translation.Y - 1) + 2;
+      xDistance = this.PacMan.Transform.Translation.X - this.Blinky.Transform.Translation.X;
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(3, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+    } else if(this.LevelSettings.GameVars.PacManDirection == 3)
+    {
+      //get east distance
+      yDistance = this.PacMan.Transform.Translation.Y - this.Blinky.Transform.Translation.Y - 2;
+      xDistance = this.PacMan.Transform.Translation.X - (this.Blinky.Transform.Translation.X + 1);
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(0, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+      
+      //get west distance
+      yDistance = this.PacMan.Transform.Translation.Y - this.Blinky.Transform.Translation.Y - 2;
+      xDistance = this.PacMan.Transform.Translation.X - (this.Blinky.Transform.Translation.X - 1);
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(1, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+      
+      //get north distance
+      yDistance = this.PacMan.Transform.Translation.Y - (this.Blinky.Transform.Translation.Y + 1) - 2;
+      xDistance = this.PacMan.Transform.Translation.X - this.Blinky.Transform.Translation.X;
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(2, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+      
+      //get south distance
+      yDistance = this.PacMan.Transform.Translation.Y - (this.Blinky.Transform.Translation.Y - 1) - 2;
+      xDistance = this.PacMan.Transform.Translation.X - this.Blinky.Transform.Translation.X;
+      yDistance *= 2;
+      xDistance *= 2;
+      this.DistanceFromPacman.Set(3, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+    }
+  }
+  function GetBestMove() : Real
+  {
+    var greatestDistance : Real = 0;
+    var indexOfShortestDistance : Integer = 0;
+    
+    //gets greatest distance of each direction
+    for(var i : Integer = 0; i < 4; i += 1)
+    {
+      if(this.DistanceFromPacman[i] > greatestDistance)
+      {
+        greatestDistance = this.DistanceFromPacman[i];
+      }
+    }
+    //excludes invalid moves
+    for(var i : Integer = 0; i < 4; i += 1)
+    {
+      if(!this.ValidMove.ResultDirection[i])
+      {
+        this.DistanceFromPacman.Set(i, greatestDistance * 2);
+      }
+    }
+    //ghost can't move to previous tile
+    this.DistanceFromPacman.Set(this.PreviousDirection, greatestDistance * 2);
+    
+    for(var i : Integer = 0; i < 4; i += 1)
+    {
+      if(this.DistanceFromPacman[i] < this.DistanceFromPacman[indexOfShortestDistance])
+      {
+        indexOfShortestDistance = i;
+      }
+    }
+    return indexOfShortestDistance;
+  }
+  
+  function CalculateNextMove()
+  {
+    //starts the sequence for the actions
+    var actionSequence = Actions.Sequence(this.Owner.Actions);
+    
+    //set tiles that can't be moved to
+    this.AvailableDirections.Set(this.PreviousDirection, false);
+    //calculate adjacent tile distances
+    this.CalculateDistanceFromPacman();
+        
+    this.MoveBool = this.GetBestMove();
+    
+    if(this.MoveBool == 0 && this.ValidMove.ResultDirection[0] && this.PreviousDirection != 0)
+    {
+        Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) + this.MoveDistanceX,this.MoveSpeed, Ease.Linear);
+        this.PreviousDirection = 1;
+    }
+    else if(this.MoveBool == 1 && this.ValidMove.ResultDirection[1] && this.PreviousDirection != 1)
+    {
+        Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) - this.MoveDistanceX,this.MoveSpeed, Ease.Linear);
+        this.PreviousDirection = 0;
+    }
+    else if(this.MoveBool == 2 && this.ValidMove.ResultDirection[2] && this.PreviousDirection != 2)
+    {
+        Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) + this.MoveDistanceY,this.MoveSpeed, Ease.Linear);
+        this.PreviousDirection = 3;
+    }
+    else if(this.MoveBool == 3 && this.ValidMove.ResultDirection[3] && this.PreviousDirection != 3)
+    {
+        Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) - this.MoveDistanceY,this.MoveSpeed, Ease.Linear);
+        this.PreviousDirection = 2;
+    }
+    
+    //reset all available directions to true
+    this.AvailableDirections = Array[Boolean](4, true);
+    
+    // this makes this recursive
+    Actions.Call(actionSequence, this.CalculateNextMove);
+  }
+}

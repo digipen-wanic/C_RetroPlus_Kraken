@@ -1,0 +1,9 @@
+[Version:1]
+TextContent 
+{
+	ZilchScriptBuilder 
+	{
+		var Name = "DestroyOnCollision"
+		var ResourceId = 0x5c4a87c63ca9c06f
+	}
+}
