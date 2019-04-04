@@ -11,6 +11,8 @@ class PacManOnDeath : ZilchComponent
   var LoadLevel : Level = null;
   [Property]
   var SoundToPlay : SoundCue = null;
+  [Property]
+  var DeathTime : Real = 0;
   function Initialize(init : CogInitializer)
   {
     Zero.Connect(this.Owner, Events.GroupCollisionStarted, this.OnGroupCollisionStarted);
@@ -29,10 +31,17 @@ class PacManOnDeath : ZilchComponent
     this.Owner.Actions.Cancel;
     this.Space.SoundSpace.PlayCue(this.SoundToPlay);
     this.GameSession.GameVars.PacManLives -= 1;
-    var seq = Action.Sequence(this.Owner.Actions);
-    Actions.Delay(seq, 3.0);
+    
     this.Owner.Sprite.SpriteSource = this.DeathAnimation;
     
+    var seq = Action.Sequence(this.Owner.Actions);
+    Actions.Delay(seq, 3.0);
+    Action.Call(seq, this.ChangeLevel);
+    
+  }
+  
+  function ChangeLevel()
+  {
     this.Space.LoadLevel(this.LoadLevel);
   }
 }
