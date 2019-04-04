@@ -2,6 +2,8 @@ class Fruit : ZilchComponent
 {
   [Property]
   var FirstFruit : Boolean = false;
+  [Property]
+  var SoundToMake : SoundCue = null;
   var Timer : Real = 0.0;
   function Initialize(init : CogInitializer)
   {
@@ -31,6 +33,7 @@ class Fruit : ZilchComponent
   function OnCollisionStarted(event : CollisionEvent)
   {
     this.GameSession.GameVars.Points += 100.0;
+    this.Space.SoundSpace.PlayCue(this.SoundToMake);
     this.Owner.Destroy();
   }
 }

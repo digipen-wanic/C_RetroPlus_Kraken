@@ -1,13 +1,15 @@
 class Pellets : ZilchComponent
 {
+  [Property]
+  var SoundToPlay : SoundCue = null;
   function Initialize(init : CogInitializer)
   {
     Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
   }
-
   function OnCollisionStarted(event : CollisionEvent)
   {
     this.GameSession.GameVars.Points += 10.0;
+    this.Space.SoundSpace.PlayCue(this.SoundToPlay);
     this.Owner.Destroy();
   }
 }

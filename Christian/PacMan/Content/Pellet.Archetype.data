@@ -4,7 +4,7 @@ Cog
 	var Name = "Fruit"
 	Transform 
 	{
-		var Translation = Real3{-6.99999905, 2, 0}
+		var Translation = Real3{-4, -4, 0}
 		var Scale = Real3{0.25, 0.25, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -48,5 +48,6 @@ Cog
 	}
 	Pellets 
 	{
+		var SoundToPlay = "5cc5437005ca7ff8:Pebbleeat"
 	}
 }

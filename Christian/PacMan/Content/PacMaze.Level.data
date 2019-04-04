@@ -84,7 +84,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{10.7864361, -0.0344916061, 20}
+			var Translation = Real3{2.37123871, 0.118639678, 20}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, -1.09278471e-08, 0, 1}
 		}
@@ -137,7 +137,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 57.2789993
+			var Size = 28.4439411
 		}
 		EditorCameraController 
 		{
@@ -146,7 +146,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = 0
 			var HorizontalAngle = 0
-			var LookTarget = Real3{10.7864361, -0.0344916061, 4.49635337e-07}
+			var LookTarget = Real3{2.37123871, 0.118639678, 8.17953349e-08}
 			var MoveSensitivity = 1
 		}
 	}
@@ -155,7 +155,7 @@ Level
 		var Name = "PacMan"
 		Transform 
 		{
-			var Translation = Real3{1, -3, 0}
+			var Translation = Real3{-0.25, -3, 0}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -208,25 +208,11 @@ Level
 			var RotationLocked = false
 			var Mode2D = Mode2DStates.InheritFromSpace
 		}
-		SoundEmitter 
-		{
-			var Volume = 1
-			var Pitch = 0
-			var Attenuator = "57ca8a6ad262efe5:DefaultNoAttenuation"
-			var Directional = false
-			var EmitAngle = 90
-			var RearVolume = 0.200000003
-		}
-		SimpleSound 
-		{
-			var StartPlaying = true
-			var Positional = false
-			var Cue = "5cc29ec3e7519477:Soldier_paincrticialdeath01"
-		}
 		PacManOnDeath 
 		{
-			var DeathAnimation = "null"
+			var DeathAnimation = "5c765d7f01557ab2:PacManDeath"
 			var LoadLevel = "5cfd5035fc0494fa:PacMaze"
+			var SoundToPlay = "5cc53f37c7f9eca0:PacmanDeath"
 		}
 	}
 	Cog [ContextId:5]
@@ -1629,6 +1615,10 @@ Level
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{0.25, 0.25, 1}
 		}
+		Pellets 
+		{
+			var SoundToPlay = "5cc5538df035a517:Pebbleeat"
+		}
 	}
 	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:139]
 	{
@@ -1754,6 +1744,10 @@ Level
 			var Translation = Real3{6, 0, 0}
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{0.25, 0.25, 1}
+		}
+		Pellets 
+		{
+			var SoundToPlay = "4e1bd44008b4dc2a:DefaultSoundCue"
 		}
 	}
 	Cog [InheritId:"5c48ee6b73d53853:Pellet"][ContextId:153]
@@ -2129,6 +2123,9 @@ Level
 		{
 			var DrawDebugLine = false
 		}
+		ClydeAI 
+		{
+		}
 	}
 	Cog [InheritId:"5cc3fd9991718ae8:Inky"][ContextId:191]
 	{
@@ -2146,6 +2143,9 @@ Level
 		ValidMove 
 		{
 			var DrawDebugLine = false
+		}
+		InkyAI 
+		{
 		}
 	}
 	Cog [InheritId:"5cc30cc237684f6b:Pinky"][ContextId:192]
@@ -2246,6 +2246,7 @@ Level
 		Fruit 
 		{
 			var FirstFruit = true
+			var SoundToMake = "5cc53e90d4cb1de5:Fruiteat"
 		}
 	}
 	Cog [ContextId:197]
@@ -2441,6 +2442,50 @@ Level
 			var AnimationActive = true
 			var AnimationSpeed = 1
 			var StartFrame = 0
+		}
+	}
+	Cog [ContextId:214]
+	{
+		var Name = "StartingSoundSprite"
+		Transform 
+		{
+			var Translation = Real3{1.38477182, -2.01870561, 3.86754877e-08}
+			var Scale = Real3{1, 1, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = false
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+		SoundEmitter 
+		{
+			var Volume = 1
+			var Pitch = 0
+			var Attenuator = "57ca8a6ad262efe5:DefaultNoAttenuation"
+			var Directional = false
+			var EmitAngle = 90
+			var RearVolume = 0.200000003
+		}
+		SimpleSound 
+		{
+			var StartPlaying = true
+			var Positional = false
+			var Cue = "5cc53de56c014575:PacmanIntro"
 		}
 	}
 }
