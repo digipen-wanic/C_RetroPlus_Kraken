@@ -84,7 +84,13 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
+<<<<<<< .mine
+			var Translation = Real3{-4.96024275, -0.734221995, 19.949297}
+||||||| .r96
+			var Translation = Real3{-2.25702667, -3.51445103, 19.9488945}
+=======
 			var Translation = Real3{-1.65925205, 2.84432268, 19.9853191}
+>>>>>>> .r98
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0.00261798222, -0.00261800364, 6.85398845e-06, 0.999993205}
 		}
@@ -137,7 +143,13 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
+<<<<<<< .mine
+			var Size = 28.4439964
+||||||| .r96
+			var Size = 19.0665836
+=======
 			var Size = 42.4334412
+>>>>>>> .r98
 		}
 		EditorCameraController 
 		{
@@ -146,7 +158,13 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = -0.00523598772
 			var HorizontalAngle = 0.00523598772
+<<<<<<< .mine
+			var LookTarget = Real3{-4.85552502, -0.629502714, -0.0501535051}
+||||||| .r96
+			var LookTarget = Real3{-2.15230894, -3.40973186, -0.0505567193}
+=======
 			var LookTarget = Real3{-1.5545342, 2.94904184, -0.0141314734}
+>>>>>>> .r98
 			var MoveSensitivity = 1
 		}
 	}
@@ -284,6 +302,16 @@ Level
 		{
 			var TeleExit = Real3{0, 0, 0}
 		}
+		RigidBody 
+		{
+			var Velocity = Real3{0, 0, 0}
+			var AngularVelocity = Real3{0, 0, 0}
+			var DynamicState = RigidBodyDynamicState.Kinematic
+			var AllowSleep = true
+			var Asleep = false
+			var RotationLocked = false
+			var Mode2D = Mode2DStates.InheritFromSpace
+		}
 	}
 	Cog [ContextId:8]
 	{
@@ -325,6 +353,16 @@ Level
 		Teleporter 
 		{
 			var TeleExit = Real3{-11, 3, 0}
+		}
+		RigidBody 
+		{
+			var Velocity = Real3{0, 0, 0}
+			var AngularVelocity = Real3{0, 0, 0}
+			var DynamicState = RigidBodyDynamicState.Kinematic
+			var AllowSleep = true
+			var Asleep = false
+			var RotationLocked = false
+			var Mode2D = Mode2DStates.InheritFromSpace
 		}
 	}
 	Cog [ContextId:9]
