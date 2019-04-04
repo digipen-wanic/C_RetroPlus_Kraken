@@ -1,0 +1,38 @@
+/********************************************
+Name :Christian Yan
+Last edited : 4/3/2019
+Brief : This is a simple button 
+********************************************/
+class MainMenuButton : ZilchComponent
+{
+  //choose the sound you want to play after you hit the button
+  [Property]
+  var SoundToPlay : SoundCue = null;
+  //choose what level you want to load
+  [Property]
+  var LevelToLoad : Level = null;
+  //what button to press to go to the next level
+  [Property]
+  var KeyToClick : Keys = Keys.Enter;
+  //timer 
+  var Timer : Real = 0.0;
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    //starts the timer
+    this.Timer += event.Dt;
+    //6 second timer before you can go to the next level
+    if(this.Timer >= 6.0)
+    {
+      if(Zero.Keyboard.KeyIsDown(this.KeyToClick))
+      {
+        this.Space.SoundSpace.PlayCue(this.SoundToPlay);
+        this.Space.LoadLevel(this.LevelToLoad);
+      }
+    }
+  }
+}

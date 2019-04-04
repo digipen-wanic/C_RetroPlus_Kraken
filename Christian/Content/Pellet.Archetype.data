@@ -4,8 +4,8 @@ Cog
 	var Name = "Pellet"
 	Transform 
 	{
-		var Translation = Real3{3, -8, 0}
-		var Scale = Real3{0.25, 0.25, 1}
+		var Translation = Real3{2, -17, 0}
+		var Scale = Real3{1.5, 1.5, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
 	Sprite 
@@ -20,24 +20,16 @@ Cog
 		var Material = "582c575af53d18c9:AlphaSprite"
 		var VertexColor = Real4{1, 1, 1, 1}
 		var GeometryMode = SpriteGeometryMode.ZPlane
-		var SpriteSource = "5274db4c2e7c11f9:Circle"
+		var SpriteSource = "5cc5433b082e5f5f:PacManPellet"
 		var FlipX = false
 		var FlipY = false
 		var AnimationActive = true
 		var AnimationSpeed = 1
 		var StartFrame = 0
 	}
-	SphereCollider 
-	{
-		var Ghost = true
-		var SendsEvents = true
-		var Material = "4de020863e872da8:DefaultPhysicsMaterial"
-		var CollisionGroup = "5c48ee71769c608c:Pellet"
-		var Offset = Real3{0, 0, 0}
-		var Radius = 0.125
-	}
 	Pellets 
 	{
+		var SoundToPlay = "5c70d95dc63e25bf:Pebbleeat"
 	}
 	RigidBody 
 	{
@@ -48,5 +40,14 @@ Cog
 		var Asleep = false
 		var RotationLocked = false
 		var Mode2D = Mode2DStates.InheritFromSpace
+	}
+	BoxCollider 
+	{
+		var Ghost = false
+		var SendsEvents = true
+		var Material = "4de020863e872da8:DefaultPhysicsMaterial"
+		var CollisionGroup = "5c48ee71769c608c:Pellet"
+		var Offset = Real3{0, 0, 0}
+		var HalfSize = Real3{0.100000001, 0.100000001, 0.5}
 	}
 }

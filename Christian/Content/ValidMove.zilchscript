@@ -1,58 +1,77 @@
+/********************************************
+Name : Christian Yan
+Last edited : 4/3/2019
+Brief : This is to check what directions are a valid move
+********************************************/
 class ValidMove : ZilchComponent
 {
   [Dependency]
   var Transform : Transform;
+  //turn this on if you want to see the cast
   [Property]
   var DrawDebugLine : Boolean = true;
+  //how far away the segment will end
   [Property]
   var MaxDebugLength : Real = 1.0;
-  var ResultN : Boolean = false ;
+  // E, W, N, S
+  // 0, 1, 2, 3
+  var ResultDirection : Array[Boolean] = Array[Boolean](4, false);
+  /*
+  var ResultN : Boolean = false;
   var ResultE : Boolean = false;
   var ResultS : Boolean = false;
   var ResultW : Boolean = false;
+  */
   function Initialize(init : CogInitializer)
   {
     Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
   }
 
   function OnLogicUpdate(event : UpdateEvent)
-  {
-    this.ResultN = this.CastRay(Real3(0,1.0,0.0));
-    this.ResultE = this.CastRay(Real3(1.0,0.0,0.0));
-    this.ResultS = this.CastRay(Real3(0.0,-1.0,0.0));
-    this.ResultW = this.CastRay(Real3(-1.0,0.0,0.0));
-    Console.WriteLine("north `this.ResultN`");
-    Console.WriteLine("east `this.ResultE`");
-    Console.WriteLine("south `this.ResultS`");
-    Console.WriteLine("west `this.ResultW`");
+  {    
+    this.ResultDirection.Set(2,this.CastRay(Real3(0,1.0,0.0)));
+    this.ResultDirection.Set(0,this.CastRay(Real3(1.0,0.0,0.0)));
+    this.ResultDirection.Set(3,this.CastRay(Real3(0.0,-1.0,0.0)));
+    this.ResultDirection.Set(1,this.CastRay(Real3(-1.0,0.0,0.0)));
   }
   function CastRay(direction : Real3) : Boolean
   {
+    //this is a filter so that the cast wont detecet certain objects
     var filter = CastFilter();
+    //this is what will be returned
     var rBool : Boolean = false;
+    //this ignores kinematic in rigibody
     filter.IgnoreKinematic = true;
+    //this gets the segment functinos
     var segment = Segment();
+    //this is where the segment will start
     segment.Start = (this.Owner.Transform.Translation);
+    //this is wher the segment will end
     segment.End = segment.Start + direction;
-    
+    //this is the result of the cast
     var result = this.Space.PhysicsSpace.CastSegment(segment, 2 , filter);
-    
+    //if the segment didnt hit anything then it was a valid move
     if(result.IsEmpty)
     {
       rBool = true;
     }
+    //if it did hit something then its not a balid move
     else
     {
       rBool = false;
-      //Console.WriteLine("Valid Move");
     }
-    
+    //this is to draw the debug line
     if(this.DrawDebugLine)
     {
+      //gets debugline functinos
       var debugSegment = DebugLine();
+      //where the debug line should start
       debugSegment.Start = segment.Start;
+      //this is where the debug line should end
       debugSegment.End = segment.Start + direction;
+      //this is the size of the head 
       debugSegment.HeadSize = 0.2;
+      //this draws the debug line
       DebugDraw.Add(debugSegment);
     }
     return rBool;

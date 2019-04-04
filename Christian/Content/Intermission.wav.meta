@@ -1,0 +1,12 @@
+[Version:1]
+AudioContent 
+{
+	SoundBuilder 
+	{
+		var Name = "Intermission"
+		var ResourceId = 0x5c70d6ad3bcb2a31
+		var FileLoadType = AudioFileLoadType.Auto
+		var Normalize = false
+		var MaxVolume = 0.899999976
+	}
+}

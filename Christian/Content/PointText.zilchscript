@@ -1,0 +1,20 @@
+/********************************************
+Name : Christian Yan
+Last edited : 4/3/2019
+Brief : This is to display the points of the put this on a sprite text
+********************************************/
+class PointText : ZilchComponent
+{
+  [Dependency]
+  var SpriteText : SpriteText;
+  function Initialize(init : CogInitializer)
+  {
+    this.Owner.SpriteText.Text = ("`this.GameSession.GameVars.Points`");
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    this.Owner.SpriteText.Text = ("`this.GameSession.GameVars.Points`");
+  }
+}

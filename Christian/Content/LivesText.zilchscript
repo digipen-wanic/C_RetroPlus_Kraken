@@ -1,0 +1,39 @@
+/********************************************
+Name :Christian Yan
+Last edited : 4/3/2019
+Brief : This will change the visible on a sprite dpending on the Lives left
+********************************************/
+class LivesText : ZilchComponent
+{
+  //if its the first life then turn this on
+  [Property]
+  var FirstLife : Boolean = false;
+  //if its the second life then turn this one on
+  [Property]
+  var SecondLife : Boolean = false;
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    //checks which one it is
+    if(this.FirstLife)
+    {
+      //changes the visabilty depending on the live left
+      if(this.GameSession.GameVars.PacManLives == 1)
+      {
+        this.Owner.Sprite.Visible = false;
+      }
+    }
+    if(this.SecondLife)
+    {
+      if(this.GameSession.GameVars.PacManLives == 0)
+      {
+        this.Owner.Sprite.Visible = false;
+      }
+    }
+  }
+}

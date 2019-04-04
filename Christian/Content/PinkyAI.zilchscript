@@ -1,3 +1,8 @@
+/********************************************
+Name :
+Last edited : 
+Brief : 
+********************************************/
 class PinkyAI : ZilchComponent
 {
   [Dependency] var ValidMove : ValidMove;

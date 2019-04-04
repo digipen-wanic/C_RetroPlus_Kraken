@@ -1,0 +1,12 @@
+[Version:1]
+AudioContent 
+{
+	SoundBuilder 
+	{
+		var Name = "PacmanDeath"
+		var ResourceId = 0x5c70d95dc639a7f4
+		var FileLoadType = AudioFileLoadType.Auto
+		var Normalize = false
+		var MaxVolume = 0.899999976
+	}
+}

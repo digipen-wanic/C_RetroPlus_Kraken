@@ -1,0 +1,18 @@
+/********************************************
+Name :Christian Yan
+Last edited : 4/3/2019
+Brief : This just make a object move up towards 0,0,0
+********************************************/
+class MenuMove : ZilchComponent
+{
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    var seq = Actions.Sequence(this.Owner.Actions);
+    Actions.Property(seq,@this.Owner.Transform.Translation, Real3(0.0,0.0,0.0), 6.0, Ease.Linear);
+  }
+}

@@ -1,0 +1,59 @@
+/********************************************
+Name : Christian Yan
+Last edited : 4/3/2019
+Brief : this will make the fruit pop up when you get enough points 
+********************************************/
+class Fruit : ZilchComponent
+{
+  //turn this on if you want it to be the first fruit hat spawns
+  [Property]
+  var FirstFruit : Boolean = false;
+  //sound that will play when this item is picked up
+  [Property]
+  var SoundToMake : SoundCue = null;
+  //timer
+  var Timer : Real = 0.0;
+  //this should turn on if the timer needs to start
+  var TimerBool : Boolean = false;
+  function Initialize(init : CogInitializer)
+  {
+    this.Owner.Sprite.Visible = false;
+    this.Owner.SphereCollider.SendsEvents = false;
+    Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    //checks points to make the object visible and make it send events
+    if(this.GameSession.GameVars.Points >= 650 && this.GameSession.GameVars.Points <= 1250 && this.FirstFruit)
+    {
+      this.Owner.Sprite.Visible = true;
+      this.Owner.SphereCollider.SendsEvents = true;
+      this.Timer += event.Dt;
+      this.TimerBool = true;
+    }
+    else if(this.GameSession.GameVars.Points >= 1600)
+    {
+      this.Owner.Sprite.Visible = true;
+      this.Owner.SphereCollider.SendsEvents = true;
+      this.Timer += event.Dt;
+      this.TimerBool = true;
+    }
+    //this should destroy the owner after 9 seconds
+    if(this.Timer >= 9)
+    {
+      this.Owner.Destroy();
+    }
+  }
+
+  function OnCollisionStarted(event : CollisionEvent)
+  {
+    //adds points
+    this.GameSession.GameVars.Points += 100.0;
+    //plays the sound
+    this.Space.SoundSpace.PlayCue(this.SoundToMake);
+    //destroys the owner
+    this.Owner.Destroy();
+  }
+}
