@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "Pebbleeat"
+		var ResourceId = 0x5c70d95dc63e25bf
+		var LoaderType = "SoundCue"
+		var Version = 0
+	}
+}

@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "Ghostmovement"
+		var ResourceId = 0x5c70d6863c13137b
+		var LoaderType = "SoundCue"
+		var Version = 0
+	}
+}

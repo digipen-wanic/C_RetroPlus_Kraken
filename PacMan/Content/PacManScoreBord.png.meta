@@ -1,0 +1,20 @@
+[Version:1]
+ImageContent 
+{
+	SpriteSourceBuilder 
+	{
+		var Name = "PacManScoreBord"
+		var ResourceId = 0x5cc3fa62a8c939de
+		var FrameSizeX = 72
+		var FrameSizeY = 72
+		var FrameCount = 1
+		var FrameDelay = 0.0833333358
+		var OriginX = 36
+		var OriginY = 36
+		var PixelsPerUnit = 14
+		var Sampling = SpriteSampling.Nearest
+		var Looping = true
+		var Slices = Real4{0, 0, 0, 0}
+		var Fill = SpriteFill.Stretch
+	}
+}

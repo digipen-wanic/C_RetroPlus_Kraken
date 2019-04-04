@@ -1,0 +1,39 @@
+/********************************************
+Name : Christian Yan
+Last edited : 4/3/2019
+Brief : This script will play the animation and a souind once the play has died
+********************************************/
+class PacManOnDeath : ZilchComponent
+{
+  [Property]
+  var DeathAnimation : SpriteSource = null;
+  [Property]
+  var LoadLevel : Level = null;
+  [Property]
+  var SoundToPlay : SoundCue = null;
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Owner, Events.GroupCollisionStarted, this.OnGroupCollisionStarted);
+  }
+
+  function OnGroupCollisionStarted(event : CollisionGroupEvent)
+  {
+    if(event.OtherObject.Collider.CollisionGroup.Name == "Ghosts")
+    {
+      this.Death();
+      this.Space.DispatchEvent("Death",ZilchEvent());
+    }    
+  }
+  function Death()
+  {
+    this.Owner.Actions.Cancel;
+    this.Space.SoundSpace.PlayCue(this.SoundToPlay);
+    this.GameSession.GameVars.PacManLives -= 1;
+    var seq = Action.Sequence(this.Owner.Actions);
+    Actions.Delay(seq, 3.0);
+    this.Owner.Sprite.SpriteSource = this.DeathAnimation;
+    
+    this.Space.LoadLevel(this.LoadLevel);
+  }
+}
+

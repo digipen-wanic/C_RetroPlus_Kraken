@@ -1,5 +1,7 @@
 class PowerPellets : ZilchComponent
 {
+  [Property]
+  var SoundToPlay : SoundCue = null;
   function Initialize(init : CogInitializer)
   {
     Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
@@ -11,6 +13,7 @@ class PowerPellets : ZilchComponent
       this.GameSession.GameVars.Points += 50.0;
       this.GameSession.GameVars.FreezeBool = true;
       this.GameSession.GameVars.FrightenedBool = true;
+      this.Space.SoundSpace.PlayCue(this.SoundToPlay);
       this.Owner.Destroy();
   }
 }

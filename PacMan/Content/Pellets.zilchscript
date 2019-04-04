@@ -1,12 +1,21 @@
+/********************************************
+Name :Christian  Yan
+Last edited : 4/3/2019
+Brief : this is for the pellets in the maze once they are picked up they will add points to the game vars and destroy the owner
+********************************************/
 class Pellets : ZilchComponent
 {
+  //what sound to play once this object has deteced collision
+  [Property]
+  var SoundToPlay : SoundCue = null;
   function Initialize(init : CogInitializer)
   {
     Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
   }
-
   function OnCollisionStarted(event : CollisionEvent)
   {
+    this.GameSession.GameVars.Points += 10.0;
+    this.Space.SoundSpace.PlayCue(this.SoundToPlay);
     this.Owner.Destroy();
   }
 }

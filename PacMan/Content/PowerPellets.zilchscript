@@ -1,0 +1,23 @@
+/********************************************
+Name :Christian Yan
+Last edited : Real4/3/2019 
+Brief : This is for the Power Pellets
+********************************************/
+class PowerPellets : ZilchComponent
+{
+  //what sound will play once this object has detected collsion
+  [Property]
+  var SoundToPlay : SoundCue = null;
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+  }
+
+  function OnCollisionStarted(event : CollisionEvent)
+  {
+      //trigger frightened phase
+      this.GameSession.GameVars.Points += 50.0;
+      this.Space.SoundSpace.PlayCue(this.SoundToPlay);
+      this.Owner.Destroy();
+  }
+}

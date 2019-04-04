@@ -1,0 +1,16 @@
+[Version:1]
+TextContent 
+{
+	ZilchScriptBuilder 
+	{
+		var Name = "Fruit"
+		var ResourceId = 0x5c7105be379440df
+	}
+	ContentTags 
+	{
+		var Tags = Array
+		{
+			"Sound4Dayz"
+		}
+	}
+}
