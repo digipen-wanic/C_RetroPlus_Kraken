@@ -548,6 +548,10 @@ Level
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{1.5, 1.5, 1}
 		}
+		Sprite 
+		{
+			var SpriteSource = "5cc3f1817fcf4712:PacManClydeSide_0"
+		}
 	}
 	Cog [InheritId:"5cc3fd9991718ae8:Inky"][ContextId:15]
 	{

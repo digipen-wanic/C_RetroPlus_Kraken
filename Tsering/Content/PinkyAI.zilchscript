@@ -166,21 +166,27 @@ class PinkyAI : ZilchComponent
     {
         Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) + this.MoveDistanceX,this.MoveSpeed, Ease.Linear);
         this.PreviousDirection = 1;
+        this.Owner.Sprite.SpriteSource = SpriteSource.PacManPinkyside_0;
+        this.Owner.Transform.SetEulerAnglesXYZ(0,0,0);
     }
     else if(this.MoveBool == 1 && this.ValidMove.ResultDirection[1] && this.PreviousDirection != 1)
     {
         Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) - this.MoveDistanceX,this.MoveSpeed, Ease.Linear);
         this.PreviousDirection = 0;
+        this.Owner.Sprite.SpriteSource = SpriteSource.PacManPinkyside_0;
+        this.Owner.Transform.SetEulerAnglesXYZ(0,Math.Pi,0);
     }
     else if(this.MoveBool == 2 && this.ValidMove.ResultDirection[2] && this.PreviousDirection != 2)
     {
         Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) + this.MoveDistanceY,this.MoveSpeed, Ease.Linear);
         this.PreviousDirection = 3;
+        this.Owner.Sprite.SpriteSource = SpriteSource.PacManPinkyUp_0;
     }
     else if(this.MoveBool == 3 && this.ValidMove.ResultDirection[3] && this.PreviousDirection != 3)
     {
         Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) - this.MoveDistanceY,this.MoveSpeed, Ease.Linear);
         this.PreviousDirection = 2;
+        this.Owner.Sprite.SpriteSource = SpriteSource.PacManPinkyDown_0;
     }
     
     //reset all available directions to true
