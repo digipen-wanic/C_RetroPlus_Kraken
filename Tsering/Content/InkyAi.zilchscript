@@ -220,7 +220,7 @@ class InkyAI : ZilchComponent
     {
         Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) - this.MoveDistanceY,this.MoveSpeed, Ease.Linear);
         this.PreviousDirection = 2;
-        this.Owner.Sprite.SpriteSource = SpriteSource.PacManInkyUp_0;
+        this.Owner.Sprite.SpriteSource = SpriteSource.PacManInkyDown_0;
     }
     
     //reset all available directions to true
