@@ -3,8 +3,8 @@ ImageContent
 {
 	SpriteSourceBuilder 
 	{
-		var Name = "PacMan_SingleLine"
-		var ResourceId = 0x5cc5541192b59464
+		var Name = "PacMan_SingleCorner2"
+		var ResourceId = 0x5cc568ee7f4a2259
 		var FrameSizeX = 8
 		var FrameSizeY = 8
 		var FrameCount = 1
