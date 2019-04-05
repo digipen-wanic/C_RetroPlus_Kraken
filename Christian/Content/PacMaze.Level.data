@@ -84,7 +84,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{-4.32619524, -1.98487043, 19.9460678}
+			var Translation = Real3{11.3410416, -8.45318985, 19.9386387}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0.00261798222, -0.00261800364, 6.85398845e-06, 0.999993205}
 		}
@@ -137,7 +137,7 @@ Level
 			var FarPlane = 500
 			var PerspectiveMode = PerspectiveMode.Orthographic
 			var FieldOfView = 45
-			var Size = 34.7415619
+			var Size = 27.7762032
 		}
 		EditorCameraController 
 		{
@@ -146,7 +146,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = -0.00523598772
 			var HorizontalAngle = 0.00523598772
-			var LookTarget = Real3{-4.22147751, -1.88015115, -0.0533820614}
+			var LookTarget = Real3{11.4457598, -8.34847069, -0.060811881}
 			var MoveSensitivity = 1
 		}
 	}
@@ -400,16 +400,6 @@ Level
 		var Name = "SpriteText"
 		Transform 
 		{
-			var Translation = Real3{6.32552814, -4.54543543, 2.5464135e-07}
-			var Scale = Real3{1, 1, 1}
-			var Rotation = Quaternion{0, 0, 0, 1}
-		}
-	}
-	Cog [ContextId:12]
-	{
-		var Name = "SpriteText"
-		Transform 
-		{
 			var Translation = Real3{19.0269394, 8.50865936, 7.11699897e-07}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
@@ -436,7 +426,7 @@ Level
 		{
 		}
 	}
-	Cog [InheritId:"5cc3f4268a1c64f0:Clyde"][ContextId:13]
+	Cog [InheritId:"5cc3f4268a1c64f0:Clyde"][ContextId:12]
 	{
 		Transform 
 		{
@@ -445,7 +435,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc3fd9991718ae8:Inky"][ContextId:14]
+	Cog [InheritId:"5cc3fd9991718ae8:Inky"][ContextId:13]
 	{
 		Transform 
 		{
@@ -454,7 +444,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc30cc237684f6b:Pinky"][ContextId:15]
+	Cog [InheritId:"5cc30cc237684f6b:Pinky"][ContextId:14]
 	{
 		Transform 
 		{
@@ -463,7 +453,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [ContextId:16]
+	Cog [ContextId:15]
 	{
 		var Name = "PacManScoreBord"
 		Transform 
@@ -492,7 +482,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [ContextId:17]
+	Cog [ContextId:16]
 	{
 		var Name = "Sprite"
 		Transform 
@@ -521,7 +511,7 @@ Level
 			var StartFrame = 0
 		}
 	}
-	Cog [InheritId:"5c713f1c7c503063:Fruit"][ContextId:18]
+	Cog [InheritId:"5c713f1c7c503063:Fruit"][ContextId:17]
 	{
 		var Name = "Fruit"
 		Transform 
@@ -536,7 +526,7 @@ Level
 			var SoundToMake = "5c70d95dc63c84af:Fruiteat"
 		}
 	}
-	Cog [InheritId:"5c713f1c7c503063:Fruit"][ContextId:19]
+	Cog [InheritId:"5c713f1c7c503063:Fruit"][ContextId:18]
 	{
 		var Name = "Fruit"
 		Transform 
@@ -546,7 +536,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [ContextId:20]
+	Cog [ContextId:19]
 	{
 		var Name = "TileMap"
 		Transform 
@@ -577,7 +567,7 @@ Level
 			var MeshThickness = 1.20000005
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:21]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:20]
 	{
 		Transform 
 		{
@@ -586,7 +576,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:22]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:21]
 	{
 		Transform 
 		{
@@ -595,7 +585,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:23]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:22]
 	{
 		Transform 
 		{
@@ -604,7 +594,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:24]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:23]
 	{
 		Transform 
 		{
@@ -613,7 +603,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:25]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:24]
 	{
 		Transform 
 		{
@@ -622,7 +612,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:26]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:25]
 	{
 		Transform 
 		{
@@ -631,7 +621,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:27]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:26]
 	{
 		Transform 
 		{
@@ -640,7 +630,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:28]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:27]
 	{
 		Transform 
 		{
@@ -649,7 +639,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:29]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:28]
 	{
 		Transform 
 		{
@@ -658,7 +648,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:30]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:29]
 	{
 		Transform 
 		{
@@ -667,7 +657,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:31]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:30]
 	{
 		Transform 
 		{
@@ -676,7 +666,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:32]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:31]
 	{
 		Transform 
 		{
@@ -685,7 +675,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:33]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:32]
 	{
 		Transform 
 		{
@@ -694,7 +684,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:34]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:33]
 	{
 		Transform 
 		{
@@ -703,7 +693,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:35]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:34]
 	{
 		Transform 
 		{
@@ -712,7 +702,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:36]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:35]
 	{
 		Transform 
 		{
@@ -721,7 +711,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:37]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:36]
 	{
 		Transform 
 		{
@@ -730,7 +720,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:38]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:37]
 	{
 		Transform 
 		{
@@ -739,7 +729,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:39]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:38]
 	{
 		Transform 
 		{
@@ -748,7 +738,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:40]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:39]
 	{
 		Transform 
 		{
@@ -757,7 +747,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:41]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:40]
 	{
 		Transform 
 		{
@@ -766,7 +756,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:42]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:41]
 	{
 		Transform 
 		{
@@ -775,7 +765,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:43]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:42]
 	{
 		Transform 
 		{
@@ -784,7 +774,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:44]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:43]
 	{
 		Transform 
 		{
@@ -793,7 +783,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:45]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:44]
 	{
 		Transform 
 		{
@@ -802,7 +792,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:46]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:45]
 	{
 		Transform 
 		{
@@ -811,7 +801,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:47]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:46]
 	{
 		Transform 
 		{
@@ -820,7 +810,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:48]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:47]
 	{
 		Transform 
 		{
@@ -829,7 +819,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:49]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:48]
 	{
 		Transform 
 		{
@@ -838,7 +828,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:50]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:49]
 	{
 		Transform 
 		{
@@ -847,7 +837,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:51]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:50]
 	{
 		Transform 
 		{
@@ -856,7 +846,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:52]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:51]
 	{
 		Transform 
 		{
@@ -865,7 +855,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:53]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:52]
 	{
 		Transform 
 		{
@@ -874,7 +864,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:54]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:53]
 	{
 		Transform 
 		{
@@ -883,7 +873,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:55]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:54]
 	{
 		Transform 
 		{
@@ -892,7 +882,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:56]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:55]
 	{
 		Transform 
 		{
@@ -901,7 +891,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:57]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:56]
 	{
 		Transform 
 		{
@@ -910,7 +900,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:58]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:57]
 	{
 		Transform 
 		{
@@ -919,7 +909,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:59]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:58]
 	{
 		Transform 
 		{
@@ -928,7 +918,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:60]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:59]
 	{
 		Transform 
 		{
@@ -937,7 +927,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:61]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:60]
 	{
 		Transform 
 		{
@@ -946,7 +936,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:62]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:61]
 	{
 		Transform 
 		{
@@ -955,7 +945,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:63]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:62]
 	{
 		Transform 
 		{
@@ -964,7 +954,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:64]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:63]
 	{
 		Transform 
 		{
@@ -973,7 +963,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:65]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:64]
 	{
 		Transform 
 		{
@@ -982,7 +972,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:66]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:65]
 	{
 		Transform 
 		{
@@ -991,7 +981,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:67]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:66]
 	{
 		Transform 
 		{
@@ -1000,7 +990,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:68]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:67]
 	{
 		Transform 
 		{
@@ -1009,7 +999,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:69]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:68]
 	{
 		Transform 
 		{
@@ -1018,7 +1008,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:70]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:69]
 	{
 		Transform 
 		{
@@ -1027,7 +1017,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:71]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:70]
 	{
 		Transform 
 		{
@@ -1036,7 +1026,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:72]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:71]
 	{
 		Transform 
 		{
@@ -1045,7 +1035,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:73]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:72]
 	{
 		Transform 
 		{
@@ -1054,7 +1044,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:74]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:73]
 	{
 		Transform 
 		{
@@ -1063,7 +1053,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:75]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:74]
 	{
 		Transform 
 		{
@@ -1072,7 +1062,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:76]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:75]
 	{
 		Transform 
 		{
@@ -1081,7 +1071,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:77]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:76]
 	{
 		Transform 
 		{
@@ -1090,7 +1080,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:78]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:77]
 	{
 		Transform 
 		{
@@ -1099,7 +1089,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:79]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:78]
 	{
 		Transform 
 		{
@@ -1108,7 +1098,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:80]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:79]
 	{
 		Transform 
 		{
@@ -1117,7 +1107,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:81]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:80]
 	{
 		Transform 
 		{
@@ -1126,7 +1116,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:82]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:81]
 	{
 		Transform 
 		{
@@ -1135,7 +1125,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:83]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:82]
 	{
 		Transform 
 		{
@@ -1144,7 +1134,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:84]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:83]
 	{
 		Transform 
 		{
@@ -1153,7 +1143,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:85]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:84]
 	{
 		Transform 
 		{
@@ -1162,7 +1152,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:86]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:85]
 	{
 		Transform 
 		{
@@ -1171,7 +1161,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:87]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:86]
 	{
 		Transform 
 		{
@@ -1180,7 +1170,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:88]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:87]
 	{
 		Transform 
 		{
@@ -1189,7 +1179,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:89]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:88]
 	{
 		Transform 
 		{
@@ -1198,7 +1188,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:90]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:89]
 	{
 		Transform 
 		{
@@ -1207,7 +1197,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:91]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:90]
 	{
 		Transform 
 		{
@@ -1216,7 +1206,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:92]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:91]
 	{
 		Transform 
 		{
@@ -1225,7 +1215,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:93]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:92]
 	{
 		Transform 
 		{
@@ -1234,7 +1224,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:94]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:93]
 	{
 		Transform 
 		{
@@ -1243,7 +1233,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:95]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:94]
 	{
 		Transform 
 		{
@@ -1252,7 +1242,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:96]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:95]
 	{
 		Transform 
 		{
@@ -1261,7 +1251,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:97]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:96]
 	{
 		Transform 
 		{
@@ -1270,7 +1260,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:98]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:97]
 	{
 		Transform 
 		{
@@ -1279,7 +1269,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:99]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:98]
 	{
 		Transform 
 		{
@@ -1288,7 +1278,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:100]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:99]
 	{
 		Transform 
 		{
@@ -1297,7 +1287,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:101]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:100]
 	{
 		Transform 
 		{
@@ -1306,7 +1296,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:102]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:101]
 	{
 		Transform 
 		{
@@ -1315,7 +1305,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:103]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:102]
 	{
 		Transform 
 		{
@@ -1324,7 +1314,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:104]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:103]
 	{
 		Transform 
 		{
@@ -1333,7 +1323,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:105]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:104]
 	{
 		Transform 
 		{
@@ -1342,7 +1332,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:106]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:105]
 	{
 		Transform 
 		{
@@ -1351,7 +1341,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:107]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:106]
 	{
 		Transform 
 		{
@@ -1360,7 +1350,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:108]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:107]
 	{
 		Transform 
 		{
@@ -1369,7 +1359,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:109]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:108]
 	{
 		Transform 
 		{
@@ -1378,7 +1368,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:110]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:109]
 	{
 		Transform 
 		{
@@ -1387,7 +1377,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:111]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:110]
 	{
 		Transform 
 		{
@@ -1396,7 +1386,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:112]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:111]
 	{
 		Transform 
 		{
@@ -1405,7 +1395,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:113]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:112]
 	{
 		Transform 
 		{
@@ -1414,7 +1404,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:114]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:113]
 	{
 		Transform 
 		{
@@ -1423,7 +1413,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:115]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:114]
 	{
 		Transform 
 		{
@@ -1432,7 +1422,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:116]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:115]
 	{
 		Transform 
 		{
@@ -1441,7 +1431,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:117]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:116]
 	{
 		Transform 
 		{
@@ -1450,7 +1440,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:118]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:117]
 	{
 		Transform 
 		{
@@ -1459,7 +1449,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:119]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:118]
 	{
 		Transform 
 		{
@@ -1468,7 +1458,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:120]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:119]
 	{
 		Transform 
 		{
@@ -1477,7 +1467,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:121]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:120]
 	{
 		Transform 
 		{
@@ -1486,7 +1476,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:122]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:121]
 	{
 		Transform 
 		{
@@ -1495,7 +1485,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:123]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:122]
 	{
 		Transform 
 		{
@@ -1504,7 +1494,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:124]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:123]
 	{
 		Transform 
 		{
@@ -1513,7 +1503,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:125]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:124]
 	{
 		Transform 
 		{
@@ -1522,7 +1512,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:126]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:125]
 	{
 		Transform 
 		{
@@ -1531,7 +1521,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:127]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:126]
 	{
 		Transform 
 		{
@@ -1540,7 +1530,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:128]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:127]
 	{
 		Transform 
 		{
@@ -1549,7 +1539,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:129]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:128]
 	{
 		Transform 
 		{
@@ -1558,7 +1548,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:130]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:129]
 	{
 		Transform 
 		{
@@ -1567,7 +1557,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:131]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:130]
 	{
 		Transform 
 		{
@@ -1576,7 +1566,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:132]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:131]
 	{
 		Transform 
 		{
@@ -1585,7 +1575,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:133]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:132]
 	{
 		Transform 
 		{
@@ -1594,7 +1584,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:134]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:133]
 	{
 		Transform 
 		{
@@ -1603,7 +1593,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:135]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:134]
 	{
 		Transform 
 		{
@@ -1612,7 +1602,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:136]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:135]
 	{
 		Transform 
 		{
@@ -1621,7 +1611,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:137]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:136]
 	{
 		Transform 
 		{
@@ -1630,7 +1620,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:138]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:137]
 	{
 		Transform 
 		{
@@ -1639,7 +1629,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:139]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:138]
 	{
 		Transform 
 		{
@@ -1648,7 +1638,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:140]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:139]
 	{
 		Transform 
 		{
@@ -1657,7 +1647,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:141]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:140]
 	{
 		Transform 
 		{
@@ -1666,7 +1656,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:142]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:141]
 	{
 		Transform 
 		{
@@ -1675,7 +1665,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:143]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:142]
 	{
 		Transform 
 		{
@@ -1684,7 +1674,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:144]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:143]
 	{
 		Transform 
 		{
@@ -1693,7 +1683,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:145]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:144]
 	{
 		Transform 
 		{
@@ -1702,7 +1692,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:146]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:145]
 	{
 		Transform 
 		{
@@ -1711,7 +1701,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:147]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:146]
 	{
 		Transform 
 		{
@@ -1720,7 +1710,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:148]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:147]
 	{
 		Transform 
 		{
@@ -1733,7 +1723,7 @@ Level
 			var SoundToPlay = "5c70d95dc63e25bf:Pebbleeat"
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:149]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:148]
 	{
 		Transform 
 		{
@@ -1742,7 +1732,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:150]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:149]
 	{
 		Transform 
 		{
@@ -1751,7 +1741,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:151]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:150]
 	{
 		Transform 
 		{
@@ -1760,7 +1750,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:152]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:151]
 	{
 		Transform 
 		{
@@ -1769,7 +1759,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:153]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:152]
 	{
 		Transform 
 		{
@@ -1778,7 +1768,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:154]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:153]
 	{
 		Transform 
 		{
@@ -1787,7 +1777,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:155]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:154]
 	{
 		Transform 
 		{
@@ -1796,7 +1786,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:156]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:155]
 	{
 		Transform 
 		{
@@ -1805,7 +1795,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:157]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:156]
 	{
 		Transform 
 		{
@@ -1814,7 +1804,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:158]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:157]
 	{
 		Transform 
 		{
@@ -1823,7 +1813,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:159]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:158]
 	{
 		Transform 
 		{
@@ -1832,7 +1822,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:160]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:159]
 	{
 		Transform 
 		{
@@ -1841,7 +1831,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:161]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:160]
 	{
 		Transform 
 		{
@@ -1850,7 +1840,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:162]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:161]
 	{
 		Transform 
 		{
@@ -1859,7 +1849,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:163]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:162]
 	{
 		Transform 
 		{
@@ -1868,7 +1858,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:164]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:163]
 	{
 		Transform 
 		{
@@ -1877,7 +1867,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:165]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:164]
 	{
 		Transform 
 		{
@@ -1886,7 +1876,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:166]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:165]
 	{
 		Transform 
 		{
@@ -1895,7 +1885,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:167]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:166]
 	{
 		Transform 
 		{
@@ -1904,7 +1894,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:168]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:167]
 	{
 		Transform 
 		{
@@ -1913,7 +1903,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:169]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:168]
 	{
 		Transform 
 		{
@@ -1922,7 +1912,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:170]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:169]
 	{
 		Transform 
 		{
@@ -1931,7 +1921,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:171]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:170]
 	{
 		Transform 
 		{
@@ -1940,7 +1930,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:172]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:171]
 	{
 		Transform 
 		{
@@ -1949,7 +1939,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:173]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:172]
 	{
 		Transform 
 		{
@@ -1958,7 +1948,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:174]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:173]
 	{
 		Transform 
 		{
@@ -1967,7 +1957,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:175]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:174]
 	{
 		Transform 
 		{
@@ -1976,7 +1966,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:176]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:175]
 	{
 		Transform 
 		{
@@ -1985,7 +1975,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:177]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:176]
 	{
 		Transform 
 		{
@@ -1994,7 +1984,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:178]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:177]
 	{
 		Transform 
 		{
@@ -2003,7 +1993,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:179]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:178]
 	{
 		Transform 
 		{
@@ -2012,7 +2002,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:180]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:179]
 	{
 		Transform 
 		{
@@ -2021,7 +2011,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:181]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:180]
 	{
 		Transform 
 		{
@@ -2030,7 +2020,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:182]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:181]
 	{
 		Transform 
 		{
@@ -2039,7 +2029,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:183]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:182]
 	{
 		Transform 
 		{
@@ -2048,7 +2038,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:184]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:183]
 	{
 		Transform 
 		{
@@ -2057,7 +2047,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:185]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:184]
 	{
 		Transform 
 		{
@@ -2066,7 +2056,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:186]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:185]
 	{
 		Transform 
 		{
@@ -2075,7 +2065,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:187]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:186]
 	{
 		Transform 
 		{
@@ -2084,7 +2074,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:188]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:187]
 	{
 		Transform 
 		{
@@ -2093,7 +2083,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:189]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:188]
 	{
 		Transform 
 		{
@@ -2102,7 +2092,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:190]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:189]
 	{
 		Transform 
 		{
@@ -2111,7 +2101,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:191]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:190]
 	{
 		Transform 
 		{
@@ -2120,7 +2110,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:192]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:191]
 	{
 		Transform 
 		{
@@ -2129,7 +2119,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:193]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:192]
 	{
 		Transform 
 		{
@@ -2138,7 +2128,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:194]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:193]
 	{
 		Transform 
 		{
@@ -2147,7 +2137,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:195]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:194]
 	{
 		Transform 
 		{
@@ -2156,7 +2146,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:196]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:195]
 	{
 		Transform 
 		{
@@ -2165,7 +2155,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:197]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:196]
 	{
 		Transform 
 		{
@@ -2174,7 +2164,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:198]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:197]
 	{
 		Transform 
 		{
@@ -2183,7 +2173,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:199]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:198]
 	{
 		Transform 
 		{
@@ -2192,7 +2182,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:200]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:199]
 	{
 		Transform 
 		{
@@ -2201,7 +2191,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:201]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:200]
 	{
 		Transform 
 		{
@@ -2210,7 +2200,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:202]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:201]
 	{
 		Transform 
 		{
@@ -2219,7 +2209,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:203]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:202]
 	{
 		Transform 
 		{
@@ -2228,7 +2218,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:204]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:203]
 	{
 		Transform 
 		{
@@ -2237,7 +2227,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:205]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:204]
 	{
 		Transform 
 		{
@@ -2246,7 +2236,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:206]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:205]
 	{
 		Transform 
 		{
@@ -2255,7 +2245,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:207]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:206]
 	{
 		Transform 
 		{
@@ -2264,7 +2254,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:208]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:207]
 	{
 		Transform 
 		{
@@ -2273,7 +2263,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:209]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:208]
 	{
 		Transform 
 		{
@@ -2282,7 +2272,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:210]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:209]
 	{
 		Transform 
 		{
@@ -2291,7 +2281,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:211]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:210]
 	{
 		Transform 
 		{
@@ -2300,7 +2290,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:212]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:211]
 	{
 		Transform 
 		{
@@ -2309,7 +2299,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:213]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:212]
 	{
 		Transform 
 		{
@@ -2318,7 +2308,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:214]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:213]
 	{
 		Transform 
 		{
@@ -2327,7 +2317,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:215]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:214]
 	{
 		Transform 
 		{
@@ -2336,7 +2326,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:216]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:215]
 	{
 		Transform 
 		{
@@ -2345,7 +2335,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:217]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:216]
 	{
 		Transform 
 		{
@@ -2354,7 +2344,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:218]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:217]
 	{
 		Transform 
 		{
@@ -2363,7 +2353,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:219]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:218]
 	{
 		Transform 
 		{
@@ -2372,7 +2362,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:220]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:219]
 	{
 		Transform 
 		{
@@ -2381,7 +2371,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:221]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:220]
 	{
 		Transform 
 		{
@@ -2390,7 +2380,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:222]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:221]
 	{
 		Transform 
 		{
@@ -2399,7 +2389,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:223]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:222]
 	{
 		Transform 
 		{
@@ -2408,7 +2398,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:224]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:223]
 	{
 		Transform 
 		{
@@ -2417,7 +2407,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:225]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:224]
 	{
 		Transform 
 		{
@@ -2426,7 +2416,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:226]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:225]
 	{
 		Transform 
 		{
@@ -2435,7 +2425,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:227]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:226]
 	{
 		Transform 
 		{
@@ -2444,7 +2434,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:228]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:227]
 	{
 		Transform 
 		{
@@ -2453,7 +2443,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:229]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:228]
 	{
 		Transform 
 		{
@@ -2462,7 +2452,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:230]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:229]
 	{
 		Transform 
 		{
@@ -2471,7 +2461,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:231]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:230]
 	{
 		Transform 
 		{
@@ -2480,7 +2470,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:232]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:231]
 	{
 		Transform 
 		{
@@ -2489,7 +2479,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:233]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:232]
 	{
 		Transform 
 		{
@@ -2498,7 +2488,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:234]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:233]
 	{
 		Transform 
 		{
@@ -2507,7 +2497,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:235]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:234]
 	{
 		Transform 
 		{
@@ -2516,7 +2506,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:236]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:235]
 	{
 		Transform 
 		{
@@ -2525,7 +2515,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:237]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:236]
 	{
 		Transform 
 		{
@@ -2534,7 +2524,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:238]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:237]
 	{
 		Transform 
 		{
@@ -2543,7 +2533,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:239]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:238]
 	{
 		Transform 
 		{
@@ -2552,7 +2542,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:240]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:239]
 	{
 		Transform 
 		{
@@ -2561,7 +2551,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:241]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:240]
 	{
 		Transform 
 		{
@@ -2570,7 +2560,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:242]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:241]
 	{
 		Transform 
 		{
@@ -2579,7 +2569,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:243]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:242]
 	{
 		Transform 
 		{
@@ -2588,7 +2578,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:244]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:243]
 	{
 		Transform 
 		{
@@ -2597,7 +2587,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:245]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:244]
 	{
 		Transform 
 		{
@@ -2606,7 +2596,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:246]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:245]
 	{
 		Transform 
 		{
@@ -2615,7 +2605,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:247]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:246]
 	{
 		Transform 
 		{
@@ -2624,7 +2614,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:248]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:247]
 	{
 		Transform 
 		{
@@ -2633,7 +2623,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:249]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:248]
 	{
 		Transform 
 		{
@@ -2642,7 +2632,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:250]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:249]
 	{
 		Transform 
 		{
@@ -2651,7 +2641,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:251]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:250]
 	{
 		Transform 
 		{
@@ -2660,7 +2650,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:252]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:251]
 	{
 		Transform 
 		{
@@ -2669,7 +2659,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:253]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:252]
 	{
 		Transform 
 		{
@@ -2678,7 +2668,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:254]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:253]
 	{
 		Transform 
 		{
@@ -2687,7 +2677,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:255]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:254]
 	{
 		Transform 
 		{
@@ -2696,7 +2686,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:256]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:255]
 	{
 		Transform 
 		{
@@ -2705,7 +2695,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:257]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:256]
 	{
 		Transform 
 		{
@@ -2714,7 +2704,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:258]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:257]
 	{
 		Transform 
 		{
@@ -2723,7 +2713,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:259]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:258]
 	{
 		Transform 
 		{
@@ -2732,7 +2722,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:260]
+	Cog [InheritId:"5cc5468c4273f131:Pellet"][ContextId:259]
 	{
 		Transform 
 		{
@@ -2741,7 +2731,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5c764fdbffac995f:PowerPellet"][ContextId:261]
+	Cog [InheritId:"5c764fdbffac995f:PoewerPellet"][ContextId:260]
 	{
 		Transform 
 		{
@@ -2750,7 +2740,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5c764fdbffac995f:PowerPellet"][ContextId:262]
+	Cog [InheritId:"5c764fdbffac995f:PoewerPellet"][ContextId:261]
 	{
 		Transform 
 		{
@@ -2759,7 +2749,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5c764fdbffac995f:PowerPellet"][ContextId:263]
+	Cog [InheritId:"5c764fdbffac995f:PoewerPellet"][ContextId:262]
 	{
 		Transform 
 		{
@@ -2768,7 +2758,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5c764fdbffac995f:PowerPellet"][ContextId:264]
+	Cog [InheritId:"5c764fdbffac995f:PoewerPellet"][ContextId:263]
 	{
 		Transform 
 		{
@@ -2777,7 +2767,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [ContextId:265]
+	Cog [ContextId:264]
 	{
 		var Name = "GhostMovement"
 		Transform 
@@ -2805,28 +2795,18 @@ Level
 			var AnimationSpeed = 1
 			var StartFrame = 0
 		}
-		SoundEmitter 
+		GhostMovementSound 
 		{
-			var Volume = 1
-			var Pitch = 0
-			var Attenuator = "57ca8a6ad262efe5:DefaultNoAttenuation"
-			var Directional = false
-			var EmitAngle = 90
-			var RearVolume = 0.200000003
-		}
-		SimpleSound 
-		{
-			var StartPlaying = true
-			var Positional = false
-			var Cue = "5c70d6863c13137b:Ghostmovement"
+			var SoundToPlay = "5c70d6863c13137b:Ghostmovement"
+			var SoundWhenFleeing = "5c70d6863c13e324:ScaredGhost1"
 		}
 	}
-	Cog [ContextId:266]
+	Cog [ContextId:265]
 	{
 		var Name = "SpriteText"
 		Transform 
 		{
-			var Translation = Real3{18.3916473, 10.4998379, 0.0748667195}
+			var Translation = Real3{18.3916473, 10.6177301, 0.0748667195}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}

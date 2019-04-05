@@ -6,6 +6,8 @@ Brief :
 class PacmanMovement : ZilchComponent
 {
   [Property]
+  var Active = true;
+  [Property]
   var MoveAnimation : Archetype = null;
   [Property]
   var LeftKey : Keys = Keys.A;
@@ -19,6 +21,7 @@ class PacmanMovement : ZilchComponent
   var CanMove : Boolean = true;
   [Property]
   var TestDirection : Real3 = Real3(0,0,0);
+  
   //1 is up, 2 is right, 3 is down, 4 is left
   [Property]
   var Direction: Real3 = Real3(0, 0, 0);
@@ -82,27 +85,29 @@ class PacmanMovement : ZilchComponent
   
   function OnLogicUpdate(event : UpdateEvent)
   {
-    if (Zero.Keyboard.KeyIsDown(this.UpKey) && this.CanMove == true)
+    if(this.Active)
     {
-      this.TestDirection = Real3(0, 1, 0);
-    }
-    if (Zero.Keyboard.KeyIsDown(this.RightKey) && this.CanMove == true)
-    {
-      this.TestDirection = Real3(1, 0, 0);
-    }
-    if (Zero.Keyboard.KeyIsDown(this.DownKey) && this.CanMove == true)
-    {
-      this.TestDirection = Real3(0, -1, 0);
-    }
-    if (Zero.Keyboard.KeyIsDown(this.LeftKey) && this.CanMove == true)
-    {
-      this.TestDirection = Real3(-1, 0, 0);
-    }
-    
-    if(this.TestDirection == -this.Direction)
-    {
-      this.Owner.Actions.Cancel();
-      this.CheckMove();
+      if (Zero.Keyboard.KeyIsDown(this.UpKey) && this.CanMove == true)
+      {
+        this.TestDirection = Real3(0, 1, 0);
+      }
+      if (Zero.Keyboard.KeyIsDown(this.RightKey) && this.CanMove == true)
+      {
+        this.TestDirection = Real3(1, 0, 0);
+      }
+      if (Zero.Keyboard.KeyIsDown(this.DownKey) && this.CanMove == true)
+      {
+        this.TestDirection = Real3(0, -1, 0);
+      }
+      if (Zero.Keyboard.KeyIsDown(this.LeftKey) && this.CanMove == true)
+      {
+        this.TestDirection = Real3(-1, 0, 0);
+      }
+      if(this.TestDirection == -this.Direction)
+      {
+        this.Owner.Actions.Cancel();
+        this.CheckMove();
+      }
     }
   }
 }

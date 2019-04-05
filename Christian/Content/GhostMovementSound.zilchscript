@@ -1,0 +1,27 @@
+class GhostMovementSound : ZilchComponent
+{
+  [Property]
+  var SoundToPlay : SoundCue = null;
+  [Property]
+  var SoundWhenFleeing : SoundCue = null;
+  var Timer : Real = 0;
+  function Initialize(init : CogInitializer)
+  {
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    this.Timer += event.Dt;
+    if(this.Timer >= 1.25)
+    {
+      this.Space.SoundSpace.PlayCue(this.SoundToPlay);
+      this.Timer = 0;
+    }
+    else if(this.Timer >= 1.0 && this.GameSession.GameVars.FrightenedBool)
+    {
+      this.Space.SoundSpace.PlayCue(this.SoundWhenFleeing);
+      this.Timer = 0;
+    }
+  }
+}

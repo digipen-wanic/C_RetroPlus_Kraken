@@ -5,14 +5,16 @@ Brief : This script will play the animation and a souind once the play has died
 ********************************************/
 class PacManOnDeath : ZilchComponent
 {
+  //choose the death animation
   [Property]
   var DeathAnimation : SpriteSource = null;
-  [Property]
-  var LoadLevel : Level = null;
+  //what sound you want to play once pacman dies
   [Property]
   var SoundToPlay : SoundCue = null;
+  //timer after the you die
   [Property]
   var DeathTime : Real = 0;
+  //this is to stop making it detect collision
   function Initialize(init : CogInitializer)
   {
     Zero.Connect(this.Owner, Events.GroupCollisionStarted, this.OnGroupCollisionStarted);
@@ -20,29 +22,33 @@ class PacManOnDeath : ZilchComponent
 
   function OnGroupCollisionStarted(event : CollisionGroupEvent)
   {
-    if(event.OtherObject.Collider.CollisionGroup.Name == "Ghosts")
+    if(event.OtherObject.Collider.CollisionGroup.Name == "Ghosts" && this.GameSession.GameVars.FrightenedBool)
     {
       this.Death();
-      this.Space.DispatchEvent("Death",ZilchEvent());
-    }    
+    }
+    if((event.OtherObject.Collider.CollisionGroup.Name == "Ghosts" && !this.GameSession.GameVars.FrightenedBool))
+    {
+      this.GhostDeath();
+    }
   }
   function Death()
   {
-    this.Owner.Actions.Cancel;
+    this.Owner.Actions.Cancel();
     this.Space.SoundSpace.PlayCue(this.SoundToPlay);
     this.GameSession.GameVars.PacManLives -= 1;
-    
     this.Owner.Sprite.SpriteSource = this.DeathAnimation;
     
+    this.Owner.RemoveComponentByName("SphereCollider");
+    this.Owner.PacmanMovement.Active = false;
     var seq = Action.Sequence(this.Owner.Actions);
-    Actions.Delay(seq, 3.0);
-    Action.Call(seq, this.ChangeLevel);
-    
+    Actions.Delay(seq, 4.0);
+    Console.WriteLine("asdfasdf");
+    Action.Call(seq, this.Space.ReloadLevel);
   }
   
-  function ChangeLevel()
+  function GhostDeath()
   {
-    this.Space.LoadLevel(this.LoadLevel);
+    
   }
 }
 
