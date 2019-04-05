@@ -41,7 +41,7 @@ class FleeingAI : ZilchComponent
     
     //calculate adjacent tile distances
     this.RandInt = this.RandomGenerator.DieRoll(options);
-    Console.WriteLine(this.RandInt);
+    Console.WriteLine("`this.RandInt` `options` `this.ValidMove.ResultDirection`");
    // while(!this.ValidMove.ResultDirection.Get(this.RandInt) || this.PreviousDirection == this.RandInt)
    // {
    //   this.RandInt = this.RandomGenerator.DieRoll(4) - 1;
@@ -49,13 +49,15 @@ class FleeingAI : ZilchComponent
     if(this.ValidMove.ResultDirection[0])
     {
       options-=1;
+      Console.WriteLine("Inside`this.RandInt` `options` `this.ValidMove.ResultDirection`");
       if(options<=0)
       {
+        
         Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) + this.MoveDistanceX,this.MoveSpeed, Ease.Linear);
         this.PreviousDirection = 1;
       }
     }
-    else if(this.ValidMove.ResultDirection[1])
+    if(this.ValidMove.ResultDirection[1])
     {
       options-=1;
       if(options<=0)
@@ -63,9 +65,8 @@ class FleeingAI : ZilchComponent
         Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) - this.MoveDistanceX,this.MoveSpeed, Ease.Linear);
         this.PreviousDirection = 0; 
       }
-    
     }
-    else if(this.ValidMove.ResultDirection[2])
+    if(this.ValidMove.ResultDirection[2])
     {
       options-=1;
       if(options<=0)
@@ -74,8 +75,9 @@ class FleeingAI : ZilchComponent
         this.PreviousDirection = 3;
       }
     }
-    else if(this.ValidMove.ResultDirection[3])
+    if(this.ValidMove.ResultDirection[3])
     {
+      Console.WriteLine("Inside`this.RandInt` `options` `this.ValidMove.ResultDirection`");
       options-=1;
       if(options<=0)
       {
@@ -85,7 +87,7 @@ class FleeingAI : ZilchComponent
     }
     
     //reset all available directions to true
-    this.AvailableDirections = Array[Boolean](4, true);
+    this.ValidMove.ResultDirection = Array[Boolean](4, true);
     // this makes this recursive
     Actions.Call(actionSequence, this.CalculateNextMove);
   }

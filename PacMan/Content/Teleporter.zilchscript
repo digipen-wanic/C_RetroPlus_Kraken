@@ -21,7 +21,41 @@ class Teleporter : ZilchComponent
       event.OtherObject.Transform.Translation = this.TeleExit;
       event.OtherObject.PacmanMovement.CheckMove();
       event.OtherObject.PacmanMovement.Move();
+    }
+    if(event.OtherObject.PinkyAI != null)
+    {
       
+      event.OtherObject.Actions.Cancel();
+      event.OtherObject.Transform.Translation = this.TeleExit;
+      event.OtherObject.PinkyAI.CalculateNextMove();
+    }
+    if(event.OtherObject.BlinkyAI != null)
+    {
+      
+      event.OtherObject.Actions.Cancel();
+      event.OtherObject.Transform.Translation = this.TeleExit;
+      event.OtherObject.BlinkyAI.CalculateNextMove();
+    }
+    if(event.OtherObject.InkyAI != null)
+    {
+      
+      event.OtherObject.Actions.Cancel();
+      event.OtherObject.Transform.Translation = this.TeleExit;
+      event.OtherObject.InkyAI.CalculateNextMove();
+    }
+    if(event.OtherObject.ClydeAI != null)
+    {
+      
+      event.OtherObject.Actions.Cancel();
+      event.OtherObject.Transform.Translation = this.TeleExit;
+      event.OtherObject.ClydeAI.CalculateNextMove();
+    }
+    if(event.OtherObject.FleeingAI != null)
+    {
+      
+      event.OtherObject.Actions.Cancel();
+      event.OtherObject.Transform.Translation = this.TeleExit;
+      event.OtherObject.FleeingAI.CalculateNextMove();
     }
   }
 }
