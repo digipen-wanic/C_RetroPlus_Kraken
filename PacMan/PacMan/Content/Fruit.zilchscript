@@ -1,0 +1,45 @@
+class Fruit : ZilchComponent
+{
+  [Property]
+  var FirstFruit : Boolean = false;
+  [Property]
+  var SoundToMake : SoundCue = null;
+  var Timer : Real = 0.0;
+  var TimerBool : Boolean = false;
+  function Initialize(init : CogInitializer)
+  {
+    this.Owner.Sprite.Visible = false;
+    this.Owner.SphereCollider.SendsEvents = false;
+    Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    if(this.GameSession.GameVars.Points >= 650 && this.GameSession.GameVars.Points <= 1250 && this.FirstFruit)
+    {
+      this.Owner.Sprite.Visible = true;
+      this.Owner.SphereCollider.SendsEvents = true;
+      this.Timer += event.Dt;
+      this.TimerBool = true;
+    }
+    else if(this.GameSession.GameVars.Points >= 1300)
+    {
+      this.Owner.Sprite.Visible = true;
+      this.Owner.SphereCollider.SendsEvents = true;
+      this.Timer += event.Dt;
+      this.TimerBool = true;
+    }
+    if(this.Timer >= 9)
+    {
+      this.Owner.Destroy();
+    }
+  }
+
+  function OnCollisionStarted(event : CollisionEvent)
+  {
+    this.GameSession.GameVars.Points += 100.0;
+    this.Space.SoundSpace.PlayCue(this.SoundToMake);
+    this.Owner.Destroy();
+  }
+}

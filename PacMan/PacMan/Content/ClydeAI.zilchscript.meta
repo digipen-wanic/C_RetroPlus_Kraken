@@ -1,0 +1,16 @@
+[Version:1]
+TextContent 
+{
+	ZilchScriptBuilder 
+	{
+		var Name = "ClydeAI"
+		var ResourceId = 0x5cc3ee919ff2a27c
+	}
+	ContentTags 
+	{
+		var Tags = Array
+		{
+			"GhostAI"
+		}
+	}
+}

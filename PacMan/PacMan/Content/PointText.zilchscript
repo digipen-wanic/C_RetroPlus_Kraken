@@ -1,0 +1,15 @@
+class PointText : ZilchComponent
+{
+  [Dependency]
+  var SpriteText : SpriteText;
+  function Initialize(init : CogInitializer)
+  {
+    this.Owner.SpriteText.Text = ("`this.GameSession.GameVars.Points`");
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    this.Owner.SpriteText.Text = ("`this.GameSession.GameVars.Points`");
+  }
+}

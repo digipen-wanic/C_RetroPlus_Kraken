@@ -1,0 +1,11 @@
+[Version:1]
+DataContent 
+{
+	DataBuilder 
+	{
+		var Name = "ScaredGhost1"
+		var ResourceId = 0x5cc54403c73a1964
+		var LoaderType = "SoundCue"
+		var Version = 0
+	}
+}
