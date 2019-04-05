@@ -17,6 +17,7 @@ class GameVars : ZilchComponent
   //freeze the enemys if its true and if false the run as normal
   var FreezeBool : Boolean = false;
   //this is for the frightened mode
-  var FrightenedBool : Boolean   = true;
+  var FrightenedBool : Boolean   = false;
+  var Pellet : Integer = 244;
   var PacManDirection : Integer = 0;
 }

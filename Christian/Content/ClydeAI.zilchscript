@@ -128,38 +128,39 @@ class ClydeAI : ZilchComponent
   {
     //starts the sequence for the actions
     var actionSequence = Actions.Sequence(this.Owner.Actions);
-    
-    //set tiles that can't be moved to
-    this.AvailableDirections.Set(this.PreviousDirection, false);
-    //calculate adjacent tile distances
-    this.CalculateDistanceFromPacman();
-        
-    this.MoveBool = this.GetBestMove();
-    
-    if(this.MoveBool == 0 && this.ValidMove.ResultDirection[0] && this.PreviousDirection != 0)
+    if(this.GameSession.GameVars.FrightenedBool == false)
     {
-        Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) + this.MoveDistanceX,this.MoveSpeed, Ease.Linear);
-        this.PreviousDirection = 1;
+      //set tiles that can't be moved to
+      this.AvailableDirections.Set(this.PreviousDirection, false);
+      //calculate adjacent tile distances
+      this.CalculateDistanceFromPacman();
+          
+      this.MoveBool = this.GetBestMove();
+      
+      if(this.MoveBool == 0 && this.ValidMove.ResultDirection[0] && this.PreviousDirection != 0)
+      {
+          Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) + this.MoveDistanceX,this.MoveSpeed, Ease.Linear);
+          this.PreviousDirection = 1;
+      }
+      else if(this.MoveBool == 1 && this.ValidMove.ResultDirection[1] && this.PreviousDirection != 1)
+      {
+          Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) - this.MoveDistanceX,this.MoveSpeed, Ease.Linear);
+          this.PreviousDirection = 0;
+      }
+      else if(this.MoveBool == 2 && this.ValidMove.ResultDirection[2] && this.PreviousDirection != 2)
+      {
+          Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) + this.MoveDistanceY,this.MoveSpeed, Ease.Linear);
+          this.PreviousDirection = 3;
+      }
+      else if(this.MoveBool == 3 && this.ValidMove.ResultDirection[3] && this.PreviousDirection != 3)
+      {
+          Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) - this.MoveDistanceY,this.MoveSpeed, Ease.Linear);
+          this.PreviousDirection = 2;
+      }
+      
+      //reset all available directions to true
+      this.AvailableDirections = Array[Boolean](4, true);
     }
-    else if(this.MoveBool == 1 && this.ValidMove.ResultDirection[1] && this.PreviousDirection != 1)
-    {
-        Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) - this.MoveDistanceX,this.MoveSpeed, Ease.Linear);
-        this.PreviousDirection = 0;
-    }
-    else if(this.MoveBool == 2 && this.ValidMove.ResultDirection[2] && this.PreviousDirection != 2)
-    {
-        Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) + this.MoveDistanceY,this.MoveSpeed, Ease.Linear);
-        this.PreviousDirection = 3;
-    }
-    else if(this.MoveBool == 3 && this.ValidMove.ResultDirection[3] && this.PreviousDirection != 3)
-    {
-        Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) - this.MoveDistanceY,this.MoveSpeed, Ease.Linear);
-        this.PreviousDirection = 2;
-    }
-    
-    //reset all available directions to true
-    this.AvailableDirections = Array[Boolean](4, true);
-    
     // this makes this recursive
     Actions.Call(actionSequence, this.CalculateNextMove);
   }

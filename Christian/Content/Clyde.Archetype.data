@@ -4,7 +4,7 @@ Cog
 	var Name = "Clyde"
 	Transform 
 	{
-		var Translation = Real3{-1, -2, 0}
+		var Translation = Real3{-1.50000155, 1.0534153, 0.0002784729}
 		var Scale = Real3{1.5, 1.5, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -74,5 +74,12 @@ Cog
 		var TargetX = -4
 		var TargetY = -6
 		var Range = 8
+	}
+	FleeingAI 
+	{
+		var MoveDistanceX = Real3{1, 0, 0}
+		var MoveDistanceY = Real3{0, 1, 0}
+		var MoveSpeed = 1
+		var ScaredAnimation = "5cc3f2a802bc1092:PacManEdible2_0"
 	}
 }

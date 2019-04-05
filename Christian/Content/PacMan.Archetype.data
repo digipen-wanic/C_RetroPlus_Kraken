@@ -29,6 +29,7 @@ Cog
 	}
 	PacmanMovement 
 	{
+		var Active = true
 		var MoveAnimation = "null"
 		var LeftKey = Keys.A
 		var RightKey = Keys.D
@@ -57,26 +58,11 @@ Cog
 		var RotationLocked = false
 		var Mode2D = Mode2DStates.InheritFromSpace
 	}
-	SoundEmitter 
-	{
-		var Volume = 1
-		var Pitch = 0
-		var Attenuator = "57ca8a6ad262efe5:DefaultNoAttenuation"
-		var Directional = false
-		var EmitAngle = 90
-		var RearVolume = 0.200000003
-	}
-	SimpleSound 
-	{
-		var StartPlaying = true
-		var Positional = false
-		var Cue = "4e1bd44008b4dc2a:DefaultSoundCue"
-	}
 	PacManOnDeath 
 	{
 		var DeathAnimation = "5c765d5879fd0086:PacManDeath_0"
-		var LoadLevel = "5cfd5035fc0494fa:PacMaze"
 		var SoundToPlay = "5c70d95dc63f5568:PacmanDeath"
+		var DeathTime = 0
 	}
 	PacManEnd 
 	{

@@ -29,7 +29,6 @@ class BlinkyAI : ZilchComponent
   {
     var yDistance : Real = 0;
     var xDistance : Real = 0;
-    
     //get east distance
     yDistance = this.PacMan.Transform.Translation.Y - this.Owner.Transform.Translation.Y;
     xDistance = this.PacMan.Transform.Translation.X - (this.Owner.Transform.Translation.X + 1);

@@ -84,7 +84,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{11.3410416, -8.45318985, 19.9386387}
+			var Translation = Real3{2.90120935, 0.680779934, 19.9422741}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0.00261798222, -0.00261800364, 6.85398845e-06, 0.999993205}
 		}
@@ -146,7 +146,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = -0.00523598772
 			var HorizontalAngle = 0.00523598772
-			var LookTarget = Real3{11.4457598, -8.34847069, -0.060811881}
+			var LookTarget = Real3{3.00592709, 0.785499215, -0.0571773499}
 			var MoveSensitivity = 1
 		}
 	}
@@ -248,7 +248,7 @@ Level
 		var Name = "TeleporterLeft"
 		Transform 
 		{
-			var Translation = Real3{14, -2, 0}
+			var Translation = Real3{17, -2, 0}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -282,7 +282,7 @@ Level
 		}
 		Teleporter 
 		{
-			var TeleExit = Real3{0, 0, 0}
+			var TeleExit = Real3{-14.5, -2, 0}
 		}
 	}
 	Cog [ContextId:8]
@@ -290,7 +290,7 @@ Level
 		var Name = "TeleporterRight"
 		Transform 
 		{
-			var Translation = Real3{-13.0000019, -2, 0}
+			var Translation = Real3{-16, -2, 0}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0, 0, 0, 1}
 		}
@@ -324,7 +324,7 @@ Level
 		}
 		Teleporter 
 		{
-			var TeleExit = Real3{-11, 3, 0}
+			var TeleExit = Real3{15.5, -2, 0}
 		}
 	}
 	Cog [ContextId:9]
@@ -430,7 +430,7 @@ Level
 	{
 		Transform 
 		{
-			var Translation = Real3{-1.5, 1, 0}
+			var Translation = Real3{-1.50000155, 1.0534153, 0.0002784729}
 			var Rotation = Quaternion{0, 0, 0, 1}
 			var Scale = Real3{1.5, 1.5, 1}
 		}
@@ -2731,7 +2731,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5c764fdbffac995f:PoewerPellet"][ContextId:260]
+	Cog [InheritId:"5c764fdbffac995f:PowerPellet"][ContextId:260]
 	{
 		Transform 
 		{
@@ -2740,7 +2740,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5c764fdbffac995f:PoewerPellet"][ContextId:261]
+	Cog [InheritId:"5c764fdbffac995f:PowerPellet"][ContextId:261]
 	{
 		Transform 
 		{
@@ -2749,7 +2749,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5c764fdbffac995f:PoewerPellet"][ContextId:262]
+	Cog [InheritId:"5c764fdbffac995f:PowerPellet"][ContextId:262]
 	{
 		Transform 
 		{
@@ -2758,7 +2758,7 @@ Level
 			var Scale = Real3{1.5, 1.5, 1}
 		}
 	}
-	Cog [InheritId:"5c764fdbffac995f:PoewerPellet"][ContextId:263]
+	Cog [InheritId:"5c764fdbffac995f:PowerPellet"][ContextId:263]
 	{
 		Transform 
 		{
@@ -2827,6 +2827,64 @@ Level
 			var FontSize = 64
 			var PixelsPerUnit = 128
 			var TextAlign = TextAlign.Center
+		}
+	}
+	Cog [ContextId:266]
+	{
+		var Name = "Sprite"
+		Transform 
+		{
+			var Translation = Real3{-16.1706104, -2.15299201, 2}
+			var Scale = Real3{5, 5, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{0, 0, 0, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
+		}
+	}
+	Cog [ContextId:267]
+	{
+		var Name = "Sprite"
+		Transform 
+		{
+			var Translation = Real3{17.0543823, -2.15299201, 2}
+			var Scale = Real3{5, 5, 1}
+			var Rotation = Quaternion{0, 0, 0, 1}
+		}
+		Sprite 
+		{
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var OverrideBoundingBox = false
+			var LocalAabbCenter = Real3{0, 0, 0}
+			var LocalAabbHalfExtents = Real3{1, 1, 1}
+			var GroupSortValue = 0
+			var Material = "582c575af53d18c9:AlphaSprite"
+			var VertexColor = Real4{0, 0, 0, 1}
+			var GeometryMode = SpriteGeometryMode.ZPlane
+			var SpriteSource = "5586f579ca73ecc2:SquareBordered"
+			var FlipX = false
+			var FlipY = false
+			var AnimationActive = true
+			var AnimationSpeed = 1
+			var StartFrame = 0
 		}
 	}
 }

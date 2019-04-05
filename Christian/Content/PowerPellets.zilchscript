@@ -16,7 +16,9 @@ class PowerPellets : ZilchComponent
   function OnCollisionStarted(event : CollisionEvent)
   {
       //trigger frightened phase
+      this.GameSession.GameVars.FrightenedBool = true;
       this.GameSession.GameVars.Points += 50.0;
+      this.GameSession.GameVars.Pellet -= 1;
       this.Space.SoundSpace.PlayCue(this.SoundToPlay);
       this.Owner.Destroy();
   }

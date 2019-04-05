@@ -1,0 +1,9 @@
+[Version:1]
+TextContent 
+{
+	ZilchScriptBuilder 
+	{
+		var Name = "FrightenedMode"
+		var ResourceId = 0x5c4264d9e3c585fd
+	}
+}

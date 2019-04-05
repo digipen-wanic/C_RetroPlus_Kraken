@@ -8,7 +8,8 @@ class FleeingAI : ZilchComponent
   [Dependency] var ValidMove : ValidMove;
   [Property] var MoveDistanceX : Real3 = Real3(1,0.0,0.0);
   [Property] var MoveDistanceY : Real3 = Real3(0.0,1,0.0);
-  [Property] var MoveSpeed : Real = 3;
+  [Property] var MoveSpeed : Real = 1;
+  [Property] var ScaredAnimation : SpriteSource = null;
   var RandomGenerator : Random = Random();
   var RandInt : Integer = 0;
   var AvailableDirections : Array[Boolean] = Array[Boolean](4, true);
@@ -17,76 +18,98 @@ class FleeingAI : ZilchComponent
   var PreviousDirection : Integer = 1;
   var BMove : Real = 0.0;
   var SecondBMove : Real = 0.0;
+  var Timer : Real = 0;
+  var StartingSprite : SpriteSource;
   function Initialize(init : CogInitializer)
   {
     Console.WriteLine(this.AvailableDirections);
     //calls the function
+    Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    this.StartingSprite = this.Owner.Sprite.SpriteSource;
     this.CalculateNextMove();
+  }
+  
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    if(this.GameSession.GameVars.FrightenedBool)
+    {
+      this.Timer += event.Dt;
+    }
+    if(this.Timer >= 10.0)
+    {
+      this.GameSession.GameVars.FrightenedBool = false;
+      this.Owner.Sprite.SpriteSource = this.StartingSprite;
+      this.Timer = 0;
+    }
   }
   function CalculateNextMove()
   {
-    //starts the sequence for the actions
+      //starts the sequence for the actions
     var actionSequence = Actions.Sequence(this.Owner.Actions);
-    
-    //set tiles that can't be moved to
-    this.ValidMove.ResultDirection.Set(this.PreviousDirection, false);
-    
-    var options = 0;
-    foreach(var direction in this.ValidMove.ResultDirection)
+    if(this.GameSession.GameVars.FrightenedBool)
     {
-      if(direction)
-        options +=1;
-    }
-    
-    
-    //calculate adjacent tile distances
-    this.RandInt = this.RandomGenerator.DieRoll(options);
-    Console.WriteLine(this.RandInt);
-   // while(!this.ValidMove.ResultDirection.Get(this.RandInt) || this.PreviousDirection == this.RandInt)
-   // {
-   //   this.RandInt = this.RandomGenerator.DieRoll(4) - 1;
-   // }
-    if(this.ValidMove.ResultDirection[0])
-    {
-      options-=1;
-      if(options<=0)
+      this.Owner.Sprite.SpriteSource = this.ScaredAnimation;
+      //set tiles that can't be moved to
+      this.ValidMove.ResultDirection.Set(this.PreviousDirection, false);
+      
+      var options = 0;
+      foreach(var direction in this.ValidMove.ResultDirection)
       {
-        Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) + this.MoveDistanceX,this.MoveSpeed, Ease.Linear);
-        this.PreviousDirection = 1;
+        if(direction)
+          options +=1;
       }
-    }
-    else if(this.ValidMove.ResultDirection[1])
-    {
-      options-=1;
-      if(options<=0)
+
+      //calculate adjacent tile distances
+      this.RandInt = this.RandomGenerator.DieRoll(options);
+      Console.WriteLine("`this.RandInt` `options` `this.ValidMove.ResultDirection`");
+     // while(!this.ValidMove.ResultDirection.Get(this.RandInt) || this.PreviousDirection == this.RandInt)
+     // {
+     //   this.RandInt = this.RandomGenerator.DieRoll(4) - 1;
+     // }
+      if(this.ValidMove.ResultDirection[0])
       {
-        Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) - this.MoveDistanceX,this.MoveSpeed, Ease.Linear);
-        this.PreviousDirection = 0; 
+        options-=1;
+        Console.WriteLine("Inside`this.RandInt` `options` `this.ValidMove.ResultDirection`");
+        if(options<=0)
+        {
+          
+          Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) + this.MoveDistanceX,this.MoveSpeed, Ease.Linear);
+          this.PreviousDirection = 1;
+        }
       }
-    
-    }
-    else if(this.ValidMove.ResultDirection[2])
-    {
-      options-=1;
-      if(options<=0)
+      if(this.ValidMove.ResultDirection[1])
       {
-        Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) + this.MoveDistanceY,this.MoveSpeed, Ease.Linear);
-        this.PreviousDirection = 3;
+        options-=1;
+        if(options<=0)
+        {
+          Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) - this.MoveDistanceX,this.MoveSpeed, Ease.Linear);
+          this.PreviousDirection = 0; 
+        }
       }
-    }
-    else if(this.ValidMove.ResultDirection[3])
-    {
-      options-=1;
-      if(options<=0)
+      if(this.ValidMove.ResultDirection[2])
       {
-        Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) - this.MoveDistanceY,this.MoveSpeed, Ease.Linear);
-        this.PreviousDirection = 2;
+        options-=1;
+        if(options<=0)
+        {
+          Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) + this.MoveDistanceY,this.MoveSpeed, Ease.Linear);
+          this.PreviousDirection = 3;
+        }
       }
+      if(this.ValidMove.ResultDirection[3])
+      {
+        Console.WriteLine("Inside`this.RandInt` `options` `this.ValidMove.ResultDirection`");
+        options-=1;
+        if(options<=0)
+        {
+          Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) - this.MoveDistanceY,this.MoveSpeed, Ease.Linear);
+          this.PreviousDirection = 2;
+        }
+      }
+      
+      //reset all available directions to true
+      this.ValidMove.ResultDirection = Array[Boolean](4, true);
+      // this makes this recursive
     }
-    
-    //reset all available directions to true
-    this.AvailableDirections = Array[Boolean](4, true);
-    // this makes this recursive
     Actions.Call(actionSequence, this.CalculateNextMove);
   }
 }

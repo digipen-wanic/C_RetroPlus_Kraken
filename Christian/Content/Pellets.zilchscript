@@ -14,6 +14,7 @@ class Pellets : ZilchComponent
   }
   function OnCollisionStarted(event : CollisionEvent)
   {
+    this.GameSession.GameVars.Pellet -= 1;
     this.GameSession.GameVars.Points += 10.0;
     this.Space.SoundSpace.PlayCue(this.SoundToPlay);
     this.Owner.Destroy();

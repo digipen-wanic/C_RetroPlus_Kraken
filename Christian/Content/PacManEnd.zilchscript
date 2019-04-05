@@ -18,5 +18,11 @@ class PacManEnd : ZilchComponent
       this.GameSession.GameVars.PacManLives = 2;
       this.Space.ReloadLevel;
     }
+    if(this.GameSession.GameVars.Pellet == 0)
+    {
+      this.GameSession.GameVars.Points = 0;
+      this.GameSession.GameVars.PacManLives = 2;
+      this.Space.ReloadLevel;
+    }
   }
 }

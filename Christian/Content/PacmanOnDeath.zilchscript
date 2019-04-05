@@ -22,11 +22,11 @@ class PacManOnDeath : ZilchComponent
 
   function OnGroupCollisionStarted(event : CollisionGroupEvent)
   {
-    if(event.OtherObject.Collider.CollisionGroup.Name == "Ghosts" && this.GameSession.GameVars.FrightenedBool)
+    if(event.OtherObject.Collider.CollisionGroup.Name == "Ghosts" && this.GameSession.GameVars.FrightenedBool == false)
     {
       this.Death();
     }
-    if((event.OtherObject.Collider.CollisionGroup.Name == "Ghosts" && !this.GameSession.GameVars.FrightenedBool))
+    if((event.OtherObject.Collider.CollisionGroup.Name == "Ghosts" && this.GameSession.GameVars.FrightenedBool == true))
     {
       this.GhostDeath();
     }
@@ -48,7 +48,8 @@ class PacManOnDeath : ZilchComponent
   
   function GhostDeath()
   {
-    
+    this.GameSession.GameVars.Points += 200;
+    this.Space.DispatchEvent("",ZilchEvent());
   }
 }
 

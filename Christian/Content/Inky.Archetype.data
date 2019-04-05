@@ -4,7 +4,7 @@ Cog
 	var Name = "Inky"
 	Transform 
 	{
-		var Translation = Real3{0, -2, 0}
+		var Translation = Real3{-4, -2, 0}
 		var Scale = Real3{1.5, 1.5, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -55,7 +55,7 @@ Cog
 	{
 		var MoveDistanceX = Real3{1, 0, 0}
 		var MoveDistanceY = Real3{0, 1, 0}
-		var MoveSpeed = 0.300000012
+		var MoveSpeed = 1
 		var PacMan = CogPath
 		{
 			var Path = ":/PacMan"
@@ -86,5 +86,12 @@ Cog
 			var PathPreference1 = CogPathPreference.SpaceRelative
 			var PathPreference2 = CogPathPreference.Absolute
 		}
+	}
+	FleeingAI 
+	{
+		var MoveDistanceX = Real3{1, 0, 0}
+		var MoveDistanceY = Real3{0, 1, 0}
+		var MoveSpeed = 1
+		var ScaredAnimation = "5cc3f2a802bc1092:PacManEdible2_0"
 	}
 }

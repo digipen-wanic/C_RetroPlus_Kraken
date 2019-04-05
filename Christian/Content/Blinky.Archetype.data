@@ -4,7 +4,7 @@ Cog
 	var Name = "Blinky"
 	Transform 
 	{
-		var Translation = Real3{1, -2, 0}
+		var Translation = Real3{2.5, 1, 0}
 		var Scale = Real3{1.5, 1.5, 1}
 		var Rotation = Quaternion{0, 0, 0, 1}
 	}
@@ -71,5 +71,12 @@ Cog
 			var PathPreference1 = CogPathPreference.SpaceRelative
 			var PathPreference2 = CogPathPreference.Absolute
 		}
+	}
+	FleeingAI 
+	{
+		var MoveDistanceX = Real3{1, 0, 0}
+		var MoveDistanceY = Real3{0, 1, 0}
+		var MoveSpeed = 1
+		var ScaredAnimation = "5cc3f2a802bc1092:PacManEdible2_0"
 	}
 }
