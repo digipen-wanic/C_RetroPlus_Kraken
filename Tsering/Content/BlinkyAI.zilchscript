@@ -5,24 +5,33 @@ class BlinkyAI : ZilchComponent
   [Property] var MoveDistanceY : Real3 = Real3(0.0,1,0.0);
   [Property] var MoveSpeed : Real = 3;
   [Property] var PacMan : CogPath = null;
+  
+  [Property] var ScatterTarget_X : Real;
+  [Property] var ScatterTarget_Y : Real;
+  
   var AvailableDirections : Array[Boolean] = Array[Boolean](4, true);
   var DistanceFromPacman : Array[Real] = Array[Real](4, 0);
   var MoveBool : Real;
   var PreviousDirection : Integer = 1;
-  var BMove : Real = 0.0;
-  var SecondBMove : Real = 0.0;
+  
+  
+  
+  
   function Initialize(init : CogInitializer)
   {
-    /*
-    Console.WriteLine(this.AvailableDirections);
-    this.AvailableDirections[3] = true;
-    Console.WriteLine(this.AvailableDirections);
-    */
-    //calls the function
-    this.CalculateNextMove();
+    this.RunPhases();
+    this.CalculateDistanceFromTarget();
+    this.ScatterPhase();
+  }
     
+  function RunPhases() {
+    var actionSequence = Actions.Sequence(this.Owner.Actions);
+    // delay for 7 seconds
+    Actions.Delay(actionSequence, 7);
+   
+    Actions.Call(actionSequence, this.CalculateNextMove);
+    // go to Chase phase
     this.CalculateDistanceFromPacman();
-    Console.WriteLine(this.DistanceFromPacman);
   }
   
   function CalculateDistanceFromPacman()
@@ -50,6 +59,35 @@ class BlinkyAI : ZilchComponent
     xDistance = this.PacMan.Transform.Translation.X - this.Owner.Transform.Translation.X;
     this.DistanceFromPacman.Set(3, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
   }
+  
+  
+  function CalculateDistanceFromTarget() {
+    var yDistance : Real = 0;
+    var xDistance : Real = 0;
+    
+    //get east distance
+    yDistance = this.ScatterTarget_Y - this.Owner.Transform.Translation.Y;
+    xDistance = this.ScatterTarget_X - (this.Owner.Transform.Translation.X + 1);
+    this.DistanceFromPacman.Set(0, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+    
+    //get west distance
+    yDistance = this.ScatterTarget_Y - this.Owner.Transform.Translation.Y;
+    xDistance = this.ScatterTarget_X - (this.Owner.Transform.Translation.X - 1);
+    this.DistanceFromPacman.Set(1, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+    
+    //get north distance
+    yDistance = this.ScatterTarget_Y - (this.Owner.Transform.Translation.Y + 1);
+    xDistance = this.ScatterTarget_X - this.Owner.Transform.Translation.X;
+    this.DistanceFromPacman.Set(2, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+    
+    //get south distance
+    yDistance = this.ScatterTarget_Y - (this.Owner.Transform.Translation.Y - 1);
+    xDistance = this.ScatterTarget_X - this.Owner.Transform.Translation.X;
+    this.DistanceFromPacman.Set(3, Math.Sqrt(Math.Pow(yDistance, 2) + Math.Pow(xDistance, 2)));
+  }
+  
+  
+  
   function GetBestMove() : Real
   {
     var greatestDistance : Real = 0;
@@ -84,8 +122,12 @@ class BlinkyAI : ZilchComponent
     return indexOfShortestDistance;
   }
   
+  
+  
   function CalculateNextMove()
   {
+    //Console.WriteLine("fhueafea");
+    this.Owner.Actions.Cancel();
     //starts the sequence for the actions
     var actionSequence = Actions.Sequence(this.Owner.Actions);
     
@@ -128,5 +170,51 @@ class BlinkyAI : ZilchComponent
     
     // this makes this recursive
     Actions.Call(actionSequence, this.CalculateNextMove);
+  }
+  
+  
+  
+  function ScatterPhase() {
+    //starts the sequence for the actions
+    var actionSequence = Actions.Sequence(this.Owner.Actions);
+    
+    //set tiles that can't be moved to
+    this.AvailableDirections.Set(this.PreviousDirection, false);
+    //calculate adjacent tile distances
+    this.CalculateDistanceFromTarget();
+        
+    this.MoveBool = this.GetBestMove();
+    
+    if(this.MoveBool == 0 && this.ValidMove.ResultDirection[0] && this.PreviousDirection != 0)
+    {
+        Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) + this.MoveDistanceX,this.MoveSpeed, Ease.Linear);
+        this.PreviousDirection = 1;
+        this.Owner.Sprite.SpriteSource = SpriteSource.PacManBlinkySide_1;
+        this.Owner.Transform.SetEulerAnglesXYZ(0,0,0);
+    }
+    else if(this.MoveBool == 1 && this.ValidMove.ResultDirection[1] && this.PreviousDirection != 1)
+    {
+        Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) - this.MoveDistanceX,this.MoveSpeed, Ease.Linear);
+        this.PreviousDirection = 0;
+        this.Owner.Sprite.SpriteSource = SpriteSource.PacManBlinkySide_1;
+        this.Owner.Transform.SetEulerAnglesXYZ(0,Math.Pi,0);
+    }
+    else if(this.MoveBool == 2 && this.ValidMove.ResultDirection[2] && this.PreviousDirection != 2)
+    {
+        Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) + this.MoveDistanceY,this.MoveSpeed, Ease.Linear);
+        this.PreviousDirection = 3;
+        this.Owner.Sprite.SpriteSource = SpriteSource.PacManBlinkyUp_0;
+    }
+    else if(this.MoveBool == 3 && this.ValidMove.ResultDirection[3] && this.PreviousDirection != 3)
+    {
+        Actions.Property(actionSequence,@this.Owner.Transform.Translation, Math.Round(this.Owner.Transform.Translation) - this.MoveDistanceY,this.MoveSpeed, Ease.Linear);
+        this.PreviousDirection = 2;
+        this.Owner.Sprite.SpriteSource = SpriteSource.PacManBlinkyDown_0;
+    }
+    
+    //reset all available directions to true
+    this.AvailableDirections = Array[Boolean](4, true);
+    
+    Actions.Call(actionSequence, this.ScatterPhase);
   }
 }

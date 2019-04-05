@@ -84,7 +84,7 @@ Level
 		var Name = "EditorCamera"
 		Transform 
 		{
-			var Translation = Real3{2.46621323, -2.40812254, 19.9802914}
+			var Translation = Real3{2.46621776, -2.57478428, 19.9794178}
 			var Scale = Real3{1, 1, 1}
 			var Rotation = Quaternion{0.00261798222, -0.00261800364, 6.85398845e-06, 0.999993205}
 		}
@@ -146,7 +146,7 @@ Level
 			var LookDistance = 20
 			var VerticalAngle = -0.00523598772
 			var HorizontalAngle = 0.00523598772
-			var LookTarget = Real3{2.57093096, -2.30340314, -0.0191593077}
+			var LookTarget = Real3{2.57093549, -2.47006488, -0.0200319421}
 			var MoveSensitivity = 1
 		}
 	}

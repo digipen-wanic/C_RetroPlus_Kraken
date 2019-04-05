@@ -71,5 +71,7 @@ Cog
 			var PathPreference1 = CogPathPreference.SpaceRelative
 			var PathPreference2 = CogPathPreference.Absolute
 		}
+		var ScatterTarget_X = 10
+		var ScatterTarget_Y = 9
 	}
 }
