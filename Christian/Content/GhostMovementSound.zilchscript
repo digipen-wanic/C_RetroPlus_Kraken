@@ -11,12 +11,13 @@ class GhostMovementSound : ZilchComponent
   }
 
   function OnLogicUpdate(event : UpdateEvent)
-  {
+  {  
     this.Timer += event.Dt;
-    if(this.Timer >= 1.25)
+    if(this.Timer >= 0.7)
     {
       this.Space.SoundSpace.PlayCue(this.SoundToPlay);
       this.Timer = 0;
+
     }
     else if(this.Timer >= 1.0 && this.GameSession.GameVars.FrightenedBool)
     {
