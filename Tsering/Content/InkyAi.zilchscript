@@ -14,12 +14,6 @@ class InkyAI : ZilchComponent
   var SecondBMove : Real = 0.0;
   function Initialize(init : CogInitializer)
   {
-    /*
-    Console.WriteLine(this.AvailableDirections);
-    this.AvailableDirections[3] = true;
-    Console.WriteLine(this.AvailableDirections);
-    Owner
-    */
     //calls the function
     this.CalculateNextMove();
     
